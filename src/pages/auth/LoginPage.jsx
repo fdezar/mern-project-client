@@ -11,9 +11,15 @@ function LoginPage() {
   const handleEmailInput = e => setEmail(e.target.value);
   const handlePasswordInput = e => setPassword(e.target.value);
 
+  const handleSubmit = e => {
+    e.preventDefault()
+
+    // mirar qué se necesita si se necesita algo más
+  }
+
   return (
     <div>
-      <form>
+      <form method="POST" onSubmit={handleSubmit}>
         <label htmlFor="email">Email</label>
         <input
           type="email"

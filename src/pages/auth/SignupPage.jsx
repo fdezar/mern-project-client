@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 
 function SignupPage() {
   const [email, setEmail] = useState("");
@@ -21,9 +22,31 @@ function SignupPage() {
   const handlePasswordInput = e => setPassword(e.target.value);
   const handleUserImageInput = e => setUserImage(e.target.value);
 
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    const newUser = {
+        email,
+        username,
+        name,
+        lastName,
+        aboutMe,
+        password,
+        userImage
+    };
+
+    axios.post("", newUser)
+        .then(response => {
+            console.log(response);
+        })
+        .catch(err => {
+            console.error(err);
+        });
+};
+
   return (
     <div>
-      <form>
+      <form method="POST" onSubmit={handleSubmit}>
         <label htmlFor="email">Email</label>
         <input
           type="email"
