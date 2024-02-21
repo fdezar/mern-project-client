@@ -1,18 +1,18 @@
 import { useState } from "react";
 import jsonData from "./../data.json"
 
-function SearchBar({ setProducts }) {
+function SearchBar({ setNotes }) {
 
     const [searchQuery, setSearchQuery] = useState("");
 
     const handleInputChange = e => {
         setSearchQuery(e.target.value);
 
-        const filteredProducts = jsonData.filter((product) => {
-            return product.name.toLowerCase().includes(e.target.value.toLowerCase());
+        const filteredNotes = jsonData.filter((note) => {
+            return note.name.toLowerCase().includes(e.target.value.toLowerCase());
         });
 
-        setProducts(filteredProducts);
+        setNotes(filteredNotes);
     }
 
     return (
@@ -24,8 +24,8 @@ function SearchBar({ setProducts }) {
                     value={searchQuery}
                     onChange={handleInputChange}
                 />
-                <label htmlFor="checkbox"><input type="checkbox" />Only show products in stock</label>
             </form>
+            {/* poner un icono o algo */}
             <p>Search</p>
         </div>
     );

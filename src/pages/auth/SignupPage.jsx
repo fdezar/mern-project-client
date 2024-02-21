@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import service from "../../services/file-upload.service";
 
 function SignupPage() {
   const [email, setEmail] = useState("");
