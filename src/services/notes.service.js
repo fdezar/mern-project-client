@@ -3,7 +3,7 @@ import axios from 'axios';
 class NotesService {
   constructor() {
     this.api = axios.create({
-      baseURL: import.meta.env.SERVER_URL || 'http://localhost:5005'
+      baseURL: import.meta.env.VITE_SERVER_URL || 'http://localhost:5005/api'
     });
 
     // Automatically set JWT token in the headers for every request
@@ -19,29 +19,29 @@ class NotesService {
     });
   }
 
-  // POST /api/notes
+  // POST /api/notes/create
   createNote = requestBody => {
-    return this.api.post('/api/notes', requestBody);
+    return this.api.post('/notes/create', requestBody);
   };
 
   // GET /api/notes
   getAllNotes = () => {
-    return this.api.get('/api/notes');
+    return this.api.get('/notes');
   };
 
   // GET /api/notes/:id
-  getNote = id => {
-    return this.api.get(`/api/notes/${id}`);
+  getNoteDetails = id => {
+    return this.api.get(`/notes/${id}`);
   };
 
   // PUT /api/projects/:id
   updateNote = (id, requestBody) => {
-    return this.api.put(`/api/notes/${id}`, requestBody);
+    return this.api.put(`/notes/${id}`, requestBody);
   };
 
   // DELETE /api/projects/:id
   deleteNote = id => {
-    return this.api.delete(`/api/notes/${id}`);
+    return this.api.delete(`/notes/${id}`);
   };
 }
 

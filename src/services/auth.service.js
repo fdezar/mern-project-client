@@ -4,7 +4,7 @@ class AuthService {
   constructor() {
     // Create a new instance of axios with a custom configuration
     this.api = axios.create({
-      baseURL: import.meta.env.SERVER_URL || 'http://localhost:5005'
+      baseURL: import.meta.env.VITE_SERVER_URL || 'http://localhost:5005/api'
       // We set our API's base URL so that all requests use the same base URL
     });
 

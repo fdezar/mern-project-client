@@ -60,7 +60,6 @@ function SignupPage() {
 };
 
   return (
-    <>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -71,6 +70,7 @@ function SignupPage() {
             alignItems: 'center',
           }}
         >
+        <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }} />
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
@@ -188,7 +188,6 @@ function SignupPage() {
           </Box>
         </Box>
       </Container>
-    </>
   );
 }
 
