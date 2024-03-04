@@ -25,7 +25,7 @@ class NotesService {
   };
 
   // GET /api/notes
-  getAllNotes = () => {
+  getAllUserNotes = () => {
     return this.api.get('/notes');
   };
 

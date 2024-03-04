@@ -1,11 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import service from "../../services/file-upload.service";
+import authService from "../../services/auth.service";
 
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
+import FormControl from '@mui/material/FormControl';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
@@ -50,9 +52,10 @@ function SignupPage() {
         userImage
     };
 
-    axios.post("", newUser)
-        .then(response => {
-            console.log(response);
+    authService.signup(newUser)
+        .then(res => {
+            console.log(res.data);
+            navigate('/login');
         })
         .catch(err => {
             console.error(err);
@@ -60,6 +63,7 @@ function SignupPage() {
 };
 
   return (
+    <form onSubmit={handleSubmit}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -190,6 +194,7 @@ function SignupPage() {
           </Box>
         </Box>
       </Container>
+      </form>
   );
 }
 

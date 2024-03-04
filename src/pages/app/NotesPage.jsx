@@ -1,13 +1,14 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
+import notesService from "../../services/notes.service";
 
 function NotesPage() {
 
     const [notes, setNotes] = useState([]);
 
     useEffect(() => {
-        axios.get(/*"https://ih-beers-api2.herokuapp.com/beers"*/)
+        notesService.getAllUserNotes()
         .then(res => {
             console.log(res.data);
             setNotes(res.data);
@@ -17,7 +18,9 @@ function NotesPage() {
 
     return (
         <div>
-            
+            {notes.map(note => {
+                <p></p>
+            })}
         </div>
     )
 }
