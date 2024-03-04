@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import { Routes, Route } from "react-router-dom";
 import MyNavbar from './components/MyNavbar';
-import HomePage from './pages/app/HomePage';
+import LandingPage from './pages/app/LandingPage';
 import SignupPage from './pages/auth/SignupPage';
 import LoginPage from './pages/auth/LoginPage';
 import EditProfilePage from './pages/auth/EditProfilePage';
@@ -24,11 +24,11 @@ function App() {
     <>
       <MyNavbar />
 
-      <h1>Project</h1>
+      {/* <h1>Project</h1> */}
 
       <Routes>
 
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<LandingPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/edit-profile" element={<EditProfilePage />} />
