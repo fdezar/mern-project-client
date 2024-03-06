@@ -1,13 +1,16 @@
-import { useState, useEffect, useContext } from 'react';
+// import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import authService from '../../services/auth.service';
-import { AuthContext } from "../../context/auth.context";
+// import { AuthContext } from "../../context/auth.context";
+
+// usar el logOutUser para poder hacer el logout del Auth.context
 
 function MyProfilePage() {
 
-    const [ myUser, setMyUser ] = useState({});
+    const [ myUser, setMyUser ] = useState(null);
 
-    const { user } = useContext(AuthContext);
+    // const { user } = useContext(AuthContext);
 
     useEffect(() => {
         authService.getUserProfile()
@@ -16,9 +19,9 @@ function MyProfilePage() {
             setMyUser(res.data);
         })
         .catch(err => console.log(err));
-    }, [user]);
+    }, [myUser]);
 
-    return !user ? (
+    return !myUser ? (
         <div>
             <p>Loading</p>
         </div>
