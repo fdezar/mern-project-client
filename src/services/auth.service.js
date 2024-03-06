@@ -40,7 +40,7 @@ class AuthService {
   };
 
   getUserProfile = () => {
-    return this.api.get('/auth/:userId');
+    return this.api.get('/auth/my-profile');
   }
 
   editProfile = () => {

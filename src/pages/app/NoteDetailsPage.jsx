@@ -10,7 +10,7 @@ function NoteDetailsPage() {
     const { noteId } = useParams();
 
     useEffect(() => {
-        axios.get(/*`https://ih-beers-api2.herokuapp.com/beers/${beerId}`*/)
+        notesService.getNoteDetails()
             .then(res => {
                 console.log(res.data);
                 setNote(res.data);
@@ -26,7 +26,8 @@ function NoteDetailsPage() {
         </div>
         ) : (
         <div>
-            <p>Note</p>
+            <h1>{note.title}</h1>
+            <p>{note.content}</p>
         </div>
     )
 }

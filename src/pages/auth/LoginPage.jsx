@@ -1,4 +1,7 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import authService from "../../services/auth.service";
+import { AuthContext } from "../../context/auth.context";
 
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
@@ -18,6 +21,8 @@ import Container from '@mui/material/Container';
 function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const { storeToken, authenticateUser } = useContext(AuthContext);
 
 //   const isEmailValid = () => {
 //     return email.includes("@");
@@ -29,6 +34,21 @@ function LoginPage() {
   const handleSubmit = e => {
     e.preventDefault()
 
+    const user = {
+        email,
+        password
+    };
+
+    authService.login(user)
+        .then(res => {
+            console.log(res.data);
+            storeToken(res.data.authToken);
+            authenticateUser();
+            navigate('/dashboard');
+        })
+        .catch(err => {
+            console.error(err);
+        });
     // mirar qué se necesita si se necesita algo más
   }
 

@@ -29,6 +29,8 @@ function SignupPage() {
   const [password, setPassword] = useState("");
   const [userImage, setUserImage] = useState("");
 
+  const navigate = useNavigate();
+
   const isEmailValid = () => {
         return email.includes("@");
     };
