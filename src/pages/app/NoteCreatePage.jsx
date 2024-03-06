@@ -4,7 +4,7 @@ function NoteCreatePage() {
 
     return (
         <div>
-
+            <p>Note creation</p>
         </div>
     )
 }

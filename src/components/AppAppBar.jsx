@@ -12,6 +12,9 @@ import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import ToggleColorMode from './ToggleColorMode';
+import { Link } from "react-router-dom";
+
+// ToDo - poner links de React-Router-Dom
 
 const logoStyle = {
   width: '140px',
@@ -206,28 +209,32 @@ function AppAppBar({ mode, toggleColorMode }) {
                   <MenuItem onClick={() => scrollToSection('faq')}>FAQ</MenuItem>
                   <Divider />
                   <MenuItem>
-                    <Button
-                      color="primary"
-                      variant="contained"
-                      component="a"
-                      href="/material-ui/getting-started/templates/sign-up/"
-                      target="_blank"
-                      sx={{ width: '100%' }}
-                    >
-                      Sign up
-                    </Button>
+                    <Link to="/signup">
+                        <Button
+                          color="primary"
+                          variant="contained"
+                          component="a"
+                        //   href="/signup/"
+                          target="_blank"
+                          sx={{ width: '100%' }}
+                        >
+                          Sign up
+                        </Button>
+                    </Link>
                   </MenuItem>
                   <MenuItem>
-                    <Button
-                      color="primary"
-                      variant="outlined"
-                      component="a"
-                      href="/material-ui/getting-started/templates/sign-in/"
-                      target="_blank"
-                      sx={{ width: '100%' }}
-                    >
-                      Sign in
-                    </Button>
+                    <Link to="/login">
+                        <Button
+                          color="primary"
+                          variant="outlined"
+                          component="a"
+                        //   href="/login"
+                        //   target="_blank"
+                          sx={{ width: '100%' }}
+                        >
+                          Sign in
+                        </Button>
+                    </Link>
                   </MenuItem>
                 </Box>
               </Drawer>

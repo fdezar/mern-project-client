@@ -38,6 +38,22 @@ class AuthService {
     // same as
     // return axios.post("http://localhost:5005/auth/verify");
   };
+
+  getUserProfile = () => {
+    return this.api.get('/auth/:userId');
+  }
+
+  editProfile = () => {
+    return this.api.put('/auth/:userId');
+  }
+
+  editProfileImage = () => {
+    return this.api.put('/auth/:userId/update-image', requestBody);
+  }
+
+  deleteProfileImage = () => {
+    return this.api.delete('/auth/:userId/delete-image', requestBody);
+  }
 }
 
 // Create one instance object

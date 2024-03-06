@@ -18,6 +18,8 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 // import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+// en el Box había un handleSubmit antes
+
 function SignupPage() {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
@@ -63,7 +65,6 @@ function SignupPage() {
 };
 
   return (
-    <form onSubmit={handleSubmit}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -80,7 +81,7 @@ function SignupPage() {
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <TextField
@@ -194,7 +195,6 @@ function SignupPage() {
           </Box>
         </Box>
       </Container>
-      </form>
   );
 }
 

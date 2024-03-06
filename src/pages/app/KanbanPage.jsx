@@ -2,7 +2,7 @@ function KanbanPage() {
 
     return (
         <div>
-
+            <p>Kanban</p>
         </div>
     )
 }

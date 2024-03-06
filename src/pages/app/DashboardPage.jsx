@@ -13,15 +13,24 @@ import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import Badge from '@mui/material/Badge';
+// import Badge from '@mui/material/Badge';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import { mainListItems, secondaryListItems } from '../../components/DashboardItemList';
+// import NotificationsIcon from '@mui/icons-material/Notifications';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+// import { mainListItems, secondaryListItems } from '../../components/DashboardItemList';
+import { mainListItems } from '../../components/DashboardItemList';
+
+import DashboardPageContent from './DashboardPageContent';
+import KanbanPage from './KanbanPage';
+import NotesPage from './NotesPage';
+import NoteDetailsPage from './NoteDetailsPage';
+import NoteCreatePage from './NoteCreatePage';
+import MyProfilePage from '../auth/MyProfilePage';
 // import Chart from './Chart';
 // import Deposits from './Deposits';
 // import Orders from './Orders';
@@ -75,9 +84,15 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 function DashboardPage() {
 
     const [open, setOpen] = React.useState(true);
+    const [currentView, setCurrentView] = React.useState('dashboard');
+
     const toggleDrawer = () => {
         setOpen(!open);
     };
+
+    const handleItemClick = view => {
+        setCurrentView(view);
+    }
 
   return (
     // <ThemeProvider theme={defaultTheme}>
@@ -110,10 +125,10 @@ function DashboardPage() {
             >
               Dashboard
             </Typography>
-            <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <NotificationsIcon />
-              </Badge>
+            <IconButton color="inherit" onClick={() => handleItemClick('myProfile')}>
+              {/* <Badge badgeContent={4} color="secondary"> */}
+                <AccountCircleIcon />
+              {/* </Badge> */}
             </IconButton>
           </Toolbar>
         </AppBar>
@@ -132,9 +147,9 @@ function DashboardPage() {
           </Toolbar>
           <Divider />
           <List component="nav">
-            {mainListItems}
+            {mainListItems(handleItemClick)}
             <Divider sx={{ my: 1 }} />
-            {secondaryListItems}
+            {/* {secondaryListItems} */}
           </List>
         </Drawer>
         <Box
@@ -161,11 +176,28 @@ function DashboardPage() {
                     flexDirection: 'column',
                     height: 240,
                   }}
-                >
-                  {/* <Chart /> */}
+                >   
+                    {currentView === 'dashboard' && (
+                        <DashboardPageContent />
+                    )}
+                    {currentView === 'kanban' && (
+                        <KanbanPage />
+                    )}
+                    {currentView === 'notes' && (
+                        <NotesPage handleItemClick={handleItemClick}/>
+                    )}
+                    {currentView === 'noteDetails' && (
+                        <NoteDetailsPage />
+                    )}
+                    {currentView === 'noteCreate' && (
+                        <NoteCreatePage />
+                    )}
+                    {currentView === 'myProfile' && (
+                        <MyProfilePage />
+                    )}
                 </Paper>
               </Grid>
-              {/* Recent Deposits */}
+              {/* Recent Deposits
               <Grid item xs={12} md={4} lg={3}>
                 <Paper
                   sx={{
@@ -175,17 +207,17 @@ function DashboardPage() {
                     height: 240,
                   }}
                 >
-                  {/* <Deposits /> */}
+                  <Deposits />
                 </Paper>
               </Grid>
-              {/* Recent Orders */}
+              Recent Orders
               <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                  {/* <Orders /> */}
+                  <Orders />
                 </Paper>
-              </Grid>
+              </Grid> */}
             </Grid>
-            {/* <Copyright sx={{ pt: 4 }} /> */}
+            { /* <Copyright sx={{ pt: 4 }} /> */ }
           </Container>
         </Box>
       </Box>
