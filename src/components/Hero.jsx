@@ -27,7 +27,7 @@ export default function Hero() {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          pt: { xs: 14, sm: 20 },
+          pt: { xs: 28, sm: 40 }, /* antes 14 y 20 */
           pb: { xs: 8, sm: 12 },
         }}
       >
@@ -42,7 +42,7 @@ export default function Hero() {
               textAlign: 'center',
             }}
           >
-            Our latest&nbsp;
+            Productivity&nbsp;
             <Typography
               component="span"
               variant="h1"
@@ -51,12 +51,11 @@ export default function Hero() {
                   theme.palette.mode === 'light' ? 'primary.main' : 'primary.light',
               }}
             >
-              products
+              Flow
             </Typography>
           </Typography>
           <Typography variant="body1" textAlign="center" color="text.secondary">
-            Explore our cutting-edge dashboard, delivering high-quality solutions
-            tailored to your needs. <br />
+          Discover the Future of Productivity with Silk. <br />
             Elevate your experience with top-tier features and services.
           </Typography>
           <Stack
@@ -66,7 +65,7 @@ export default function Hero() {
             useFlexGap
             sx={{ pt: 2, width: { xs: '100%', sm: 'auto' } }}
           >
-            <TextField
+            {/* <TextField
               id="outlined-basic"
               hiddenLabel
               size="small"
@@ -80,17 +79,17 @@ export default function Hero() {
             />
             <Button variant="contained" color="primary">
               Start now
-            </Button>
+            </Button> */}
           </Stack>
-          <Typography variant="caption" textAlign="center" sx={{ opacity: 0.8 }}>
-            By clicking &quot;Start now&quot; you agree to our&nbsp;
+          {/* <Typography variant="caption" textAlign="center" sx={{ opacity: 0.8 }}>
+            By clicking &quot;Start now&quot; you agree to &nbsp;
             <Link href="#" color="primary">
               Terms & Conditions
             </Link>
             .
-          </Typography>
+          </Typography> */}
         </Stack>
-        <Box
+        {/* <Box
           id="image"
           sx={(theme) => ({
             mt: { xs: 8, sm: 10 },
@@ -113,7 +112,7 @@ export default function Hero() {
                 ? `0 0 12px 8px ${alpha('#9CCCFC', 0.2)}`
                 : `0 0 24px 12px ${alpha('#033363', 0.2)}`,
           })}
-        />
+        /> */}
       </Container>
     </Box>
   );

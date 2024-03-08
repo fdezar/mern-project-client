@@ -81,7 +81,7 @@ function LandingPage() {
             <CssBaseline />
             <AppAppBar mode={mode} toggleColorMode={toggleColorMode} />
             <Hero />
-            <Box sx={{ bgcolor: 'background.default' }}>
+            {/* <Box sx={{ bgcolor: 'background.default' }}>
               <LogoCollection />
               <Features />
               <Divider />
@@ -94,11 +94,11 @@ function LandingPage() {
               <FAQ />
               <Divider />
               <Footer />
-            </Box>
-            <ToggleCustomTheme
+            </Box> */}
+            {/* <ToggleCustomTheme
               showCustomTheme={showCustomTheme}
               toggleCustomTheme={toggleCustomTheme}
-            />
+            /> */}
         </ThemeProvider>
     )
 }

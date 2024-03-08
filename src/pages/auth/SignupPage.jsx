@@ -1,24 +1,20 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { useNavigate, Link } from "react-router-dom";
+// import axios from "axios";
 import authService from "../../services/auth.service";
 
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControl from '@mui/material/FormControl';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
+// import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-// import { createTheme, ThemeProvider } from '@mui/material/styles';
-
-// en el Box había un handleSubmit antes
 
 function SignupPage() {
   const [email, setEmail] = useState("");
@@ -30,10 +26,6 @@ function SignupPage() {
   const [userImage, setUserImage] = useState("");
 
   const navigate = useNavigate();
-
-  const isEmailValid = () => {
-        return email.includes("@");
-    };
 
   const handleEmailInput = e => setEmail(e.target.value);
   const handleUsernameInput = e => setUsername(e.target.value);
@@ -172,12 +164,12 @@ function SignupPage() {
                   </Button>
                 </label>
               </Grid>
-              <Grid item xs={12}>
+              {/* <Grid item xs={12}>
                 <FormControlLabel
                   control={<Checkbox value="allowExtraEmails" color="primary" />}
                   label="I want to receive inspiration, marketing promotions and updates via email."
                 />
-              </Grid>
+              </Grid> */}
             </Grid>
             <Button
               type="submit"
@@ -189,7 +181,8 @@ function SignupPage() {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="#" variant="body2">
+                {/* <Link href="/login" variant="body2"> */}
+                <Link to="/login">
                   Already have an account? Sign in
                 </Link>
               </Grid>

@@ -17,13 +17,13 @@ import IconButton from '@mui/material/IconButton';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
-import Link from '@mui/material/Link';
+// import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 // import NotificationsIcon from '@mui/icons-material/Notifications';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 // import { mainListItems, secondaryListItems } from '../../components/DashboardItemList';
-import { mainListItems } from '../../components/DashboardItemList';
+import { mainListItems } from '../../components/DashboardItemList';
 
 import DashboardPageContent from './DashboardPageContent';
 import KanbanPage from './KanbanPage';
@@ -174,7 +174,7 @@ function DashboardPage() {
                     p: 2,
                     display: 'flex',
                     flexDirection: 'column',
-                    height: 240,
+                    height: 650, // prev 240
                   }}
                 >   
                     {currentView === 'dashboard' && (

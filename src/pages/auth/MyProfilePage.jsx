@@ -1,14 +1,16 @@
 // import { useState, useEffect, useContext } from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import authService from '../../services/auth.service';
-// import { AuthContext } from "../../context/auth.context";
+import { AuthContext } from "../../context/auth.context";
+import Button from "@mui/material/Button";
 
 // usar el logOutUser para poder hacer el logout del Auth.context
 
 function MyProfilePage() {
 
     const [ myUser, setMyUser ] = useState(null);
+    const { logOutUser } = useContext(AuthContext);
 
     // const { user } = useContext(AuthContext);
 
@@ -37,7 +39,10 @@ function MyProfilePage() {
 
             <h3>About</h3>
             {/* <p>{myUser.aboutMe}</p> */}
-            
+
+            <Button variant="contained" style={{ marginBottom: "15px" }}>Edit Profile</Button>
+            <br />
+            <Button variant="outlined" onClick={logOutUser}>Logout</Button>
         </div>
     )
 }

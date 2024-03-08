@@ -1,6 +1,7 @@
 // src/context/auth.context.jsx
 
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5005";
 
@@ -13,7 +14,9 @@ function AuthProviderWrapper(props) {
   
   const storeToken = (token) => {
     localStorage.setItem('authToken', token);
-  }  
+  }
+  
+  const navigate = useNavigate();
   
   const authenticateUser = () => {           //  <==  ADD  
     // Get the stored token from the localStorage
@@ -56,6 +59,7 @@ function AuthProviderWrapper(props) {
   const logOutUser = () => {
     removeToken();
     authenticateUser();
+    navigate("/");
   }  
 
   useEffect(() => {

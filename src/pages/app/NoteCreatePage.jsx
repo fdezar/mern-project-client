@@ -1,20 +1,24 @@
 import { useState } from "react";
 import axios from "axios";
-import noteService from "../../services/note.service";
+import notesService from "../../services/notes.service";
 
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
+import TextareaAutosize from '@mui/material/TextareaAutosize';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+// import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import EditNoteIcon from '@mui/icons-material/EditNote';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+import { useNavigate } from "react-router-dom";
 
 function NoteCreatePage() {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
+    const navigate = useNavigate();
 
     const handleTitleInput = e => setTitle(e.target.value);
     const handleContentInput = e => setContent(e.target.value);
@@ -27,9 +31,10 @@ function NoteCreatePage() {
           content
         };
     
-        noteService.createNote(newNote)
+        notesService.createNote(newNote)
           .then(res => {
             console.log(res.data);
+            navigate('/notes'); // toDo - modificar
             // Handle success, maybe redirect to note details page
           })
           .catch(err => {
@@ -49,8 +54,8 @@ function NoteCreatePage() {
                 alignItems: 'center',
               }}
             >
-              <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-                <LockOutlinedIcon />
+              <Avatar sx={{ m: 1, bgcolor: 'primary.main' }}>
+                <EditNoteIcon />
               </Avatar>
               <Typography component="h1" variant="h5">
                 Create Note
@@ -69,11 +74,20 @@ function NoteCreatePage() {
                     />
                   </Grid>
                   <Grid item xs={12}>
-                    <TextField
+                    {/* <TextField
                       multiline
                       fullWidth
                       id="content"
                       label="Content"
+                      value={content}
+                      onChange={handleContentInput}
+                    /> */}
+                    <TextareaAutosize
+                      minRows={5}
+                      maxRows={17}
+                      fullWidth
+                      id="content"
+                      placeholder="Content"
                       value={content}
                       onChange={handleContentInput}
                     />
