@@ -17,23 +17,29 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 
 function SignupPage() {
-  const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
-  const [name, setName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [aboutMe, setAboutMe] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("Admin12@localhost.com");
+  const [username, setUsername] = useState("Admin");
+  const [firstName, setFirstName] = useState("Admin");
+  const [lastName, setLastName] = useState("Host");
+  const [aboutMe, setAboutMe] = useState("Hello");
+  const [password, setPassword] = useState("Admin10");
   const [userImage, setUserImage] = useState("");
 
   const navigate = useNavigate();
 
   const handleEmailInput = e => setEmail(e.target.value);
   const handleUsernameInput = e => setUsername(e.target.value);
-  const handleNameInput = e => setName(e.target.value);
+  const handleFirstNameInput = e => setFirstName(e.target.value);
   const handleLastNameInput = e => setLastName(e.target.value);
   const handleAboutMeInput = e => setAboutMe(e.target.value);
   const handlePasswordInput = e => setPassword(e.target.value);
-  const handleUserImageInput = e => setUserImage(e.target.value);
+//   const handleUserImageInput = e => setUserImage(e.target.value);
+
+  const handleFileUpload = e => {
+    console.log("The file to be uploaded is: ", e.target.files[0]);
+ 
+    
+  };
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -41,22 +47,38 @@ function SignupPage() {
     const newUser = {
         email,
         username,
-        name,
+        firstName,
         lastName,
         aboutMe,
         password,
-        userImage
     };
 
-    authService.signup(newUser)
-        .then(res => {
-            console.log(res.data);
-            navigate('/login');
+    const uploadData = new FormData();
+
+    // imageUrl => this name has to be the same as in the model since we pass
+    // req.body to .create() method when creating a new movie in '/api/movies' POST route
+    uploadData.append("userImage", userImage);
+    
+    authService
+      .uploadImage(uploadData)
+      .then(response => {
+        console.log("response is: ", response);
+        // response carries "fileUrl" which we can use to update the state
+        setUserImage(response.data.fileUrl);
+      })
+        .then(() => {
+            newUser.userImage = userImage;
+            authService.signup(newUser)
+            .then(res => {
+                console.log(res.data);
+                navigate('/login');
+            })
+            .catch(err => {
+                console.error(err);
+            });
         })
-        .catch(err => {
-            console.error(err);
-        });
-};
+      .catch(err => console.log("Error while uploading the file: ", err));
+  };
 
   return (
       <Container component="main" maxWidth="xs">
@@ -105,13 +127,13 @@ function SignupPage() {
               <Grid item xs={12}>
                 <TextField
                   autoComplete="name"
-                  name="name"
+                  name="firstName"
                   required
                   fullWidth
-                  id="name"
-                  label="Name"
-                  value={name}
-                  onChange={handleNameInput}
+                  id="firstName"
+                  label="First Name"
+                  value={firstName}
+                  onChange={handleFirstNameInput}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -156,7 +178,7 @@ function SignupPage() {
                   id="image"
                   name="image"
                   type="file"
-                  onChange={handleUserImageInput}
+                  onChange={(e) => setUserImage(e.target.files[0])}
                 />
                 <label htmlFor="image">
                   <Button variant="contained" component="span">

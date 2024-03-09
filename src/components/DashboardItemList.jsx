@@ -20,12 +20,12 @@ export const mainListItems = (handleItemClick) => (
       </ListItemIcon>
       <ListItemText primary="Dashboard" />
     </ListItemButton>
-    <ListItemButton onClick={() => handleItemClick('kanban')}>
+    {/* <ListItemButton onClick={() => handleItemClick('kanban')}>
       <ListItemIcon>
         <BarChartIcon />
       </ListItemIcon>
       <ListItemText primary="Kanban" />
-    </ListItemButton>
+    </ListItemButton> */}
     <ListItemButton onClick={() => handleItemClick('notes')}>
       <ListItemIcon>
         <LayersIcon />

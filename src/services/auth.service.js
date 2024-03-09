@@ -39,6 +39,10 @@ class AuthService {
     // return axios.post("http://localhost:5005/auth/verify");
   };
 
+  uploadImage = file => {
+    return this.api.post('/auth/upload-image', file);
+  }
+
   getUserProfile = () => {
     return this.api.get('/auth/my-profile');
   }
@@ -47,8 +51,8 @@ class AuthService {
     return this.api.put('/auth/:userId');
   }
 
-  editProfileImage = () => {
-    return this.api.put('/auth/:userId/update-image', requestBody);
+  editProfileImage = file => {
+    return this.api.put('/auth/:userId/update-image', file);
   }
 
   deleteProfileImage = () => {

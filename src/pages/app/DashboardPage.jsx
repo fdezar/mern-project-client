@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useNavigate } from 'react-router-dom';
 // import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import { styled } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -83,6 +84,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 function DashboardPage() {
 
+    const navigate = useNavigate();
     const [open, setOpen] = React.useState(true);
     const [currentView, setCurrentView] = React.useState('dashboard');
 
@@ -92,6 +94,7 @@ function DashboardPage() {
 
     const handleItemClick = view => {
         setCurrentView(view);
+        navigate(`/${view}`);
     }
 
   return (

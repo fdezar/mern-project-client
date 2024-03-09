@@ -19,6 +19,7 @@ function App() {
 
   return (
     <>
+    <h1>Hello world</h1>
       <Routes>
 
         <Route path="/" element={<LandingPage />} />
@@ -36,6 +37,8 @@ function App() {
         <Route path="/*" element={<NotFoundPage />} />
 
       </Routes>
+
+      
     </>
   )
 }
