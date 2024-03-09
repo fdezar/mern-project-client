@@ -9,29 +9,34 @@ import PeopleIcon from '@mui/icons-material/People';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import LayersIcon from '@mui/icons-material/Layers';
 import AssignmentIcon from '@mui/icons-material/Assignment';
-import handleItemClick from '../pages/app/DashboardPage';
+// import handleItemClick from '../pages/app/DashboardPage';
 import { Link } from 'react-router-dom';
 
-export const mainListItems = (handleItemClick) => (
+// aquí iba en los (handleItemClick)
+export const mainListItems = () => (
   <>
-    <ListItemButton onClick={() => handleItemClick('dashboard')}>
+    <Link to="/dashboard">
+    <ListItemButton>
       <ListItemIcon>
         <DashboardIcon />
       </ListItemIcon>
       <ListItemText primary="Dashboard" />
     </ListItemButton>
+    </Link>
     {/* <ListItemButton onClick={() => handleItemClick('kanban')}>
       <ListItemIcon>
         <BarChartIcon />
       </ListItemIcon>
       <ListItemText primary="Kanban" />
     </ListItemButton> */}
-    <ListItemButton onClick={() => handleItemClick('notes')}>
+    <Link to="/dashboard/notes">
+    <ListItemButton>
       <ListItemIcon>
         <LayersIcon />
       </ListItemIcon>
       <ListItemText primary="Notes" />
     </ListItemButton>
+    </Link>
     {/* <ListItemButton>
       <ListItemIcon>
         <PeopleIcon />
