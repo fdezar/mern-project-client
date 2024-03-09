@@ -28,7 +28,7 @@ function App() {
         <Route path="/edit-profile" element={<EditProfilePage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/kanban" element={<KanbanPage />} />
-        <Route path="/notes" element={<NotesPage />} />
+        <Route path="/notes" component={DashboardPage.NotesPage} />
         <Route path="/notes/create" element={<NoteCreatePage />} />
         <Route path="/notes/:noteId" element={<NoteDetailsPage />} />
         <Route path="/notes/:noteId/edit" element={<NoteEditPage />} />

@@ -59,15 +59,16 @@ function SignupPage() {
     // req.body to .create() method when creating a new movie in '/api/movies' POST route
     uploadData.append("userImage", userImage);
     
+    
     authService
       .uploadImage(uploadData)
       .then(response => {
         console.log("response is: ", response);
         // response carries "fileUrl" which we can use to update the state
-        setUserImage(response.data.fileUrl);
+        return response.data.fileUrl;
       })
-        .then(() => {
-            newUser.userImage = userImage;
+        .then((fileURL) => {
+            newUser.userImage = fileURL;
             authService.signup(newUser)
             .then(res => {
                 console.log(res.data);
