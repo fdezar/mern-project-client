@@ -1,7 +1,9 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import notesService from '../../services/notes.service';
+import Button from '@mui/material/Button';
 
 function NoteDetailsPage() {
 
@@ -10,7 +12,7 @@ function NoteDetailsPage() {
     const { noteId } = useParams();
 
     useEffect(() => {
-        notesService.getNoteDetails()
+        notesService.getNoteDetails(noteId)
             .then(res => {
                 console.log(res.data);
                 setNote(res.data);
@@ -28,6 +30,8 @@ function NoteDetailsPage() {
         <div>
             <h1>{note.title}</h1>
             <p>{note.content}</p>
+
+            <Link to={`edit`}><Button>Edit note</Button></Link>
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import Link from '@mui/material/Link';
+// import Link from '@mui/material/Link';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 // import DeleteIcon from '@mui/material/Delete';
 import notesService from '../../services/notes.service';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function NotesPage({ handleItemClick }) {
 
@@ -54,7 +55,7 @@ function NotesPage({ handleItemClick }) {
               <TableBody>
                 {notes.map((note) => (
                     <TableRow key={note._id}>
-                      <TableCell>{note.title}</TableCell>
+                      <TableCell><Link to={`${note._id}`}>{note.title}</Link></TableCell>
                       <TableCell>{note.updatedAt}</TableCell>
                       {/* <TableCell>Content</TableCell> */}
                       <TableCell align="right"><Button size="small" onClick={() => handleDeleteNote(note._id)}>Delete note</Button></TableCell>
@@ -63,7 +64,7 @@ function NotesPage({ handleItemClick }) {
             </TableBody>
         </Table>
 
-        <Button variant="outlined" onClick={() => handleItemClick('noteCreate')}>Create a note</Button>
+        <Link to="/dashboard/notes/create"><Button variant="outlined">Create a note</Button></Link>
         {/* <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 3 }}>
           See more orders
         </Link> */}

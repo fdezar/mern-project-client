@@ -34,7 +34,7 @@ function NoteCreatePage() {
         notesService.createNote(newNote)
           .then(res => {
             console.log(res.data);
-            navigate('/notes'); // toDo - modificar
+            navigate('/dashboard/notes'); // toDo - modificar
             // Handle success, maybe redirect to note details page
           })
           .catch(err => {

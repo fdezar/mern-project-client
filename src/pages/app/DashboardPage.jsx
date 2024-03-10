@@ -18,12 +18,14 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { mainListItems } from '../../components/DashboardItemList';
+import MyProfilePage from '../auth/MyProfilePage';
 import EditProfilePage from '../auth/EditProfilePage';
 import KanbanPage from './KanbanPage';
 import NotesPage from './NotesPage';
 import NoteCreatePage from './NoteCreatePage';
 import NoteDetailsPage from './NoteDetailsPage';
 import NoteEditPage from './NoteEditPage';
+import { Link } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -101,9 +103,12 @@ function DashboardPageLayout() {
           <Typography component="h1" variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
             Dashboard
           </Typography>
-          <IconButton color="inherit" onClick={() => handleItemClick('edit-profile')}>
-            <AccountCircleIcon />
-          </IconButton>
+          <Link to="/dashboard/my-profile">
+            {/* <IconButton color="inherit" onClick={() => handleItemClick('my-profile')}> */}
+            <IconButton color="inherit">
+              <AccountCircleIcon />
+            </IconButton>
+          </Link>
         </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open}>
@@ -135,9 +140,10 @@ function DashboardPageLayout() {
                 <Routes location={location}>
                   <Route path="kanban" element={<KanbanPage />} />
                   <Route path="notes" element={<NotesPage />} />
-                  <Route path="notes/:noteId" element={<NoteDetailsPage />} />
                   <Route path="notes/create" element={<NoteCreatePage />} />
+                  <Route path="notes/:noteId" element={<NoteDetailsPage />} />
                   <Route path="notes/:noteId/edit" element={<NoteEditPage />} />
+                  <Route path="my-profile" element={<MyProfilePage />} />
                   <Route path="edit-profile" element={<EditProfilePage />} />
                 </Routes>
               </Paper>

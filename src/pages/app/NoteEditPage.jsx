@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useParams, useNavigate } from 'react-router-dom';
 import axios from "axios";
 import notesService from "../../services/notes.service";
 
@@ -13,13 +14,21 @@ import Container from '@mui/material/Container';
 function NoteEditPage() {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
-    
+    const { noteId } = useParams();
+    const navigate = useNavigate();
+
     const handleTitleInput = e => setTitle(e.target.value);
     const handleContentInput = e => setContent(e.target.value);
 
     // const [note, setNote] = useState({});
 
-    const { noteId } = useParams();
+    useEffect(() => {
+        notesService.getNoteDetails(noteId)
+            .then(res => {
+                setTitle(res.data.title);
+                setContent(res.data.content);
+            })
+    }, []);
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -29,17 +38,15 @@ function NoteEditPage() {
           content
         };
 
-        useEffect(() => {
-            notesService.getNoteDetails(noteId, updatedNote)
-                .then(res => {
-                    console.log(res.data);
-                    // setNote(res.data);
-                })
-                .catch(err => {
-                    console.error(err);
-                })
-        }, [noteId])
-
+        notesService.updateNote(noteId, updatedNote)
+            .then(res => {
+                console.log(res.data);
+                // setNote(res.data);
+                navigate(`/dashboard/notes/${noteId}`);
+            })
+            .catch(err => {
+                console.error(err);
+            })
     }
 
     return (
