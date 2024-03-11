@@ -47,16 +47,16 @@ class AuthService {
     return this.api.get('/auth/my-profile');
   }
 
-  editProfile = () => {
-    return this.api.put('/auth/:userId');
+  editProfile = (requestBody) => {
+    return this.api.put('/auth/my-profile', requestBody);
   }
 
   editProfileImage = file => {
-    return this.api.put('/auth/:userId/update-image', file);
+    return this.api.put('/auth/my-profile/update-image', file);
   }
 
   deleteProfileImage = () => {
-    return this.api.delete('/auth/:userId/delete-image', requestBody);
+    return this.api.delete('/auth/my-profile/delete-image', requestBody);
   }
 }
 

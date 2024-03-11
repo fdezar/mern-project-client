@@ -19,15 +19,15 @@ import Container from '@mui/material/Container';
 
 function EditProfilePage() {
 
+  const navigate = useNavigate();
+  const [myUser, setMyUser] = useState(null);
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [aboutMe, setAboutMe] = useState("");
-  const [password, setPassword] = useState("");
-  const [userImage, setUserImage] = useState("");
-  const [myUser, setMyUser] = useState(null);
-  const navigate = useNavigate();
+  // const [password, setPassword] = useState("");
+  // const [userImage, setUserImage] = useState("");
 
 //   const isEmailValid = () => {
 //     return email.includes("@");
@@ -38,12 +38,13 @@ function EditProfilePage() {
   const handleFirstNameInput = e => setFirstName(e.target.value);
   const handleLastNameInput = e => setLastName(e.target.value);
   const handleAboutMeInput = e => setAboutMe(e.target.value);
-  const handlePasswordInput = e => setPassword(e.target.value);
-  const handleUserImageInput = e => setUserImage(e.target.value);
+  // const handlePasswordInput = e => setPassword(e.target.value);
+  // const handleUserImageInput = e => setUserImage(e.target.value);
 
   useEffect(() => {
     authService.getUserProfile()
         .then((res) => {
+            console.log(res.data);
             setMyUser(res.data);
             setEmail(res.data.email);
             setUsername(res.data.username);
@@ -56,17 +57,17 @@ function EditProfilePage() {
   const handleSubmit = e => {
     e.preventDefault();
 
-    const newUser = {
+    const editedUser = {
       email,
       username,
       firstName,
       lastName,
-      aboutMe,
-      password,
-      userImage
+      aboutMe
+      // password
+      // userImage
     };
 
-    authService.editProfile(newUser)
+    authService.editProfile(editedUser)
       .then(res => {
         console.log(res.data);
         navigate('/dashboard/my-profile');
@@ -159,7 +160,7 @@ function EditProfilePage() {
                 onChange={handleAboutMeInput}
               />
             </Grid>
-            <Grid item xs={12}>
+            {/* <Grid item xs={12}>
               <TextField
                 autoComplete="new-password"
                 name="password"
@@ -171,8 +172,8 @@ function EditProfilePage() {
                 value={password}
                 onChange={handlePasswordInput}
               />
-            </Grid>
-            <Grid item xs={12}>
+            </Grid> */}
+            {/* <Grid item xs={12}>
               <input
                 accept="image/*"
                 id="image"
@@ -185,7 +186,7 @@ function EditProfilePage() {
                   Upload Profile Image
                 </Button>
               </label>
-            </Grid>
+            </Grid> */}
             {/* Checkbox if needed */}
           </Grid>
           <Button

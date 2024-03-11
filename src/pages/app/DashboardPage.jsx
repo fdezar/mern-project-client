@@ -146,7 +146,7 @@ function DashboardPageLayout() {
                   <Route path="notes/:noteId" element={<NoteDetailsPage />} />
                   <Route path="notes/:noteId/edit" element={<NoteEditPage />} />
                   <Route path="my-profile" element={<MyProfilePage />} />
-                  <Route path="edit-profile" element={<EditProfilePage />} />
+                  <Route path="my-profile/edit" element={<EditProfilePage />} />
                 </Routes>
               </Paper>
             </Grid>
