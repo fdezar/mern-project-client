@@ -40,7 +40,8 @@ function MyProfilePage() {
             <h3>About</h3>
             <p>{myUser.aboutMe}</p>
 
-            <Link to={'edit'}><Button variant="contained" style={{ marginBottom: "15px" }}>Edit Profile</Button></Link>
+            <Link to={'edit'}><Button variant="contained" style={{ marginBottom: "15px", marginRight: "5px" }}>Edit Profile</Button></Link>
+            <Link to={'edit-password'}><Button variant="contained" style={{ marginBottom: "15px" }}>Edit Password</Button></Link>
             <br />
             <Button variant="outlined" onClick={logOutUser}>Logout</Button>
         </div>

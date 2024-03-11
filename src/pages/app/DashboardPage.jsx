@@ -21,6 +21,7 @@ import DashboardPageContent from '../../components/DashboardPageContent';
 import { mainListItems } from '../../components/DashboardItemList';
 import MyProfilePage from '../auth/MyProfilePage';
 import EditProfilePage from '../auth/EditProfilePage';
+import EditPasswordPage from '../auth/EditPasswordPage'; 
 import KanbanPage from './KanbanPage';
 import NotesPage from './NotesPage';
 import NoteCreatePage from './NoteCreatePage';
@@ -147,6 +148,7 @@ function DashboardPageLayout() {
                   <Route path="notes/:noteId/edit" element={<NoteEditPage />} />
                   <Route path="my-profile" element={<MyProfilePage />} />
                   <Route path="my-profile/edit" element={<EditProfilePage />} />
+                  <Route path="my-profile/edit-password" element={<EditPasswordPage />} />
                 </Routes>
               </Paper>
             </Grid>

@@ -1,7 +1,12 @@
+import { Link } from 'react-router-dom';
+
 function DashboardPageContent() {
 
     return (
-        <div>Dashboard</div>
+        <div>
+            <p>Are you ready?</p>
+            <Link to="notes">Create a note</Link>
+        </div>
     )
 }
 

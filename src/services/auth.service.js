@@ -51,6 +51,10 @@ class AuthService {
     return this.api.put('/auth/my-profile', requestBody);
   }
 
+  editProfilePassword = (requestBody) => {
+    return this.api.post('/auth/passwordupdate', requestBody);
+  }
+
   editProfileImage = file => {
     return this.api.put('/auth/my-profile/update-image', file);
   }
