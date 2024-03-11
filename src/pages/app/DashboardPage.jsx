@@ -17,6 +17,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Routes, Route, useLocation } from 'react-router-dom';
+import DashboardPageContent from '../../components/DashboardPageContent';
 import { mainListItems } from '../../components/DashboardItemList';
 import MyProfilePage from '../auth/MyProfilePage';
 import EditProfilePage from '../auth/EditProfilePage';
@@ -136,8 +137,9 @@ function DashboardPageLayout() {
         <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
           <Grid container spacing={3}>
             <Grid item xs={12} md={8} lg={9}>
-              <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 650 }}>
+              <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 950 }}>
                 <Routes location={location}>
+                  <Route path="/" element={<DashboardPageContent />} />
                   <Route path="kanban" element={<KanbanPage />} />
                   <Route path="notes" element={<NotesPage />} />
                   <Route path="notes/create" element={<NoteCreatePage />} />

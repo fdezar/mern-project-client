@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import authService from "../../services/auth.service";
 
@@ -17,25 +18,40 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 
 function EditProfilePage() {
+
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
-  const [name, setName] = useState("");
+  const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [aboutMe, setAboutMe] = useState("");
   const [password, setPassword] = useState("");
   const [userImage, setUserImage] = useState("");
+  const [myUser, setMyUser] = useState(null);
+  const navigate = useNavigate();
 
-  const isEmailValid = () => {
-    return email.includes("@");
-  };
+//   const isEmailValid = () => {
+//     return email.includes("@");
+//   };
 
   const handleEmailInput = e => setEmail(e.target.value);
   const handleUsernameInput = e => setUsername(e.target.value);
-  const handleNameInput = e => setName(e.target.value);
+  const handleFirstNameInput = e => setFirstName(e.target.value);
   const handleLastNameInput = e => setLastName(e.target.value);
   const handleAboutMeInput = e => setAboutMe(e.target.value);
   const handlePasswordInput = e => setPassword(e.target.value);
   const handleUserImageInput = e => setUserImage(e.target.value);
+
+  useEffect(() => {
+    authService.getUserProfile()
+        .then((res) => {
+            setMyUser(res.data);
+            setEmail(res.data.email);
+            setUsername(res.data.username);
+            setFirstName(res.data.firstName);
+            setLastName(res.data.lastName);
+            setAboutMe(res.data.aboutMe);
+        })
+  }, [])
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -43,7 +59,7 @@ function EditProfilePage() {
     const newUser = {
       email,
       username,
-      name,
+      firstName,
       lastName,
       aboutMe,
       password,
@@ -53,15 +69,18 @@ function EditProfilePage() {
     authService.editProfile(newUser)
       .then(res => {
         console.log(res.data);
-        // Handle success, maybe redirect to profile page
+        navigate('/dashboard/my-profile');
       })
       .catch(err => {
         console.error(err);
-        // Handle error, maybe show an error message to the user
       });
   };
 
-  return (
+  return !myUser ? (
+    <div>
+        <p>Loading</p>
+    </div>
+    ) : (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <Box
@@ -107,14 +126,14 @@ function EditProfilePage() {
             </Grid>
             <Grid item xs={12}>
               <TextField
-                autoComplete="name"
-                name="name"
+                autoComplete="firstName"
+                name="firstName"
                 required
                 fullWidth
-                id="name"
+                id="firstName"
                 label="Name"
-                value={name}
-                onChange={handleNameInput}
+                value={firstName}
+                onChange={handleFirstNameInput}
               />
             </Grid>
             <Grid item xs={12}>

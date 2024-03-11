@@ -21,7 +21,7 @@ function MyProfilePage() {
             setMyUser(res.data);
         })
         .catch(err => console.log(err));
-    }, [myUser]);
+    }, []);
 
     return !myUser ? (
         <div>
@@ -31,16 +31,16 @@ function MyProfilePage() {
         <div>
             <h1>My Profile</h1>
 
-            {/* <img src={myUser.userImage} /> */}
+            <img src={myUser.userImage} style={{ width: '30%'}}/>
 
-            {/* <p>{myUser.firstName} {user.lastName}</p> */}
+            <p>{myUser.firstName} {myUser.lastName}</p>
 
             <p>@{myUser.username}</p>
 
             <h3>About</h3>
-            {/* <p>{myUser.aboutMe}</p> */}
+            <p>{myUser.aboutMe}</p>
 
-            <Button variant="contained" style={{ marginBottom: "15px" }}>Edit Profile</Button>
+            <Link to={'edit'}><Button variant="contained" style={{ marginBottom: "15px" }}>Edit Profile</Button></Link>
             <br />
             <Button variant="outlined" onClick={logOutUser}>Logout</Button>
         </div>
