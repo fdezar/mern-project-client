@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-class KanbanItemsService {
+class KanbanService {
   constructor() {
     this.api = axios.create({
       baseURL: import.meta.env.VITE_SERVER_URL || 'http://localhost:5005/api'
@@ -46,6 +46,6 @@ class KanbanItemsService {
 }
 
 // Create one instance object
-const kanbanItemsService = new KanbanItemsService();
+const kanbanService = new KanbanService();
 
-export default kanbanItemsService;
+export default kanbanService;

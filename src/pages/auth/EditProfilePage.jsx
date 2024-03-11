@@ -26,8 +26,7 @@ function EditProfilePage() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [aboutMe, setAboutMe] = useState("");
-  // const [password, setPassword] = useState("");
-  // const [userImage, setUserImage] = useState("");
+  const [userImage, setUserImage] = useState("");
 
 //   const isEmailValid = () => {
 //     return email.includes("@");
@@ -38,7 +37,6 @@ function EditProfilePage() {
   const handleFirstNameInput = e => setFirstName(e.target.value);
   const handleLastNameInput = e => setLastName(e.target.value);
   const handleAboutMeInput = e => setAboutMe(e.target.value);
-  // const handlePasswordInput = e => setPassword(e.target.value);
   // const handleUserImageInput = e => setUserImage(e.target.value);
 
   useEffect(() => {
@@ -51,8 +49,32 @@ function EditProfilePage() {
             setFirstName(res.data.firstName);
             setLastName(res.data.lastName);
             setAboutMe(res.data.aboutMe);
+            setUserImage(res.data.userImage);
         })
   }, [])
+
+  // const handleSubmit = e => {
+  //   e.preventDefault();
+
+  //   const editedUser = {
+  //     email,
+  //     username,
+  //     firstName,
+  //     lastName,
+  //     aboutMe
+  //     // password
+  //     // userImage
+  //   };
+
+  //   authService.editProfile(editedUser)
+  //     .then(res => {
+  //       console.log(res.data);
+  //       navigate('/dashboard/my-profile');
+  //     })
+  //     .catch(err => {
+  //       console.error(err);
+  //     });
+  // };
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -67,14 +89,28 @@ function EditProfilePage() {
       // userImage
     };
 
-    authService.editProfile(editedUser)
+    const uploadData = new FormData();
+
+    uploadData.append("userImage", userImage);
+
+    authService
+      .editProfileImage(uploadData)
       .then(res => {
-        console.log(res.data);
-        navigate('/dashboard/my-profile');
+        console.log("response is: ", res);
+        return res.data.fileUrl;
       })
-      .catch(err => {
-        console.error(err);
-      });
+        .then(fileURL => {
+          editedUser.userImage = fileURL;
+          authService.editProfile(editedUser)
+          .then(res => {
+            console.log(res.data);
+            navigate('/dashboard/my-profile');
+          })
+          .catch(err => {
+            console.error(err);
+          });
+        })
+      .catch(err => console.error("Error while uploading the file: ", err));
   };
 
   return !myUser ? (
@@ -173,20 +209,20 @@ function EditProfilePage() {
                 onChange={handlePasswordInput}
               />
             </Grid> */}
-            {/* <Grid item xs={12}>
+            <Grid item xs={12}>
               <input
                 accept="image/*"
                 id="image"
                 name="image"
                 type="file"
-                onChange={handleUserImageInput}
+                onChange={(e) => setUserImage(e.target.files[0])}
               />
               <label htmlFor="image">
                 <Button variant="contained" component="span">
                   Upload Profile Image
                 </Button>
               </label>
-            </Grid> */}
+            </Grid>
             {/* Checkbox if needed */}
           </Grid>
           <Button

@@ -35,11 +35,11 @@ function SignupPage() {
   const handlePasswordInput = e => setPassword(e.target.value);
 //   const handleUserImageInput = e => setUserImage(e.target.value);
 
-  const handleFileUpload = e => {
-    console.log("The file to be uploaded is: ", e.target.files[0]);
+  // const handleFileUpload = e => {
+  //   console.log("The file to be uploaded is: ", e.target.files[0]);
  
     
-  };
+  // };
 
   const handleSubmit = e => {
     e.preventDefault();
