@@ -12,10 +12,10 @@ function MyProfilePage() {
     useEffect(() => {
         authService.getUserProfile()
         .then(res => {
-            console.log(res.data);
+            // console.log(res.data);
             setMyUser(res.data);
         })
-        .catch(err => console.log(err));
+        // .catch(err => console.log(err));
     }, []);
 
     return !myUser ? (

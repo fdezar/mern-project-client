@@ -14,11 +14,11 @@ function NoteDetailsPage() {
     useEffect(() => {
         notesService.getNoteDetails(noteId)
             .then(res => {
-                console.log(res.data);
+                // console.log(res.data);
                 setNote(res.data);
             })
             .catch(err => {
-                console.error(err);
+                // console.error(err);
             })
     }, [noteId])
 

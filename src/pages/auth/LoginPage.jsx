@@ -36,13 +36,13 @@ function LoginPage() {
 
     authService.login(user)
         .then(res => {
-            console.log(res.data);
+            // console.log(res.data);
             storeToken(res.data.authToken);
             authenticateUser();
             navigate('/dashboard');
         })
         .catch(err => {
-            console.error(err);
+            // console.error(err);
         });
   }
 

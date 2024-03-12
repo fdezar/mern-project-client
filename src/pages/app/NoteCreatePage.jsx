@@ -33,12 +33,12 @@ function NoteCreatePage() {
     
         notesService.createNote(newNote)
           .then(res => {
-            console.log(res.data);
+            // console.log(res.data);
             navigate('/dashboard/notes'); // toDo - modificar
             // Handle success, maybe redirect to note details page
           })
           .catch(err => {
-            console.error(err);
+            // console.error(err);
             // Handle error, maybe show an error message to the user
           });
     };

@@ -9,28 +9,28 @@ import notesService from '../../services/notes.service';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-function NotesPage({ handleItemClick }) {
+function NotesPage() {
 
     const [notes, setNotes] = useState([]);
 
     const handleDeleteNote = id => {
         notesService.deleteNote(id)
           .then(res => {
-            console.log(res.data)
+            // console.log(res.data)
             setNotes(prevNotes => prevNotes.filter(note => note._id !== id));
           })
           .catch(err => {
-            console.log(err);
+            // console.log(err);
           })
     };
 
     useEffect(() => {
         notesService.getAllUserNotes()
         .then(res => {
-            console.log(res.data);
+            // console.log(res.data);
             setNotes(res.data);
         })
-        .catch(err => console.log(err));
+        // .catch(err => console.log(err));
     }, []);
 
 

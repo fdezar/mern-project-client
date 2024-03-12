@@ -73,14 +73,14 @@ function EditProfilePage() {
           editedUser.userImage = fileURL;
           authService.editProfile(editedUser)
           .then(res => {
-            console.log(res.data);
+            // console.log(res.data);
             navigate('/dashboard/my-profile');
           })
           .catch(err => {
-            console.error(err);
+            // console.error(err);
           });
         })
-      .catch(err => console.error("Error while uploading the file: ", err));
+      // .catch(err => console.error("Error while uploading the file: ", err));
   };
 
   return !myUser ? (

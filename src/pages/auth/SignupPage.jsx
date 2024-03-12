@@ -65,11 +65,11 @@ function SignupPage() {
             newUser.userImage = fileURL;
             authService.signup(newUser)
             .then(res => {
-                console.log(res.data);
+                // console.log(res.data);
                 navigate('/login');
             })
             .catch(err => {
-                console.error(err);
+                // console.error(err);
             });
         })
       .catch(err => console.log("Error while uploading the file: ", err));

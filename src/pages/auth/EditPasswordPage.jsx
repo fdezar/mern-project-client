@@ -35,7 +35,7 @@ function EditPasswordPage() {
         navigate("/login");
       })
       .catch((err) => {
-        console.error(err);
+        // console.error(err);
         // const errorDescription = error.response.data.message;
         // setErrorMessage(errorDescription);
       });
