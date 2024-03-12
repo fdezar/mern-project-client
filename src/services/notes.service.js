@@ -19,27 +19,22 @@ class NotesService {
     });
   }
 
-  // POST /api/notes/create
   createNote = requestBody => {
     return this.api.post('/notes/create', requestBody);
   };
 
-  // GET /api/notes
   getAllUserNotes = () => {
     return this.api.get('/notes');
   };
 
-  // GET /api/notes/:id
   getNoteDetails = id => {
     return this.api.get(`/notes/${id}`);
   };
 
-  // PUT /api/projects/:id
   updateNote = (id, requestBody) => {
     return this.api.put(`/notes/${id}`, requestBody);
   };
 
-  // DELETE /api/projects/:id
   deleteNote = id => {
     return this.api.delete(`/notes/${id}`);
   };

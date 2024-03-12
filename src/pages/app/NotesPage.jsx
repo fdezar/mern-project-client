@@ -5,7 +5,6 @@ import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Button from '@mui/material/Button';
-// import DeleteIcon from '@mui/material/Delete';
 import notesService from '../../services/notes.service';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
@@ -15,11 +14,6 @@ function NotesPage({ handleItemClick }) {
     const [notes, setNotes] = useState([]);
 
     const handleDeleteNote = id => {
-      // console.log("Deleting note with id:", id);
-      // console.log("Current notes:", notes);
-      // const updatedNotes = notes.filter(note => note.id !== id);
-      // console.log("Updated notes:", updatedNotes);
-      // setNotes(updatedNotes);
         notesService.deleteNote(id)
           .then(res => {
             console.log(res.data)
@@ -56,8 +50,7 @@ function NotesPage({ handleItemClick }) {
                 {notes.map((note) => (
                     <TableRow key={note._id}>
                       <TableCell><Link to={`${note._id}`}>{note.title}</Link></TableCell>
-                      <TableCell>{note.updatedAt}</TableCell>
-                      {/* <TableCell>Content</TableCell> */}
+                      <TableCell>{note.updatedAt}</TableCell>       
                       <TableCell align="right"><Button size="small" onClick={() => handleDeleteNote(note._id)}>Delete note</Button></TableCell>
                     </TableRow>
                 ))}
@@ -66,25 +59,9 @@ function NotesPage({ handleItemClick }) {
 
         <Link to="/dashboard/notes/create"><Button variant="outlined">Create a note</Button></Link>
         {/* <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 3 }}>
-          See more orders
+          See more notes
         </Link> */}
     </>
-
-     // <table>
-        //         <thead>
-        //             <tr>
-        //                 <th>icon Name</th>
-        //                 <th>icon Last Update</th>
-        //                 <th>Shared</th>
-        //             </tr>
-        //             <tbody>
-        //                 {notes.map(note => {
-        //                     return <NoteRow key={note._id} note={note.name} />
-        //                 })}
-        //             </tbody>
-        //         </thead>
-        //     </table>
-        
     );
 }
 

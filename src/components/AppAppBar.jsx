@@ -14,8 +14,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ToggleColorMode from './ToggleColorMode';
 import { Link } from "react-router-dom";
 
-// ToDo - poner links de React-Router-Dom
-
 const logoStyle = {
   width: '140px',
   height: 'auto',

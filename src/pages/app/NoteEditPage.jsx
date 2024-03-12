@@ -20,8 +20,6 @@ function NoteEditPage() {
     const handleTitleInput = e => setTitle(e.target.value);
     const handleContentInput = e => setContent(e.target.value);
 
-    // const [note, setNote] = useState({});
-
     useEffect(() => {
         notesService.getNoteDetails(noteId)
             .then(res => {
@@ -41,7 +39,6 @@ function NoteEditPage() {
         notesService.updateNote(noteId, updatedNote)
             .then(res => {
                 console.log(res.data);
-                // setNote(res.data);
                 navigate(`/dashboard/notes/${noteId}`);
             })
             .catch(err => {

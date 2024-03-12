@@ -1,18 +1,13 @@
-// import { useState, useEffect, useContext } from 'react';
 import { useState, useEffect, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import authService from '../../services/auth.service';
 import { AuthContext } from "../../context/auth.context";
 import Button from "@mui/material/Button";
 
-// usar el logOutUser para poder hacer el logout del Auth.context
-
 function MyProfilePage() {
 
     const [ myUser, setMyUser ] = useState(null);
     const { logOutUser } = useContext(AuthContext);
-
-    // const { user } = useContext(AuthContext);
 
     useEffect(() => {
         authService.getUserProfile()

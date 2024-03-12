@@ -19,27 +19,22 @@ class KanbanService {
     });
   }
 
-  // POST /api/kanban/create
   createKanban = requestBody => {
     return this.api.post('/kanban/create', requestBody);
   };
 
-  // GET /api/kanban
   getAllKanbans = () => {
     return this.api.get('/kanban');
   };
 
-  // GET /api/kanban/:id
   getKanban = id => {
     return this.api.get(`/kanban/${id}`);
   };
 
-  // PUT /api/kanban/:id
   updateKanban = (id, requestBody) => {
     return this.api.put(`/kanban/${id}`, requestBody);
   };
 
-  // DELETE /api/kanban/:id
   deleteKanban = id => {
     return this.api.delete(`/kanban/${id}`);
   };

@@ -44,7 +44,6 @@ function LoginPage() {
         .catch(err => {
             console.error(err);
         });
-    // mirar qué se necesita si se necesita algo más
   }
 
   return (

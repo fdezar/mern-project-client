@@ -7,10 +7,6 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-// import FormControl from '@mui/material/FormControl';
-// import FormControlLabel from '@mui/material/FormControlLabel';
-// import Checkbox from '@mui/material/Checkbox';
-// import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
@@ -37,7 +33,6 @@ function EditProfilePage() {
   const handleFirstNameInput = e => setFirstName(e.target.value);
   const handleLastNameInput = e => setLastName(e.target.value);
   const handleAboutMeInput = e => setAboutMe(e.target.value);
-  // const handleUserImageInput = e => setUserImage(e.target.value);
 
   useEffect(() => {
     authService.getUserProfile()
@@ -53,29 +48,6 @@ function EditProfilePage() {
         })
   }, [])
 
-  // const handleSubmit = e => {
-  //   e.preventDefault();
-
-  //   const editedUser = {
-  //     email,
-  //     username,
-  //     firstName,
-  //     lastName,
-  //     aboutMe
-  //     // password
-  //     // userImage
-  //   };
-
-  //   authService.editProfile(editedUser)
-  //     .then(res => {
-  //       console.log(res.data);
-  //       navigate('/dashboard/my-profile');
-  //     })
-  //     .catch(err => {
-  //       console.error(err);
-  //     });
-  // };
-
   const handleSubmit = e => {
     e.preventDefault();
 
@@ -85,8 +57,6 @@ function EditProfilePage() {
       firstName,
       lastName,
       aboutMe
-      // password
-      // userImage
     };
 
     const uploadData = new FormData();
@@ -196,19 +166,6 @@ function EditProfilePage() {
                 onChange={handleAboutMeInput}
               />
             </Grid>
-            {/* <Grid item xs={12}>
-              <TextField
-                autoComplete="new-password"
-                name="password"
-                required
-                fullWidth
-                id="password"
-                label="Password"
-                type="password"
-                value={password}
-                onChange={handlePasswordInput}
-              />
-            </Grid> */}
             <Grid item xs={12}>
               <input
                 accept="image/*"
@@ -241,128 +198,3 @@ function EditProfilePage() {
 }
 
 export default EditProfilePage;
-
-// import { useState } from "react";
-// import axios from "axios";
-// import service from "../../services/file-upload.service";
-
-// function EditProfilePage() {
-
-//   const [email, setEmail] = useState("");
-//   const [username, setUsername] = useState("");
-//   const [name, setName] = useState("");
-//   const [lastName, setLastName] = useState("");
-//   const [aboutMe, setAboutMe] = useState("");
-//   const [password, setPassword] = useState("");
-//   const [userImage, setUserImage] = useState("");
-
-//   const isEmailValid = () => {
-//         return email.includes("@");
-//     };
-
-//   const handleEmailInput = e => setEmail(e.target.value);
-//   const handleUsernameInput = e => setUsername(e.target.value);
-//   const handleNameInput = e => setName(e.target.value);
-//   const handleLastNameInput = e => setLastName(e.target.value);
-//   const handleAboutMeInput = e => setAboutMe(e.target.value);
-//   const handlePasswordInput = e => setPassword(e.target.value);
-//   const handleUserImageInput = e => setUserImage(e.target.value);
-
-//   const handleSubmit = e => {
-//     e.preventDefault();
-
-//     const newUser = {
-//         email,
-//         username,
-//         name,
-//         lastName,
-//         aboutMe,
-//         password,
-//         userImage
-//     };
-
-//     axios.post("", newUser)
-//         .then(response => {
-//             console.log(response);
-//         })
-//         .catch(err => {
-//             console.error(err);
-//         });
-//     };
-
-//   return (
-//     <div>
-//       <form method="POST" onSubmit={handleSubmit}>
-//         <label htmlFor="email">Email</label>
-//         <input
-//           type="email"
-//           name="email"
-//           id="email"
-//           value={email}
-//           onChange={handleEmailInput}
-//         />
-
-//         <label htmlFor="username">Username</label>
-//         <input
-//           type="text"
-//           name="username"
-//           id="username"
-//           value={username}
-//           onChange={handleUsernameInput}
-//         />
-
-//         <label htmlFor="name">Name</label>
-//         <input
-//           type="text"
-//           name="name"
-//           id="name"
-//           value={name}
-//           onChange={handleNameInput}
-//         />
-
-//         <label htmlFor="lastName">Last Name</label>
-//         <input
-//           type="text"
-//           name="lastName"
-//           id="lastName"
-//           value={lastName}
-//           onChange={handleLastNameInput}
-//         />
-
-//         <label htmlFor="aboutMe">Something about you</label>
-//         <input
-//           type="text"
-//           name="aboutMe"
-//           id="aboutMe"
-//           value={aboutMe}
-//           onChange={handleAboutMeInput}
-//         />
-
-//         <label htmlFor="password">Password</label>
-//         <input
-//           type="password"
-//           name="password"
-//           id="password"
-//           value={password}
-//           onChange={handlePasswordInput}
-//         />
-
-//         <label htmlFor="image">Profile Image</label>
-//         <input
-//           type="file"
-//           name="image"
-//           id="image"
-//           value={userImage}
-//           onChange={handleUserImageInput}
-//         />
-
-//         <button type="submit">Sign Up</button>
-//       </form>
-
-//       <p>Your email is {email}</p>
-//       {isEmailValid() && <p>Your email address is correct</p>}
-//     </div>
-//   );
-// }
-
-// export default EditProfilePage;

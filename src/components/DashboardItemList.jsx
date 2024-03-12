@@ -9,10 +9,8 @@ import PeopleIcon from '@mui/icons-material/People';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import LayersIcon from '@mui/icons-material/Layers';
 import AssignmentIcon from '@mui/icons-material/Assignment';
-// import handleItemClick from '../pages/app/DashboardPage';
 import { Link } from 'react-router-dom';
 
-// aquí iba en los (handleItemClick)
 export const mainListItems = () => (
   <>
     <Link to="/dashboard">
