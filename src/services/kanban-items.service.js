@@ -20,12 +20,12 @@ class KanbanItemsService {
   }
 
   createKanbanItem = requestBody => {
-    return this.api.post('/kanban', requestBody);
+    return this.api.post('/:kanbanId/createItem', requestBody);
   };
 
-  getAllKanbanItems = () => {
-    return this.api.get('/kanban');
-  };
+  // getAllKanbanItems = () => {
+  //   return this.api.get('/kanban');
+  // };
 
   getKanbanItem = id => {
     return this.api.get(`/kanban/${id}`);

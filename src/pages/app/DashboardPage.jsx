@@ -145,6 +145,7 @@ function DashboardPageLayout() {
                   <Route path="notes/create" element={<NoteCreatePage />} />
                   <Route path="notes/:noteId" element={<NoteDetailsPage />} />
                   <Route path="notes/:noteId/edit" element={<NoteEditPage />} />
+                  <Route path="kanban" element={<KanbanPage />} />
                   <Route path="my-profile" element={<MyProfilePage />} />
                   <Route path="my-profile/edit" element={<EditProfilePage />} />
                   <Route path="my-profile/edit-password" element={<EditPasswordPage />} />
