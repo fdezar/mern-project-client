@@ -21,12 +21,14 @@ export const mainListItems = () => (
       <ListItemText primary="Dashboard" />
     </ListItemButton>
     </Link>
-    {/* <ListItemButton onClick={() => handleItemClick('kanban')}>
+    <Link to="/dashboard/kanban">
+    <ListItemButton>
       <ListItemIcon>
         <BarChartIcon />
       </ListItemIcon>
       <ListItemText primary="Kanban" />
-    </ListItemButton> */}
+    </ListItemButton>
+    </Link>
     <Link to="/dashboard/notes">
     <ListItemButton>
       <ListItemIcon>
