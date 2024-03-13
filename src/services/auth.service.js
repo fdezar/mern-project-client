@@ -57,7 +57,7 @@ class AuthService {
   }
 
   deleteProfileImage = () => {
-    return this.api.delete('/auth/my-profile/delete-image');
+    return this.api.put('/auth/my-profile/delete-image');
   }
 }
 
