@@ -22,7 +22,7 @@ function MyProfilePage() {
     const handleDeleteProfile = () => {
         authService.deleteProfile()
             .then(() => {
-                console.log('Profile deleted');
+                // console.log('Profile deleted');
                 navigate('/');
             })
     }
