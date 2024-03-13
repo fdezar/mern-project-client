@@ -48,6 +48,10 @@ class AuthService {
     return this.api.post('/auth/passwordupdate', requestBody);
   }
 
+  deleteProfile = () => {
+    return this.api.delete('/auth/my-profile');
+  }
+
   editProfileImage = file => {
     return this.api.put('/auth/my-profile/update-image', file);
   }

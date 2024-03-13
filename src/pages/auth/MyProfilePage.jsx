@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import authService from '../../services/auth.service';
 import { AuthContext } from "../../context/auth.context";
 import Button from "@mui/material/Button";
@@ -8,6 +8,7 @@ function MyProfilePage() {
 
     const [ myUser, setMyUser ] = useState(null);
     const { logOutUser } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     useEffect(() => {
         authService.getUserProfile()
@@ -17,6 +18,14 @@ function MyProfilePage() {
         })
         // .catch(err => console.log(err));
     }, []);
+
+    const handleDeleteProfile = () => {
+        authService.deleteProfile()
+            .then(() => {
+                console.log('Profile deleted');
+                navigate('/');
+            })
+    }
 
     return !myUser ? (
         <div>
@@ -38,7 +47,8 @@ function MyProfilePage() {
             <Link to={'edit'}><Button variant="contained" style={{ marginBottom: "15px", marginRight: "5px" }}>Edit Profile</Button></Link>
             <Link to={'edit-password'}><Button variant="contained" style={{ marginBottom: "15px" }}>Edit Password</Button></Link>
             <br />
-            <Button variant="outlined" onClick={logOutUser}>Logout</Button>
+            <Button variant="outlined" style={{ marginBottom: "15px", marginRight: "5px" }} onClick={logOutUser}>Logout</Button>
+            <Button variant="outlined" color="secondary" style={{ marginBottom: "15px" }} onClick={handleDeleteProfile}>Delete profile</Button>
         </div>
     )
 }
