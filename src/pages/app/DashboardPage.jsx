@@ -23,7 +23,7 @@ import MyProfilePage from '../auth/MyProfilePage';
 import EditProfilePage from '../auth/EditProfilePage';
 import EditPasswordPage from '../auth/EditPasswordPage'; 
 // import KanbanPage from './KanbanPage';
-import KanbanPage from "../../components/KanbanCard";
+import KanbanPage from "../../components/Kanban";
 import NotesPage from './NotesPage';
 import NoteCreatePage from './NoteCreatePage';
 import NoteDetailsPage from './NoteDetailsPage';

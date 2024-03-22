@@ -11,9 +11,7 @@ const ListsContainer = styled.div`
   flex-direction: row;
 `;
 
-const mapStateToProps = state => ({
-    lists: state.lists
-  });
+
 
 // TODO: Fix performance issue
 
@@ -41,7 +39,7 @@ class Kanban extends PureComponent {
     const { lists } = this.props;
     return (
       <DragDropContext onDragEnd={this.onDragEnd}>
-        <h2>Hello Youtube</h2>
+        <h2>Kanban</h2>
         <Droppable droppableId="all-lists" direction="horizontal" type="list">
           {provided => (
             <ListsContainer
@@ -67,6 +65,8 @@ class Kanban extends PureComponent {
   }
 }
 
-
+const mapStateToProps = state => ({
+    lists: state.lists
+  });
 
 export default connect(mapStateToProps)(Kanban);

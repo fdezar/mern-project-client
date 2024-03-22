@@ -10,7 +10,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import { ThemeProviderWrapper } from "./context/theme.context";
 import { AuthProviderWrapper } from './context/auth.context.jsx'
 import { Provider } from "react-redux";
-import { DragDropContext } from 'react-beautiful-dnd';
+// import { DragDropContext } from 'react-beautiful-dnd';
 import store from "./store/index.jsx";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -18,11 +18,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Router>
       <ThemeProviderWrapper>
       <AuthProviderWrapper>
-      <DragDropContext>
+      {/* <DragDropContext> */}
       <Provider store={store}>
         <App />
       </Provider>
-      </DragDropContext>
+      {/* </DragDropContext> */}
       </AuthProviderWrapper>
       </ThemeProviderWrapper>
     </Router>

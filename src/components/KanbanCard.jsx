@@ -85,9 +85,9 @@ const KanbanCard = React.memo(({ text, id, listID, index, dispatch }) => {
         <animated.div style={props}>
         {/* <Droppable> */}
             
-        <Droppable droppableId={String(id)} type="card">
+        {/* <Droppable droppableId={String(id)} type="card">
         {provided => (
-              <div {...provided.droppableProps} ref={provided.innerRef}>
+              <div {...provided.droppableProps} ref={provided.innerRef}> */}
           <Draggable draggableId={String(id)} index={index}>
             {provided => (
               <CardContainer
@@ -114,9 +114,9 @@ const KanbanCard = React.memo(({ text, id, listID, index, dispatch }) => {
               </CardContainer>
             )}
           </Draggable>
-          </div>
+          {/* </div>
         )}
-          </Droppable>
+          </Droppable> */}
         </animated.div>
   );
 
