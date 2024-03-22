@@ -9,13 +9,20 @@ import '@fontsource/roboto/700.css';
 import { BrowserRouter as Router } from 'react-router-dom'
 import { ThemeProviderWrapper } from "./context/theme.context";
 import { AuthProviderWrapper } from './context/auth.context.jsx'
+import { Provider } from "react-redux";
+import { DragDropContext } from 'react-beautiful-dnd';
+import store from "./store/index.jsx";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Router>
       <ThemeProviderWrapper>
       <AuthProviderWrapper>
+      <DragDropContext>
+      <Provider store={store}>
         <App />
+      </Provider>
+      </DragDropContext>
       </AuthProviderWrapper>
       </ThemeProviderWrapper>
     </Router>

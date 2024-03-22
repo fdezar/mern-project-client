@@ -11,7 +11,10 @@ export default defineConfig({
       }
     }
   },
-
-  
   plugins: [react()],
+  resolve: {
+    alias: {
+      '@reduxjs/toolkit': '@reduxjs/toolkit/dist/redux-toolkit.esm.js',
+    },
+  },
 })
