@@ -14,7 +14,7 @@ import { Provider } from "react-redux";
 import store from "./store/index.jsx";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <Router>
       <ThemeProviderWrapper>
       <AuthProviderWrapper>
@@ -26,5 +26,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       </AuthProviderWrapper>
       </ThemeProviderWrapper>
     </Router>
-  </React.StrictMode>,
+  // </React.StrictMode>,
 )

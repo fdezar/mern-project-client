@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
 import CardContent from "@mui/material/CardContent";
-import { Draggable, Droppable } from "react-beautiful-dnd";
+import { Draggable } from "react-beautiful-dnd";
 import styled from "styled-components";
 import Icon from "@mui/material/Icon";
 import KanbanForm from "./KanbanForm";
@@ -77,91 +77,91 @@ const KanbanCard = React.memo(({ text, id, listID, index, dispatch }) => {
     dispatch(deleteCard(id, listID));
   };
 
-  return isEditing ? (
-        <KanbanForm text={cardText} onChange={handleChange} closeForm={closeForm}>
-            <KanbanButton onClick={saveCard}>Save</KanbanButton>
-        </KanbanForm>
-    ) : (
-        <animated.div style={props}>
-        {/* <Droppable> */}
+//   return isEditing ? (
+//         <KanbanForm text={cardText} onChange={handleChange} closeForm={closeForm}>
+//             <KanbanButton onClick={saveCard}>Save</KanbanButton>
+//         </KanbanForm>
+//     ) : (
+//         <animated.div style={props}>
+//         {/* <Droppable> */}
             
-        {/* <Droppable droppableId={String(id)} type="card">
-        {provided => (
-              <div {...provided.droppableProps} ref={provided.innerRef}> */}
-          <Draggable draggableId={String(id)} index={index}>
-            {provided => (
-              <CardContainer
-                {...provided.draggableProps}
-                {...provided.dragHandleProps}
-                ref={provided.innerRef}
-                onDoubleClick={() => setIsEditing(true)}
-              >
-                <Card>
-                  <EditButton
-                    onMouseDown={() => setIsEditing(true)}
-                    fontSize="small"
-                  >
-                    edit
-                  </EditButton>
-                  <DeleteButton fontSize="small" onMouseDown={handleDeleteCard}>
-                    delete
-                  </DeleteButton>
+//         {/* <Droppable droppableId={String(id)} type="card">
+//         {provided => (
+//               <div {...provided.droppableProps} ref={provided.innerRef}> */}
+//           <Draggable draggableId={String(id)} index={index}>
+//             {provided => (
+//               <CardContainer
+//                 {...provided.draggableProps}
+//                 {...provided.dragHandleProps}
+//                 ref={provided.innerRef}
+//                 onDoubleClick={() => setIsEditing(true)}
+//               >
+//                 <Card>
+//                   <EditButton
+//                     onMouseDown={() => setIsEditing(true)}
+//                     fontSize="small"
+//                   >
+//                     edit
+//                   </EditButton>
+//                   <DeleteButton fontSize="small" onMouseDown={handleDeleteCard}>
+//                     delete
+//                   </DeleteButton>
   
-                  <CardContent>
-                    <Typography>{text}</Typography>
-                  </CardContent>
-                </Card>
-              </CardContainer>
-            )}
-          </Draggable>
-          {/* </div>
-        )}
-          </Droppable> */}
-        </animated.div>
-  );
+//                   <CardContent>
+//                     <Typography>{text}</Typography>
+//                   </CardContent>
+//                 </Card>
+//               </CardContainer>
+//             )}
+//           </Draggable>
+//           {/* </div>
+//         )}
+//           </Droppable> */}
+//         </animated.div>
+//   );
 
-//   const renderEditForm = () => {
-//     return (
-//       <KanbanForm text={cardText} onChange={handleChange} closeForm={closeForm}>
-//         <KanbanButton onClick={saveCard}>Save</KanbanButton>
-//       </KanbanForm>
-//     );
-//   };
+  const renderEditForm = () => {
+    return (
+      <KanbanForm text={cardText} onChange={handleChange} closeForm={closeForm}>
+        <KanbanButton onClick={saveCard}>Save</KanbanButton>
+      </KanbanForm>
+    );
+  };
 
-//   const renderCard = () => {
-//     return (
-//       <animated.div style={props}>
-//         <Draggable draggableId={String(id)} index={index}>
-//           {provided => (
-//             <CardContainer
-//               {...provided.draggableProps}
-//               {...provided.dragHandleProps}
-//               ref={provided.innerRef}
-//               onDoubleClick={() => setIsEditing(true)}
-//             >
-//               <Card>
-//                 <EditButton
-//                   onMouseDown={() => setIsEditing(true)}
-//                   fontSize="small"
-//                 >
-//                   edit
-//                 </EditButton>
-//                 <DeleteButton fontSize="small" onMouseDown={handleDeleteCard}>
-//                   delete
-//                 </DeleteButton>
+  const renderCard = () => {
+    return (
+      <animated.div style={props}>
+        <Draggable draggableId={String(id)} index={index}>
+          {provided => (
+            <CardContainer
+              {...provided.draggableProps}
+              {...provided.dragHandleProps}
+              ref={provided.innerRef}
+              onDoubleClick={() => setIsEditing(true)}
+            >
+              <Card>
+                <EditButton
+                  onMouseDown={() => setIsEditing(true)}
+                  fontSize="small"
+                >
+                  edit
+                </EditButton>
+                <DeleteButton fontSize="small" onMouseDown={handleDeleteCard}>
+                  delete
+                </DeleteButton>
 
-//                 <CardContent>
-//                   <Typography>{text}</Typography>
-//                 </CardContent>
-//               </Card>
-//             </CardContainer>
-//           )}
-//         </Draggable>
-//       </animated.div>
-//     );
-//   };
+                <CardContent>
+                  <Typography>{text}</Typography>
+                </CardContent>
+              </Card>
+            </CardContainer>
+          )}
+        </Draggable>
+      </animated.div>
+    );
+  };
 
-//   return isEditing ? renderEditForm() : renderCard();
+  return isEditing ? renderEditForm() : renderCard();
 });
 
 export default connect()(KanbanCard);
