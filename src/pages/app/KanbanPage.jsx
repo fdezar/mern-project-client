@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import kanbanService from '../../services/kanban.service.js';
-import kanbanItemsService from '../../services/kanban-items.service';
+import kanbanItemsService from '../../services/card.service.js';
 
 const KanbanPage = () => {
   const [kanbans, setKanbans] = useState([]);

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-class KanbanItemsService {
+class CardService {
   constructor() {
     this.api = axios.create({
       baseURL: import.meta.env.VITE_SERVER_URL || 'http://localhost:5005/api'
@@ -19,28 +19,28 @@ class KanbanItemsService {
     });
   }
 
-  createKanbanItem = requestBody => {
-    return this.api.post('/:kanbanId/createItem', requestBody);
+  createCard = requestBody => {
+    return this.api.post('/:kanbanId/createCard', requestBody);
   };
 
   // getAllKanbanItems = () => {
   //   return this.api.get('/kanban');
   // };
 
-  getKanbanItem = id => {
+  getCard = id => {
     return this.api.get(`/kanban/${id}`);
   };
 
-  updateKanbanItem = (id, requestBody) => {
+  updateCard = (id, requestBody) => {
     return this.api.put(`/kanban/${id}`, requestBody);
   };
 
-  deleteKanbanItem = id => {
+  deleteCard = id => {
     return this.api.delete(`/kanban/${id}`);
   };
 }
 
 // Create one instance object
-const kanbanItemsService = new KanbanItemsService();
+const cardService = new CardService();
 
-export default kanbanItemsService;
+export default cardService;
