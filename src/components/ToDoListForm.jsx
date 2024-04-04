@@ -11,15 +11,7 @@ function ToDoListForm({ handleAddItem }) {
         const newItem = { content };
 
         handleAddItem(newItem);
-
-        // toDoListService.createToDoListItem(newItem)
-        //     .then(item => {
-        //         console.log("Submitted: ", item);
-        //         handleAddItem(item);
-        //     })
-        //     .catch(err => {
-        //         console.error(err);
-        //     })
+        setContent("");
     }
 
   return (
