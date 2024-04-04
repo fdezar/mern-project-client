@@ -10,14 +10,16 @@ function ToDoListForm({ handleAddItem }) {
         e.preventDefault();
         const newItem = { content };
 
-        toDoListService.createToDoListItem(newItem)
-            .then(item => {
-                console.log("Submitted: ", item);
-                handleAddItem(item);
-            })
-            .catch(err => {
-                console.error(err);
-            })
+        handleAddItem(newItem);
+
+        // toDoListService.createToDoListItem(newItem)
+        //     .then(item => {
+        //         console.log("Submitted: ", item);
+        //         handleAddItem(item);
+        //     })
+        //     .catch(err => {
+        //         console.error(err);
+        //     })
     }
 
   return (

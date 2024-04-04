@@ -9,27 +9,27 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 function ToDoList() {
-     const [toDoList, setToDoList] = useState([]);
+    //  const [toDoList, setToDoList] = useState([]);
 
-     const handleDeleteToDoListItem = id => {
-         toDoListService.deleteToDoListItem(id)
-           .then(res => {
-             // console.log(res.data)
-             setToDoList(prevToDoList => prevToDoList.filter(toDoListItem => toDoListItem._id !== id));
-           })
-           .catch(err => {
-             // console.log(err);
-           })
-     };
+    //  const handleDeleteToDoListItem = id => {
+    //      toDoListService.deleteToDoListItem(id)
+    //        .then(res => {
+    //          // console.log(res.data)
+    //          setToDoList(prevToDoList => prevToDoList.filter(toDoListItem => toDoListItem._id !== id));
+    //        })
+    //        .catch(err => {
+    //          // console.log(err);
+    //        })
+    //  };
 
-     useEffect(() => {
-         toDoListService.getAllUserToDoLists()
-         .then(res => {
-             // console.log(res.data);
-             setToDoList(res.data);
-         })
-         // .catch(err => console.log(err));
-     }, []);
+    //  useEffect(() => {
+    //      toDoListService.getAllUserToDoLists()
+    //      .then(res => {
+    //          // console.log(res.data);
+    //          setToDoList(res.data);
+    //      })
+    //      // .catch(err => console.log(err));
+    //  }, []);
 
      return (
          <>
