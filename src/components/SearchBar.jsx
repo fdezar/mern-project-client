@@ -1,18 +1,28 @@
 import { useState } from "react";
-import jsonData from "./../data.json"
+import notesService from "../services/notes.service";
 
 function SearchBar({ setNotes }) {
 
     const [searchQuery, setSearchQuery] = useState("");
 
     const handleInputChange = e => {
-        setSearchQuery(e.target.value);
+        const query = e.target.value.toLowerCase();
+        setSearchQuery(query);
 
-        const filteredNotes = jsonData.filter((note) => {
-            return note.name.toLowerCase().includes(e.target.value.toLowerCase());
-        });
-
-        setNotes(filteredNotes);
+        notesService.getAllUserNotes()
+            .then(userNotes => {
+                const userNotesData = userNotes.data;
+                let filteredNotes = userNotes.data;
+                if (query.trim() !== "") {
+                    filteredNotes = userNotesData.filter((note) => {
+                        return note.title.toLowerCase().includes(query);
+                    });
+                }
+                setNotes(filteredNotes);
+            })
+            .catch(error => {
+                console.error("Error fetching notes:", error);
+            });
     }
 
     return (
@@ -26,7 +36,7 @@ function SearchBar({ setNotes }) {
                 />
             </form>
             {/* poner un icono o algo */}
-            <p>Search</p>
+            {/* <p>Search</p> */}
         </div>
     );
 }

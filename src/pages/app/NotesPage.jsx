@@ -5,6 +5,7 @@ import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Button from '@mui/material/Button';
+import SearchBar from '../../components/SearchBar';
 import notesService from '../../services/notes.service';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
@@ -37,6 +38,7 @@ function NotesPage() {
     return (
         <>
             <h1>Notes</h1>
+            <SearchBar setNotes={setNotes} />
             <Table size="small">
               <TableHead>
                 <TableRow>
