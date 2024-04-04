@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import KanbanCard from "./KanbanCard";
 import KanbanCreate from "./KanbanCreate";
 import { Droppable, Draggable } from "react-beautiful-dnd";

@@ -12,8 +12,6 @@ const ListsContainer = styled.div`
 `;
 
 
-// TODO: Fix performance issue
-
 class Kanban extends PureComponent {
   onDragEnd = result => {
     const { destination, source, draggableId, type } = result;

@@ -10,11 +10,11 @@ const initialState = [
     cards: [
       {
         id: `card-${0}`,
-        text: "We create our first card"
+        text: "Implement Backend"
       },
       {
         id: `card-${1}`,
-        text: "Apply Drag and Drop"
+        text: "Add Icons"
       }
     ]
   },
@@ -24,28 +24,39 @@ const initialState = [
     cards: [
       {
         id: `card-${2}`,
-        text: "we will create our first in Progress"
+        text: "Implement Kanban"
       },
       {
         id: `card-${3}`,
-        text: "and render many cards on our list with static data"
+        text: "Implement drag and drop"
       },
       {
         id: `card-${4}`,
         text:
-          "we will also make some little changes I forgot in the last episode (link tags for roboto font and icons,..)"
+          "react-beautiful-dnd"
       },
       {
         id: `card-${5}`,
         text:
-          "we will also make some little changes I forgot in the last episode (link tags for roboto font and icons,..)"
+          "Style with Material UI"
       }
     ]
+  },
+  {
+    title: "Done",
+    id: `list-${2}`
   }
 ];
 
 const listsReducer = (state = initialState, action) => {
+    console.log(action.payload);
   switch (action.type) {
+    case CONSTANTS.GET_LISTS: {
+        const { title } = action.payload;
+
+        return [...state, title];
+    }
+
     case CONSTANTS.ADD_LIST:
       const newList = {
         title: action.payload,
@@ -53,7 +64,22 @@ const listsReducer = (state = initialState, action) => {
         id: `list-${listID}`
       };
       listID += 1;
+
+    //   return kanbanService.createKanban(newList)
+    //     .then(newKanban => {
+    //         return [...state, newKanban];
+    //     })
+    //     .catch(err => {
+    //         console.error(err);
+    //     })
+    // }
+
       return [...state, newList];
+
+    // return [...state, action.payload];
+
+    // case CONSTANTS.ADD_LIST_SUCCESS:
+    //     return [...state, action.payload];
 
     case CONSTANTS.ADD_CARD: {
       const newCard = {
