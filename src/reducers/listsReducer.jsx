@@ -44,7 +44,8 @@ const initialState = [
   },
   {
     title: "Done",
-    id: `list-${2}`
+    id: `list-${2}`,
+    cards: []
   }
 ];
 
