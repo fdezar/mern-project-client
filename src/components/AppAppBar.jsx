@@ -15,9 +15,11 @@ import ToggleColorMode from './ToggleColorMode';
 import { Link } from "react-router-dom";
 
 const logoStyle = {
-  width: '140px',
+  width: '35px',
   height: 'auto',
   cursor: 'pointer',
+  marginLeft: '20px',
+  marginRight: '10px'
 };
 
 function AppAppBar({ mode, toggleColorMode }) {
@@ -84,17 +86,17 @@ function AppAppBar({ mode, toggleColorMode }) {
                 px: 0,
               }}
             >
-              {/* <img
+              <img
                 src={
-                  'https://assets-global.website-files.com/61ed56ae9da9fd7e0ef0a967/61f12e6faf73568658154dae_SitemarkDefault.svg'
+                  '/src/assets/images/landing-page/Silk-logo.png'
                 }
                 style={logoStyle}
-                alt="logo of sitemark"
-              /> */}
+                alt="Silk logo"
+              />
 
-              <MenuItem>
+              {/* <MenuItem>
                 <Typography style={{ color: "#0959AA", fontFamily: "system-ui", fontWeight: "bold" }}>Silk</Typography>
-              </MenuItem>
+              </MenuItem> */}
               
               <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
               

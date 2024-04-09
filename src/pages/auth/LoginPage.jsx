@@ -18,8 +18,8 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 
 function LoginPage() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("JohnDoe@localhost.com");
+  const [password, setPassword] = useState("Admin1");
   const navigate = useNavigate();
   const { storeToken, authenticateUser } = useContext(AuthContext);
 

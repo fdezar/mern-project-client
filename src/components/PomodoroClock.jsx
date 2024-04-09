@@ -1,4 +1,22 @@
 import { useState, useEffect } from 'react';
+import { styled } from '@mui/system';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
+
+const Wrapper = styled('div')({
+    textAlign: 'center',
+    padding: '20px',
+  });
+  
+  const LengthControl = styled('div')({
+    display: 'flex',
+    alignItems: 'center',
+  });
+  
+  const Timer = styled('div')({
+    marginBottom: '16px',
+  });
 
 function PomodoroClock() {
     const [breakLength, setBreakLength] = useState(5);
@@ -95,38 +113,76 @@ function PomodoroClock() {
     const title = timingType === "SESSION" ? "Session" : "Break"; 
 
     return (
-        <div>
-            <div className="wrapper">
-                <h2>Pomodoro Clock</h2>
-                <div className="break-session-length">
-                    <div>
-                        <h3 id="break-label">Break</h3>
-                        <div>
-                            <button id="break-increment" className="btn btn-success" disabled={play} onClick={handleBreakIncrease}>+</button>
-                                <p id="break-length">{breakLength}</p>
-                            <button id="break-decrement" className="btn btn-warning" disabled={play} onClick={handleBreakDecrease}>-</button>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 id="session-label">Session</h3>
-                        <div>
-                            <button id="session-increment" className="btn btn-success" disabled={play} onClick={handleSessionIncrease}>+</button>
-                                <p id="session-length">{sessionLength}</p>
-                            <button id="session-decrement" className="btn btn-warning" disabled={play} onClick={handleSessionDecrease}>-</button>
-                        </div>
-                    </div>
-                </div>
-            <div className="timer-wrapper">
-                <div className="timer">
-                    <h2 id="timer-label">{title}</h2>
-                    <h3 id="time-left">{timeFormatter()}</h3>
-                </div>
-                <button id="start_stop" className="btn btn-primary" onClick={handlePlay} >Start/Stop</button>
-                <button id="reset" className="btn btn-danger" onClick={handleReset}>reset</button>
+        <Wrapper>
+      <Typography variant="h2">Pomodoro Clock</Typography>
+      <Grid container spacing={2} justifyContent="center">
+        <Grid item xs={12} sm={6}>
+          <LengthControl>
+            <Typography variant="h3">Break</Typography>
+            <div>
+              <Button variant="contained" color="primary" disabled={play} onClick={handleBreakIncrease}>+</Button>
+              <Typography variant="body1">{breakLength}</Typography>
+              <Button variant="contained" color="secondary" disabled={play} onClick={handleBreakDecrease}>-</Button>
             </div>
+          </LengthControl>
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <LengthControl>
+            <Typography variant="h3">Session</Typography>
+            <div>
+              <Button variant="contained" color="primary" disabled={play} onClick={handleSessionIncrease}>+</Button>
+              <Typography variant="body1">{sessionLength}</Typography>
+              <Button variant="contained" color="secondary" disabled={play} onClick={handleSessionDecrease}>-</Button>
             </div>
-            <audio id="beep" preload="auto" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"></audio>
-        </div>
+          </LengthControl>
+        </Grid>
+      </Grid>
+      <Timer>
+        <Typography variant="h2" id="timer-label">{title}</Typography>
+        <Typography variant="h3" id="time-left">{timeFormatter()}</Typography>
+      </Timer>
+      <Grid container spacing={2} justifyContent="center">
+        <Grid item xs={6} sm={3}>
+          <Button variant="contained" color="primary" id="start_stop" onClick={handlePlay}>{play ? 'Stop' : 'Start'}</Button>
+        </Grid>
+        <Grid item xs={6} sm={3}>
+          <Button variant="contained" color="secondary" id="reset" onClick={handleReset}>Reset</Button>
+        </Grid>
+      </Grid>
+      <audio id="beep" preload="auto" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"></audio>
+    </Wrapper>
+        // <div>
+        //     <div className="wrapper">
+        //         <h2>Pomodoro Clock</h2>
+        //         <div className="break-session-length">
+        //             <div>
+        //                 <h3 id="break-label">Break</h3>
+        //                 <div>
+        //                     <button id="break-increment" className="btn btn-success" disabled={play} onClick={handleBreakIncrease}>+</button>
+        //                         <p id="break-length">{breakLength}</p>
+        //                     <button id="break-decrement" className="btn btn-warning" disabled={play} onClick={handleBreakDecrease}>-</button>
+        //                 </div>
+        //             </div>
+        //             <div>
+        //                 <h3 id="session-label">Session</h3>
+        //                 <div>
+        //                     <button id="session-increment" className="btn btn-success" disabled={play} onClick={handleSessionIncrease}>+</button>
+        //                         <p id="session-length">{sessionLength}</p>
+        //                     <button id="session-decrement" className="btn btn-warning" disabled={play} onClick={handleSessionDecrease}>-</button>
+        //                 </div>
+        //             </div>
+        //         </div>
+        //     <div className="timer-wrapper">
+        //         <div className="timer">
+        //             <h2 id="timer-label">{title}</h2>
+        //             <h3 id="time-left">{timeFormatter()}</h3>
+        //         </div>
+        //         <button id="start_stop" className="btn btn-primary" onClick={handlePlay} >Start/Stop</button>
+        //         <button id="reset" className="btn btn-danger" onClick={handleReset}>reset</button>
+        //     </div>
+        //     </div>
+        //     <audio id="beep" preload="auto" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"></audio>
+        // </div>
     );
 }
 
