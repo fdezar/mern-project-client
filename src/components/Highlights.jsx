@@ -15,39 +15,39 @@ import ThumbUpAltRoundedIcon from '@mui/icons-material/ThumbUpAltRounded';
 const items = [
   {
     icon: <SettingsSuggestRoundedIcon />,
-    title: 'Adaptable performance',
+    title: 'Effortless Efficiency',
     description:
-      'Our product effortlessly adjusts to your needs, boosting efficiency and simplifying your tasks.',
+      'Empower your productivity journey with seamless integration of Pomodoro, Todolist, Kanban, and note-taking features tailored for web developers.',
   },
   {
     icon: <ConstructionRoundedIcon />,
-    title: 'Built to last',
+    title: 'Built to Empower',
     description:
-      'Experience unmatched durability that goes above and beyond with lasting investment.',
+      'Experience robust functionality designed to elevate your web development workflow, ensuring lasting value and performance.',
   },
   {
     icon: <ThumbUpAltRoundedIcon />,
-    title: 'Great user experience',
+    title: 'Intuitive Interface',
     description:
-      'Integrate our product into your routine with an intuitive and easy-to-use interface.',
+      'Navigate effortlessly through your tasks with an interface intuitively designed to enhance your user experience, backed by responsive design for optimal accessibility.',
   },
   {
     icon: <AutoFixHighRoundedIcon />,
-    title: 'Innovative functionality',
+    title: 'Reliable Solutions',
     description:
-      'Stay ahead with features that set new standards, addressing your evolving needs better than the rest.',
+      'Stay at the forefront of productivity with reliable features that anticipate and address the unique challenges faced by web developers.',
   },
   {
     icon: <SupportAgentRoundedIcon />,
-    title: 'Reliable support',
+    title: 'User-Focused Design',
     description:
-      'Count on our responsive customer support, offering assistance that goes beyond the purchase.',
+      'Prioritize user satisfaction with a design tailored to meet the needs of web developers, ensuring intuitive usability and seamless integration into your workflow.',
   },
   {
     icon: <QueryStatsRoundedIcon />,
-    title: 'Precision in every detail',
+    title: 'Crafted for Success',
     description:
-      'Enjoy a meticulously crafted product where small touches make a significant impact on your overall experience.',
+      'Discover the precision and attention to detail in every feature, meticulously crafted to enhance your productivity and streamline your development process.',
   },
 ];
 
@@ -81,9 +81,9 @@ export default function Highlights() {
             Highlights
           </Typography>
           <Typography variant="body1" sx={{ color: 'grey.400' }}>
-            Explore why our product stands out: adaptability, durability,
-            user-friendly design, and innovation. Enjoy reliable customer support and
-            precision in every detail.
+            Explore why Silk stands out: adaptability, efficiency,
+            user-friendly design, and reliability. Enjoy a product crafted for success and
+            built to empower you to your goals.
           </Typography>
         </Box>
         <Grid container spacing={2.5}>

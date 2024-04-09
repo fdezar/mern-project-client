@@ -99,7 +99,7 @@ function AppAppBar({ mode, toggleColorMode }) {
               <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
               
               
-                {/* <MenuItem
+                <MenuItem
                   onClick={() => scrollToSection('features')}
                   sx={{ py: '6px', px: '12px' }}
                 >
@@ -122,7 +122,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                   <Typography variant="body2" color="text.primary">
                     Highlights
                   </Typography>
-                </MenuItem> */}
+                </MenuItem>
                 {/* <MenuItem
                   onClick={() => scrollToSection('pricing')}
                   sx={{ py: '6px', px: '12px' }}
@@ -130,7 +130,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                   <Typography variant="body2" color="text.primary">
                     Pricing
                   </Typography>
-                </MenuItem>
+                </MenuItem> */}
                 <MenuItem
                   onClick={() => scrollToSection('faq')}
                   sx={{ py: '6px', px: '12px' }}
@@ -138,7 +138,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                   <Typography variant="body2" color="text.primary">
                     FAQ
                   </Typography>
-                </MenuItem> */}
+                </MenuItem>
               </Box>
             </Box>
             <Box
@@ -203,7 +203,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                   >
                     <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
                   </Box>
-                  {/* <MenuItem onClick={() => scrollToSection('features')}>
+                  <MenuItem onClick={() => scrollToSection('features')}>
                     Features
                   </MenuItem>
                   <MenuItem onClick={() => scrollToSection('testimonials')}>
@@ -212,11 +212,12 @@ function AppAppBar({ mode, toggleColorMode }) {
                   <MenuItem onClick={() => scrollToSection('highlights')}>
                     Highlights
                   </MenuItem>
-                  <MenuItem onClick={() => scrollToSection('pricing')}>
+                  {/* <MenuItem onClick={() => scrollToSection('pricing')}>
                     Pricing
-                  </MenuItem>
-                  <MenuItem onClick={() => scrollToSection('faq')}>FAQ</MenuItem> */}
+                  </MenuItem> */}
+                  <MenuItem onClick={() => scrollToSection('faq')}>FAQ</MenuItem>
                   {/* <Divider /> */}
+                  <br />
                   <MenuItem>
                     <Link to="/signup">
                         <Button

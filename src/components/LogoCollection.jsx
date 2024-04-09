@@ -41,7 +41,7 @@ export default function LogoCollection() {
         align="center"
         color="text.secondary"
       >
-        Trusted by the best companies
+        Inspired by
       </Typography>
       <Grid container justifyContent="center" sx={{ mt: 0.5, opacity: 0.6 }}>
         {logos.map((logo, index) => (

@@ -3,7 +3,8 @@ import { alpha } from '@mui/material';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
-import Link from '@mui/material/Link';
+// import Link from '@mui/material/Link';
+import { Link } from 'react-router-dom';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
@@ -27,7 +28,7 @@ export default function Hero() {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          pt: { xs: 28, sm: 40 }, /* antes 14 y 20 */
+          pt: { xs: 28, sm: 27 }, /* antes 14 y 20 */
           pb: { xs: 8, sm: 12 },
         }}
       >
@@ -42,7 +43,7 @@ export default function Hero() {
               textAlign: 'center',
             }}
           >
-            Productivity&nbsp;
+            Web Dev&nbsp;
             <Typography
               component="span"
               variant="h1"
@@ -51,12 +52,12 @@ export default function Hero() {
                   theme.palette.mode === 'light' ? 'primary.main' : 'primary.light',
               }}
             >
-              Flow
+              Productivity
             </Typography>
           </Typography>
           <Typography variant="body1" textAlign="center" color="text.secondary">
-          Discover the Future of Productivity with Silk. <br />
-            Elevate your experience with top-tier features and services.
+           <br />
+           Maximize Your Workflow: Elevate Your Web Development Game with Streamlined Tools and Time Management Solutions.
           </Typography>
           <Stack
             direction={{ xs: 'column', sm: 'row' }}
@@ -76,10 +77,12 @@ export default function Hero() {
                 autocomplete: 'off',
                 ariaLabel: 'Enter your email address',
               }}
-            />
-            <Button variant="contained" color="primary">
-              Start now
-            </Button> */}
+            /> */}
+            <Button variant="contained" color="primary" style={{ width: '100px'}}>
+              <Link to='/signup'>
+              Get Started
+              </Link>
+            </Button>
           </Stack>
           {/* <Typography variant="caption" textAlign="center" sx={{ opacity: 0.8 }}>
             By clicking &quot;Start now&quot; you agree to &nbsp;
@@ -89,7 +92,7 @@ export default function Hero() {
             .
           </Typography> */}
         </Stack>
-        {/* <Box
+        <Box
           id="image"
           sx={(theme) => ({
             mt: { xs: 8, sm: 10 },
@@ -112,7 +115,7 @@ export default function Hero() {
                 ? `0 0 12px 8px ${alpha('#9CCCFC', 0.2)}`
                 : `0 0 24px 12px ${alpha('#033363', 0.2)}`,
           })}
-        /> */}
+        />
       </Container>
     </Box>
   );

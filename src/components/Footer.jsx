@@ -8,9 +8,9 @@ import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 
-import FacebookIcon from '@mui/icons-material/GitHub';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/X';
+import XIcon from '@mui/icons-material/X';
 
 const logoStyle = {
   width: '140px',
@@ -191,23 +191,31 @@ export default function Footer() {
         >
           <IconButton
             color="inherit"
-            href="https://github.com/mui"
+            href="https://github.com/fdezar/mern-project-client"
             aria-label="GitHub"
             sx={{ alignSelf: 'center' }}
           >
-            <FacebookIcon />
+            <GitHubIcon />
           </IconButton>
           <IconButton
+            color="inherit"
+            href="https://github.com/fdezar/mern-project-server"
+            aria-label="GitHub"
+            sx={{ alignSelf: 'center' }}
+          >
+            <GitHubIcon />
+          </IconButton>
+          {/* <IconButton
             color="inherit"
             href="https://twitter.com/MaterialUI"
             aria-label="X"
             sx={{ alignSelf: 'center' }}
           >
             <TwitterIcon />
-          </IconButton>
+          </IconButton> */}
           <IconButton
             color="inherit"
-            href="https://www.linkedin.com/company/mui/"
+            href="https://www.linkedin.com/in/gabrielfdez"
             aria-label="LinkedIn"
             sx={{ alignSelf: 'center' }}
           >

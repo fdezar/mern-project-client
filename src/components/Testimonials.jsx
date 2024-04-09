@@ -11,46 +11,46 @@ import { useTheme } from '@mui/system';
 
 const userTestimonials = [
   {
-    avatar: <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />,
-    name: 'Remy Sharp',
-    occupation: 'Senior Engineer',
+    avatar: <Avatar alt="John Doe" src="/static/images/avatar/1.jpg" />,
+    name: 'John Doe',
+    occupation: 'Front End Dev',
     testimonial:
-      "I absolutely love how versatile this product is! Whether I'm tackling work projects or indulging in my favorite hobbies, it seamlessly adapts to my changing needs. Its intuitive design has truly enhanced my daily routine, making tasks more efficient and enjoyable.",
+      "Using Silk has been a game-changer for me as a web developer. The Pomodoro timer keeps me focused during intense coding sessions, while the Kanban board effortlessly organizes my tasks. Plus, the note-saving feature ensures I never forget any crucial ideas. It's truly a lifesaver!",
   },
   {
-    avatar: <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />,
-    name: 'Travis Howard',
-    occupation: 'Lead Product Designer',
+    avatar: <Avatar alt="Lisa Miller" src="/static/images/avatar/2.jpg" />,
+    name: 'Lisa Miller',
+    occupation: 'Full Stack Dev',
     testimonial:
-      "One of the standout features of this product is the exceptional customer support. In my experience, the team behind this product has been quick to respond and incredibly helpful. It's reassuring to know that they stand firmly behind their product.",
+      "I've tried numerous productivity tools, but none compare to this one tailored for web developers. The Pomodoro technique has revolutionized how I manage my time, helping me strike the perfect balance between work and breaks.",
   },
   {
-    avatar: <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />,
-    name: 'Cindy Baker',
-    occupation: 'CTO',
+    avatar: <Avatar alt="Sara Williams" src="/static/images/avatar/3.jpg" />,
+    name: 'Sara Williams',
+    occupation: 'Back End Dev',
     testimonial:
-      'The level of simplicity and user-friendliness in this product has significantly simplified my life. I appreciate the creators for delivering a solution that not only meets but exceeds user expectations.',
+      'As a busy web developer, staying organized is key to my success. Thanks to Silk, I can seamlessly integrate the Pomodoro technique into my workflow, boosting my productivity levels significantly.',
   },
   {
-    avatar: <Avatar alt="Remy Sharp" src="/static/images/avatar/4.jpg" />,
-    name: 'Julia Stewart',
-    occupation: 'Senior Engineer',
-    testimonial:
-      "I appreciate the attention to detail in the design of this product. The small touches make a big difference, and it's evident that the creators focused on delivering a premium experience.",
-  },
-  {
-    avatar: <Avatar alt="Travis Howard" src="/static/images/avatar/5.jpg" />,
+    avatar: <Avatar alt="John Smith" src="/static/images/avatar/4.jpg" />,
     name: 'John Smith',
-    occupation: 'Product Designer',
+    occupation: 'Front End Dev',
     testimonial:
-      "I've tried other similar products, but this one stands out for its innovative features. It's clear that the makers put a lot of thought into creating a solution that truly addresses user needs.",
+      "I've been using Silk for a while now, and it's been a total game-changer for my web development projects. The Pomodoro timer keeps me disciplined and prevents burnout, while the Kanban board allows me to visualize my workflow and make adjustments as needed. It's like having a personal productivity coach!",
   },
   {
-    avatar: <Avatar alt="Cindy Baker" src="/static/images/avatar/6.jpg" />,
-    name: 'Daniel Wolf',
-    occupation: 'CDO',
+    avatar: <Avatar alt="David Brown" src="/static/images/avatar/5.jpg" />,
+    name: 'David Brown',
+    occupation: 'Full Stack Dev',
     testimonial:
-      "The quality of this product exceeded my expectations. It's durable, well-designed, and built to last. Definitely worth the investment!",
+      "Since incorporating Silk into my routine, I've seen a remarkable improvement in my productivity as a web developer. The Pomodoro timer helps me stay focused and motivated, while the Kanban Drag and Drop feature keeps me organized and on track with my tasks.",
+  },
+  {
+    avatar: <Avatar alt="Emily Davis" src="/static/images/avatar/6.jpg" />,
+    name: 'Emily Davis',
+    occupation: 'Back End Dev',
+    testimonial:
+      "Being a web developer means juggling multiple tasks at once, but Silk has made it much more manageable. The Pomodoro technique helps me stay focused and productive throughout the day, while the Kanban Drag and Drop feature ensures I never lose sight of my project goals.",
   },
 ];
 
@@ -104,9 +104,7 @@ export default function Testimonials() {
           Testimonials
         </Typography>
         <Typography variant="body1" color="text.secondary">
-          See what our customers love about our products. Discover how we excel in
-          efficiency, durability, and satisfaction. Join us for quality, innovation,
-          and reliable support.
+        Real Stories, Real Results: Embark on a Journey Through the Experiences of Fellow Developers as They Share Insights, Triumphs, and Transformative Moments from Their Productivity Journey with Silk.
         </Typography>
       </Box>
       <Grid container spacing={2}>
@@ -139,11 +137,11 @@ export default function Testimonials() {
                   title={testimonial.name}
                   subheader={testimonial.occupation}
                 />
-                <img
+                {/* <img
                   src={logos[index]}
                   alt={`Logo ${index + 1}`}
                   style={logoStyle}
-                />
+                /> */}
               </Box>
             </Card>
           </Grid>

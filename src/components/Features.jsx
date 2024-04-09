@@ -16,23 +16,23 @@ import ViewQuiltRoundedIcon from '@mui/icons-material/ViewQuiltRounded';
 const items = [
   {
     icon: <ViewQuiltRoundedIcon />,
-    title: 'Dashboard',
+    title: 'Pomodoro & Tasks',
     description:
-      'This item could provide a snapshot of the most important metrics or data points related to the product.',
+      'Boost productivity with our integrated Pomodoro timer, seamlessly balancing work intervals and breaks for optimal focus. Experience enhanced time management as you effortlessly divide your workday into focused sprints, punctuated by rejuvenating breaks.',
     imageLight: 'url("/static/images/templates/templates-images/dash-light.png")',
     imageDark: 'url("/static/images/templates/templates-images/dash-dark.png")',
   },
   {
     icon: <EdgesensorHighRoundedIcon />,
-    title: 'Mobile integration',
+    title: 'Drag and Drop Kanban',
     description:
-      'This item could provide information about the mobile app version of the product.',
+      'Effortlessly manage tasks with our intuitive Kanban Drag and Drop feature, streamlining workflow organization and progress tracking. From ideation to completion, empower your team to visualize tasks, prioritize assignments, and adapt dynamically to project needs with ease.',
     imageLight: 'url("/static/images/templates/templates-images/mobile-light.png")',
     imageDark: 'url("/static/images/templates/templates-images/mobile-dark.png")',
   },
   {
     icon: <DevicesRoundedIcon />,
-    title: 'Available on all platforms',
+    title: 'Save your notes',
     description:
       'This item could let users know the product is available on all platforms, such as web, mobile, and desktop.',
     imageLight: 'url("/static/images/templates/templates-images/devices-light.png")',
@@ -55,16 +55,15 @@ export default function Features() {
         <Grid item xs={12} md={6}>
           <div>
             <Typography component="h2" variant="h4" color="text.primary">
-              Product features
+              Silk features
             </Typography>
             <Typography
               variant="body1"
               color="text.secondary"
               sx={{ mb: { xs: 2, sm: 4 } }}
             >
-              Here you can provide a brief overview of the key features of the
-              product. For example, you could list the number of features, the types
-              of features, add-ons, or the benefits of the features.
+              
+              Silk elevates your web development workflow with tailored productivity features designed to address every need. From efficient task management to seamless cross-device syncing, discover how Silk empowers developers to excel in productivity. Explore its capabilities now.
             </Typography>
           </div>
           <Grid container item gap={1} sx={{ display: { xs: 'auto', sm: 'none' } }}>
@@ -120,7 +119,7 @@ export default function Features() {
               <Typography color="text.secondary" variant="body2" sx={{ my: 0.5 }}>
                 {selectedFeature.description}
               </Typography>
-              <Link
+              {/* <Link
                 color="primary"
                 variant="body2"
                 fontWeight="bold"
@@ -136,7 +135,7 @@ export default function Features() {
                   fontSize="small"
                   sx={{ mt: '1px', ml: '2px' }}
                 />
-              </Link>
+              </Link> */}
             </Box>
           </Box>
           <Stack
@@ -210,7 +209,7 @@ export default function Features() {
                     >
                       {description}
                     </Typography>
-                    <Link
+                    {/* <Link
                       color="primary"
                       variant="body2"
                       fontWeight="bold"
@@ -229,7 +228,7 @@ export default function Features() {
                         fontSize="small"
                         sx={{ mt: '1px', ml: '2px' }}
                       />
-                    </Link>
+                    </Link> */}
                   </div>
                 </Box>
               </Card>
