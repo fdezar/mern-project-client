@@ -21,7 +21,7 @@ export default function FAQ() {
       id="faq"
       sx={{
         pt: { xs: 4, sm: 12 },
-        pb: { xs: 8, sm: 16 },
+        pb: { xs: 9, sm: 14 },
         position: 'relative',
         display: 'flex',
         flexDirection: 'column',

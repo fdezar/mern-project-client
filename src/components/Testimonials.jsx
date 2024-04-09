@@ -11,35 +11,35 @@ import { useTheme } from '@mui/system';
 
 const userTestimonials = [
   {
-    avatar: <Avatar alt="John Doe" src="/static/images/avatar/1.jpg" />,
+    avatar: <Avatar alt="John Doe" src="/src/assets/images/landing-page/testimonials-user-1.jpg" />,
     name: 'John Doe',
     occupation: 'Front End Dev',
     testimonial:
       "Using Silk has been a game-changer for me as a web developer. The Pomodoro timer keeps me focused during intense coding sessions, while the Kanban board effortlessly organizes my tasks. Plus, the note-saving feature ensures I never forget any crucial ideas. It's truly a lifesaver!",
   },
   {
-    avatar: <Avatar alt="Lisa Miller" src="/static/images/avatar/2.jpg" />,
+    avatar: <Avatar alt="Lisa Miller" src="/src/assets/images/landing-page/testimonials-user-2.jpg" />,
     name: 'Lisa Miller',
     occupation: 'Full Stack Dev',
     testimonial:
       "I've tried numerous productivity tools, but none compare to this one tailored for web developers. The Pomodoro technique has revolutionized how I manage my time, helping me strike the perfect balance between work and breaks.",
   },
   {
-    avatar: <Avatar alt="Sara Williams" src="/static/images/avatar/3.jpg" />,
+    avatar: <Avatar alt="Sara Williams" src="/src/assets/images/landing-page/testimonials-user-3.jpg" />,
     name: 'Sara Williams',
     occupation: 'Back End Dev',
     testimonial:
       'As a busy web developer, staying organized is key to my success. Thanks to Silk, I can seamlessly integrate the Pomodoro technique into my workflow, boosting my productivity levels significantly.',
   },
   {
-    avatar: <Avatar alt="John Smith" src="/static/images/avatar/4.jpg" />,
+    avatar: <Avatar alt="John Smith" src="/src/assets/images/landing-page/testimonials-user-4.jpeg" />,
     name: 'John Smith',
     occupation: 'Front End Dev',
     testimonial:
       "I've been using Silk for a while now, and it's been a total game-changer for my web development projects. The Pomodoro timer keeps me disciplined and prevents burnout, while the Kanban board allows me to visualize my workflow and make adjustments as needed. It's like having a personal productivity coach!",
   },
   {
-    avatar: <Avatar alt="David Brown" src="/static/images/avatar/5.jpg" />,
+    avatar: <Avatar alt="David Brown" src="/src/assets/images/landing-page/testimonials-user-5.jpg" />,
     name: 'David Brown',
     occupation: 'Full Stack Dev',
     testimonial:
