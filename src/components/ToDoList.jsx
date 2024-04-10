@@ -4,6 +4,7 @@ import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
 import toDoListService from '../services/todolist.service';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
@@ -48,7 +49,7 @@ function ToDoList() {
                  {toDoList.map((toDoListItem) => (
                      <TableRow key={toDoListItem._id}>
                        <TableCell>{toDoListItem.content}</TableCell>       
-                       <TableCell align="right"><Button size="small" onClick={() => handleDeleteToDoListItem(toDoListItem._id)}>Delete item</Button></TableCell>
+                       <TableCell align="right"><Button size="small" onClick={() => handleDeleteToDoListItem(toDoListItem._id)}><DeleteIcon /></Button></TableCell>
                      </TableRow>
                  ))}
              </TableBody>

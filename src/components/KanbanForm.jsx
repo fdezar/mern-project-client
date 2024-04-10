@@ -1,6 +1,6 @@
 import React from "react";
-import styled from "styled-components";
-import Icon from "@mui/material/Icon";
+import styled from "styled-components"
+import CloseIcon from '@mui/icons-material/Close';
 import Textarea from "react-textarea-autosize";
 import Card from "@mui/material/Card";
 
@@ -29,7 +29,7 @@ const ButtonContainer = styled.div`
   margin-left: 8px;
 `;
 
-const StyledIcon = styled(Icon)`
+const StyledIcon = styled(CloseIcon)`
   margin-left: 8px;
   cursor: pointer;
 `;

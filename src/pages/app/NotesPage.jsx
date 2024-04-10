@@ -5,10 +5,12 @@ import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
 import SearchBar from '../../components/SearchBar';
 import notesService from '../../services/notes.service';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { format } from 'date-fns';
 
 function NotesPage() {
 
@@ -51,9 +53,9 @@ function NotesPage() {
               <TableBody>
                 {notes.map((note) => (
                     <TableRow key={note._id}>
-                      <TableCell><Link to={`${note._id}`}>{note.title}</Link></TableCell>
-                      <TableCell>{note.updatedAt}</TableCell>       
-                      <TableCell align="right"><Button size="small" onClick={() => handleDeleteNote(note._id)}>Delete note</Button></TableCell>
+                      <TableCell><Link to={`${note._id}`} style={{textDecoration: 'none', color: 'inherit'}}>{note.title}</Link></TableCell>
+                      <TableCell>{format(new Date(note.updatedAt), 'dd/MM/yyyy HH:mm')}</TableCell>       
+                      <TableCell align="right"><Button size="small" onClick={() => handleDeleteNote(note._id)}><DeleteIcon /></Button></TableCell>
                     </TableRow>
                 ))}
             </TableBody>

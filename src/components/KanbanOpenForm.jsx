@@ -1,5 +1,6 @@
 import React from "react";
 // import Icon from "@material-ui/core/Icon";
+import AddIcon from '@mui/icons-material/Add';
 import Icon from "@mui/material/Icon";
 import styled from "styled-components";
 
@@ -25,7 +26,7 @@ const KanbanOpenForm = ({ list, children, onClick }) => {
 
   return (
     <OpenFormButton onClick={onClick}>
-      <Icon>add</Icon>
+      <AddIcon>add</AddIcon>
       <p style={{ flexShrink: 0 }}>{children}</p>
     </OpenFormButton>
   );

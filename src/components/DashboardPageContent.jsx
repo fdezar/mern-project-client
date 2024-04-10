@@ -10,6 +10,7 @@ import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 function DashboardPageContent() {
   const [toDoList, setToDoList] = useState([]);
@@ -53,8 +54,6 @@ function DashboardPageContent() {
 
   return (
     <div>
-      <p>Are you ready?</p>
-      <Link to="notes">Create a note</Link>
       <PomodoroClock />
       <ToDoListForm handleAddItem={handleAddItem} />
       <Table size="small">
@@ -62,7 +61,7 @@ function DashboardPageContent() {
                  {toDoList.map((toDoListItem) => (
                      <TableRow key={toDoListItem._id}>
                        <TableCell>{toDoListItem.content}</TableCell>       
-                       <TableCell align="right"><Button size="small" onClick={() => handleDeleteToDoListItem(toDoListItem._id)}>Delete item</Button></TableCell>
+                       <TableCell align="right"><Button size="small" onClick={() => handleDeleteToDoListItem(toDoListItem._id)}><DeleteIcon /></Button></TableCell>
                      </TableRow>
                  ))}
              </TableBody>

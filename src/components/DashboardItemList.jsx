@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
 
 export const mainListItems = () => (
   <>
-    <Link to="/dashboard">
+    <Link to="/dashboard" style={{ textDecoration: 'none', color: 'inherit' }}>
     <ListItemButton>
       <ListItemIcon>
         <DashboardIcon />
@@ -21,7 +21,7 @@ export const mainListItems = () => (
       <ListItemText primary="Dashboard" />
     </ListItemButton>
     </Link>
-    <Link to="/dashboard/kanban">
+    <Link to="/dashboard/kanban" style={{ textDecoration: 'none', color: 'inherit' }}>
     <ListItemButton>
       <ListItemIcon>
         <BarChartIcon />
@@ -29,12 +29,12 @@ export const mainListItems = () => (
       <ListItemText primary="Kanban" />
     </ListItemButton>
     </Link>
-    <Link to="/dashboard/notes">
+    <Link to="/dashboard/notes" style={{ textDecoration: 'none', color: 'inherit' }}>
     <ListItemButton>
       <ListItemIcon>
         <LayersIcon />
       </ListItemIcon>
-      <ListItemText primary="Notes" />
+      <ListItemText primary="Notes"/>
     </ListItemButton>
     </Link>
     {/* <ListItemButton>

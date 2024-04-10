@@ -92,6 +92,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                 }
                 style={logoStyle}
                 alt="Silk logo"
+                onClick={() => scrollToSection('hero')}
               />
 
               {/* <MenuItem>

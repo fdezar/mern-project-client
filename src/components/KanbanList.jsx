@@ -5,7 +5,7 @@ import { Droppable, Draggable } from "react-beautiful-dnd";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import { editTitle, deleteList } from "../actions";
-import Icon from "@mui/material/Icon";
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const ListContainer = styled.div`
   background-color: #dfe3e6;
@@ -33,7 +33,7 @@ const TitleContainer = styled.div`
   cursor: pointer;
 `;
 
-const DeleteButton = styled(Icon)`
+const DeleteButton = styled(DeleteIcon)`
   cursor: pointer;
   transition: opacity 0.3s ease-in-out;
   opacity: 0.4;

@@ -4,7 +4,8 @@ import Typography from "@mui/material/Typography";
 import CardContent from "@mui/material/CardContent";
 import { Draggable } from "react-beautiful-dnd";
 import styled from "styled-components";
-import Icon from "@mui/material/Icon";
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
 import KanbanForm from "./KanbanForm";
 import { editCard, deleteCard } from "../actions";
 import { connect } from "react-redux";
@@ -18,7 +19,7 @@ const CardContainer = styled.div`
   word-wrap: break-word;
 `;
 
-const EditButton = styled(Icon)`
+const EditButton = styled(EditIcon)`
   position: absolute;
   display: none;
   right: 5px;
@@ -33,7 +34,7 @@ const EditButton = styled(Icon)`
   }
 `;
 
-const DeleteButton = styled(Icon)`
+const DeleteButton = styled(DeleteIcon)`
   position: absolute;
   display: none;
   right: 5px;

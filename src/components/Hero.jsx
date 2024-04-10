@@ -55,9 +55,9 @@ export default function Hero() {
               Productivity
             </Typography>
           </Typography>
-          <Typography variant="body1" textAlign="center" color="text.secondary">
+          <Typography variant="h6" textAlign="center" color="text.secondary">
            <br />
-           Maximize Your Workflow: Elevate Your Web Development Game with Streamlined Tools and Time Management Solutions.
+           Maximize Your Workflow with Silk. Elevate Your Web Development Game with Streamlined Tools and Time Management Solutions.
           </Typography>
           <Stack
             direction={{ xs: 'column', sm: 'row' }}
@@ -79,7 +79,7 @@ export default function Hero() {
               }}
             /> */}
             <Button variant="contained" color="primary" style={{ width: '100px'}}>
-              <Link to='/signup'>
+              <Link to='/signup' style={{ textDecoration: 'none', color: 'inherit' }}>
               Get Started
               </Link>
             </Button>

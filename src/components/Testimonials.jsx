@@ -46,7 +46,7 @@ const userTestimonials = [
       "Since incorporating Silk into my routine, I've seen a remarkable improvement in my productivity as a web developer. The Pomodoro timer helps me stay focused and motivated, while the Kanban Drag and Drop feature keeps me organized and on track with my tasks.",
   },
   {
-    avatar: <Avatar alt="Emily Davis" src="/static/images/avatar/6.jpg" />,
+    avatar: <Avatar alt="Emily Davis" src="/src/assets/images/landing-page/testimonials-user-6.jpg" />,
     name: 'Emily Davis',
     occupation: 'Back End Dev',
     testimonial:
