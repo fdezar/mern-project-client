@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import authService from '../../services/auth.service';
 import { styled } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiDrawer from '@mui/material/Drawer';
@@ -79,7 +80,17 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 function DashboardPageLayout() {
   const navigate = useNavigate();
   const [open, setOpen] = useState(true);
+  const [ myUser, setMyUser ] = useState(null);
   const location = useLocation();
+
+  useEffect(() => {
+    authService.getUserProfile()
+    .then(res => {
+        // console.log(res.data);
+        setMyUser(res.data);
+    })
+    // .catch(err => console.log(err));
+}, []);
 
   const toggleDrawer = () => {
     setOpen(!open);
@@ -106,9 +117,11 @@ function DashboardPageLayout() {
           <Typography component="h1" variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
             Dashboard
           </Typography>
-          <Link to="/dashboard/my-profile">
+          <Link to="/dashboard/my-profile" style={{ color: 'inherit' }}>
             <IconButton color="inherit">
-              <AccountCircleIcon />
+              { myUser && myUser.userImage && (
+                <img src={myUser.userImage} style={{ borderRadius: '50%', width: '30px'}} />
+              )}
             </IconButton>
           </Link>
         </Toolbar>

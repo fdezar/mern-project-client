@@ -20,8 +20,7 @@ const logoStyle = {
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" mt={1}>
-      {'Copyright © '}
-      <Link href="https://mui.com/">Sitemark&nbsp;</Link>
+      {'Copyright © Silk '}
       {new Date().getFullYear()}
     </Typography>
   );
@@ -169,15 +168,15 @@ export default function Footer() {
         }}
       >
         <div>
-          <Link color="text.secondary" href="#">
+          {/* <Link color="text.secondary" href="#">
             Privacy Policy
-          </Link>
-          <Typography display="inline" sx={{ mx: 0.5, opacity: 0.5 }}>
-            &nbsp;•&nbsp;
+          </Link> */}
+          <Typography display="inline" sx={{ mx: 0.5, opacity: 0.7 }}>
+            Made by @fdezar
           </Typography>
-          <Link color="text.secondary" href="#">
+          {/* <Link color="text.secondary" href="#">
             Terms of Service
-          </Link>
+          </Link> */}
           <Copyright />
         </div>
         <Stack
