@@ -19,7 +19,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import DashboardPageContent from '../../components/DashboardPageContent';
-import { mainListItems } from '../../components/DashboardItemList';
+import { mainListItems, secondaryListItems } from '../../components/DashboardItemList';
 import MyProfilePage from '../auth/MyProfilePage';
 import EditProfilePage from '../auth/EditProfilePage';
 import EditPasswordPage from '../auth/EditPasswordPage'; 
@@ -62,6 +62,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
         duration: theme.transitions.duration.enteringScreen,
       }),
       boxSizing: 'border-box',
+      backgroundColor: 'rgb(235, 235, 235)',
       ...(!open && {
         overflowX: 'hidden',
         transition: theme.transitions.create('width', {
@@ -103,7 +104,7 @@ function DashboardPageLayout() {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar position="absolute" open={open}>
+      <AppBar position="absolute" open={open} sx={{ backgroundColor: '#655eec' }}>
         <Toolbar sx={{ pr: '24px' }}>
           <IconButton
             edge="start"
@@ -136,12 +137,13 @@ function DashboardPageLayout() {
         <List component="nav">
           {mainListItems(handleItemClick)}
           <Divider sx={{ my: 1 }} />
+          {secondaryListItems(handleItemClick)}
         </List>
       </Drawer>
       <Box
         component="main"
         sx={{
-          backgroundColor: (theme) => (theme.palette.mode === 'light' ? theme.palette.grey[100] : theme.palette.grey[900]),
+          backgroundColor: (theme) => (theme.palette.mode === 'light' ? theme.palette.white : theme.palette.grey[900]),
           flexGrow: 1,
           height: '100vh',
           overflow: 'auto',
@@ -151,7 +153,7 @@ function DashboardPageLayout() {
         <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
           <Grid container spacing={3}>
             <Grid item xs={12} md={8} lg={9}>
-              <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 950 }}>
+              {/* <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 950, minWidth: 1300 }}> */}
                 <Routes location={location}>
                   <Route path="/" element={<DashboardPageContent />} />
                   <Route path="kanban" element={<KanbanPage />} />
@@ -164,7 +166,7 @@ function DashboardPageLayout() {
                   <Route path="my-profile/edit" element={<EditProfilePage />} />
                   <Route path="my-profile/edit-password" element={<EditPasswordPage />} />
                 </Routes>
-              </Paper>
+              {/* </Paper> */}
             </Grid>
           </Grid>
         </Container>

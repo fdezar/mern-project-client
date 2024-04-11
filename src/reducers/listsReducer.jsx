@@ -52,11 +52,11 @@ const initialState = [
 const listsReducer = (state = initialState, action) => {
     console.log(action.payload);
   switch (action.type) {
-    case CONSTANTS.GET_LISTS: {
-        const { title } = action.payload;
+    // case CONSTANTS.GET_LISTS: {
+    //     const { title } = action.payload;
 
-        return [...state, title];
-    }
+    //     return [...state, title];
+    // }
 
     case CONSTANTS.ADD_LIST:
       const newList = {
