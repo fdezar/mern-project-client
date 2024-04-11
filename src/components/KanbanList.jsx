@@ -32,6 +32,8 @@ const TitleContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  padding-top: 8px;
+  padding-bottom: 13px;
 `;
 
 const DeleteButton = styled(DeleteIcon)`
