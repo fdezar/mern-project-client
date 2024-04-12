@@ -12,10 +12,12 @@ import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import DevicesRoundedIcon from '@mui/icons-material/DevicesRounded';
 import EdgesensorHighRoundedIcon from '@mui/icons-material/EdgesensorHighRounded';
 import ViewQuiltRoundedIcon from '@mui/icons-material/ViewQuiltRounded';
+import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
+import BarChartIcon from '@mui/icons-material/BarChart';
 
 const items = [
   {
-    icon: <ViewQuiltRoundedIcon />,
+    icon: <AccessAlarmIcon />,
     title: 'Pomodoro & Tasks',
     description:
       'Boost productivity with our integrated Pomodoro timer, seamlessly balancing work intervals and breaks for optimal focus. Experience enhanced time management as you effortlessly divide your workday into focused sprints, punctuated by rejuvenating breaks.',
@@ -23,7 +25,7 @@ const items = [
     imageDark: 'url("/static/images/templates/templates-images/dash-dark.png")',
   },
   {
-    icon: <EdgesensorHighRoundedIcon />,
+    icon: <BarChartIcon />,
     title: 'Drag and Drop Kanban',
     description:
       'Effortlessly manage tasks with our intuitive Kanban Drag and Drop feature, streamlining workflow organization and progress tracking. From ideation to completion, empower your team to visualize tasks, prioritize assignments, and adapt dynamically to project needs with ease.',

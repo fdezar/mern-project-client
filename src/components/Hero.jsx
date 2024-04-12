@@ -17,8 +17,8 @@ export default function Hero() {
         width: '100%',
         backgroundImage:
           theme.palette.mode === 'light'
-            ? 'linear-gradient(180deg, #CEE5FD, #FFF)'
-            : 'linear-gradient(#02294F, #090E10)',
+            ? 'linear-gradient(180deg, #C8C6F4, #FFF)'
+            : 'linear-gradient(#22265F, #090E10)',
         backgroundSize: '100% 20%',
         backgroundRepeat: 'no-repeat',
       })}
@@ -78,7 +78,7 @@ export default function Hero() {
                 ariaLabel: 'Enter your email address',
               }}
             /> */}
-            <Button variant="contained" color="primary" style={{ width: '100px'}}>
+            <Button variant="contained" color="primary" style={{ width: '110px'}}>
               <Link to='/signup' style={{ textDecoration: 'none', color: 'inherit' }}>
               Get Started
               </Link>
@@ -108,11 +108,11 @@ export default function Hero() {
             outline: '1px solid',
             outlineColor:
               theme.palette.mode === 'light'
-                ? alpha('#BFCCD9', 0.5)
+                ? alpha('#C8C6F4', 0.5)
                 : alpha('#9CCCFC', 0.1),
             boxShadow:
               theme.palette.mode === 'light'
-                ? `0 0 12px 8px ${alpha('#9CCCFC', 0.2)}`
+                ? `0 0 12px 8px ${alpha('#BAB8EF', 0.2)}`
                 : `0 0 24px 12px ${alpha('#033363', 0.2)}`,
           })}
         />
