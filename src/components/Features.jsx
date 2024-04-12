@@ -14,6 +14,8 @@ import EdgesensorHighRoundedIcon from '@mui/icons-material/EdgesensorHighRounded
 import ViewQuiltRoundedIcon from '@mui/icons-material/ViewQuiltRounded';
 import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
 import BarChartIcon from '@mui/icons-material/BarChart';
+import NotesIcon from '@mui/icons-material/Notes';
+
 
 const items = [
   {
@@ -33,10 +35,10 @@ const items = [
     imageDark: 'url("/static/images/templates/templates-images/mobile-dark.png")',
   },
   {
-    icon: <DevicesRoundedIcon />,
-    title: 'Save your notes',
+    icon: <NotesIcon />,
+    title: 'Save your notes anywhere',
     description:
-      'This item could let users know the product is available on all platforms, such as web, mobile, and desktop.',
+      'Silk is available on all platforms, such as web, mobile, and desktop.',
     imageLight: 'url("/static/images/templates/templates-images/devices-light.png")',
     imageDark: 'url("/static/images/templates/templates-images/devices-dark.png")',
   },
