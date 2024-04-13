@@ -11,6 +11,8 @@ import notesService from '../../services/notes.service';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { format } from 'date-fns';
+import formThemeProvider from "../theme/formThemeProvider";
+import { ThemeProvider } from "@mui/material";
 
 function NotesPage() {
 
@@ -39,6 +41,7 @@ function NotesPage() {
 
     return (
         <>
+          <ThemeProvider theme={formThemeProvider}>
             <h1>Notes</h1>
             <SearchBar setNotes={setNotes} />
             <Table size="small">
@@ -59,12 +62,13 @@ function NotesPage() {
                     </TableRow>
                 ))}
             </TableBody>
-        </Table>
+          </Table>
 
-        <Link to="/dashboard/notes/create"><Button variant="outlined">Create a note</Button></Link>
-        {/* <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 3 }}>
+          <Link to="/dashboard/notes/create"><Button variant="outlined">Create a note</Button></Link>
+          {/* <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 3 }}>
           See more notes
-        </Link> */}
+          </Link> */}
+        </ThemeProvider>
     </>
     );
 }

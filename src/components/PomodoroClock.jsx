@@ -3,6 +3,8 @@ import { styled } from '@mui/system';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
+import formThemeProvider from "../pages/theme/formThemeProvider";
+import { ThemeProvider } from "@mui/material";
 
 const Wrapper = styled('div')({
     textAlign: 'center',
@@ -113,6 +115,7 @@ function PomodoroClock() {
     const title = timingType === "SESSION" ? "Session" : "Break"; 
 
     return (
+      <ThemeProvider theme={formThemeProvider}>
         <Wrapper>
       <Typography variant="h2">Pomodoro Clock</Typography>
       <Grid container spacing={2} justifyContent="center">
@@ -151,6 +154,7 @@ function PomodoroClock() {
       </Grid>
       <audio id="beep" preload="auto" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"></audio>
     </Wrapper>
+    </ThemeProvider>
         // <div>
         //     <div className="wrapper">
         //         <h2>Pomodoro Clock</h2>
@@ -183,6 +187,7 @@ function PomodoroClock() {
         //     </div>
         //     <audio id="beep" preload="auto" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"></audio>
         // </div>
+        
     );
 }
 

@@ -88,7 +88,7 @@ function AppAppBar({ mode, toggleColorMode }) {
             >
               <img
                 src={
-                  '/src/assets/images/landing-page/Silk-logo.png'
+                  '/src/assets/images/silk-logo.png'
                 }
                 style={logoStyle}
                 alt="Silk logo"
@@ -222,7 +222,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                   {/* <Divider /> */}
                   <br />
                   <MenuItem>
-                    <Link to="/signup">
+                    <Link to="/signup" style={{ width: '100%'}}>
                         <Button
                           color="primary"
                           variant="contained"
@@ -236,7 +236,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                     </Link>
                   </MenuItem>
                   <MenuItem>
-                    <Link to="/login">
+                    <Link to="/login" style={{ width: '100%'}}>
                         <Button
                           color="primary"
                           variant="outlined"

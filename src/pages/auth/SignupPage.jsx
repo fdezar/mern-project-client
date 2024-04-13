@@ -15,6 +15,8 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+import formThemeProvider from "../theme/formThemeProvider";
+import { ThemeProvider } from "@mui/material";
 
 function SignupPage() {
   const [email, setEmail] = useState("Admin12@localhost.com");
@@ -76,6 +78,7 @@ function SignupPage() {
   };
 
   return (
+    <ThemeProvider theme={formThemeProvider}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -86,9 +89,7 @@ function SignupPage() {
             alignItems: 'center',
           }}
         >
-        <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-          <LockOutlinedIcon />
-        </Avatar>
+        <img src="/src/assets/images/silk-logo.png" style={{ width: '50px', margin: '20px' }}></img>
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
@@ -169,6 +170,7 @@ function SignupPage() {
               </Grid>
               <Grid item xs={12}>
                 <input
+                  style={{ display: 'none' }}
                   accept="image/*"
                   id="image"
                   name="image"
@@ -176,7 +178,7 @@ function SignupPage() {
                   onChange={(e) => setUserImage(e.target.files[0])}
                 />
                 <label htmlFor="image">
-                  <Button variant="contained" component="span">
+                  <Button variant="contained" fullWidth component="span" sx={{ marginTop: '10px' }}>
                     Upload Profile Image
                   </Button>
                 </label>
@@ -199,7 +201,7 @@ function SignupPage() {
             <Grid container justifyContent="flex-end">
               <Grid item>
                 {/* <Link href="/login" variant="body2"> */}
-                <Link to="/login">
+                <Link to="/login" style={{ textDecoration: 'none' }}>
                   Already have an account? Sign in
                 </Link>
               </Grid>
@@ -207,6 +209,7 @@ function SignupPage() {
           </Box>
         </Box>
       </Container>
+      </ThemeProvider>
   );
 }
 

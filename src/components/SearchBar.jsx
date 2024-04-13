@@ -1,5 +1,6 @@
 import { useState } from "react";
 import notesService from "../services/notes.service";
+import { TextField } from "@mui/material";
 
 function SearchBar({ setNotes }) {
 
@@ -28,12 +29,16 @@ function SearchBar({ setNotes }) {
     return (
         <div>
             <form>
-                <label htmlFor="search">Search</label>
-                <input 
-                    type="text"
+                <TextField 
+                    placeholder="Search..."
                     value={searchQuery}
                     onChange={handleInputChange}
                 />
+                {/* <input 
+                    type="text"
+                    value={searchQuery}
+                    onChange={handleInputChange}
+                /> */}
             </form>
             {/* poner un icono o algo */}
             {/* <p>Search</p> */}
