@@ -15,7 +15,7 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import formThemeProvider from "../theme/formThemeProvider";
+import appThemeProvider from "../theme/appThemeProvider";
 import { ThemeProvider } from "@mui/material";
 
 function SignupPage() {
@@ -78,7 +78,7 @@ function SignupPage() {
   };
 
   return (
-    <ThemeProvider theme={formThemeProvider}>
+    <ThemeProvider theme={appThemeProvider}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box

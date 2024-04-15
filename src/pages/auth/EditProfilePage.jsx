@@ -12,6 +12,8 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+import appThemeProvider from "../theme/appThemeProvider";
+import { ThemeProvider } from "@mui/material";
 
 function EditProfilePage() {
 
@@ -88,112 +90,113 @@ function EditProfilePage() {
         <p>Loading</p>
     </div>
     ) : (
-    <Container component="main" maxWidth="xs">
-      <CssBaseline />
-      <Box
-        sx={{
-          marginTop: 8,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-        }}
-      >
-        <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-          <LockOutlinedIcon />
-        </Avatar>
-        <Typography component="h1" variant="h5">
-          Edit Profile
-        </Typography>
-        <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 3 }}>
-          <Grid container spacing={2}>
-            <Grid item xs={12}>
-              <TextField
-                autoComplete="email"
-                name="email"
-                required
-                fullWidth
-                id="email"
-                label="Email"
-                autoFocus
-                value={email}
-                onChange={handleEmailInput}
-              />
+    <ThemeProvider theme={appThemeProvider}>
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <Box
+          sx={{
+            marginTop: 8,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <img src="/src/assets/images/silk-logo.png" style={{ width: '50px', margin: '20px' }}></img>
+          <Typography component="h1" variant="h5">
+            Edit Profile
+          </Typography>
+          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 3 }}>
+            <Grid container spacing={2}>
+              <Grid item xs={12}>
+                <TextField
+                  autoComplete="email"
+                  name="email"
+                  required
+                  fullWidth
+                  id="email"
+                  label="Email"
+                  autoFocus
+                  value={email}
+                  onChange={handleEmailInput}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  autoComplete="username"
+                  name="username"
+                  required
+                  fullWidth
+                  id="username"
+                  label="Username"
+                  value={username}
+                  onChange={handleUsernameInput}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  autoComplete="firstName"
+                  name="firstName"
+                  required
+                  fullWidth
+                  id="firstName"
+                  label="Name"
+                  value={firstName}
+                  onChange={handleFirstNameInput}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  autoComplete="family-name"
+                  name="lastName"
+                  required
+                  fullWidth
+                  id="lastName"
+                  label="Last Name"
+                  value={lastName}
+                  onChange={handleLastNameInput}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  autoComplete="off"
+                  name="aboutMe"
+                  fullWidth
+                  id="aboutMe"
+                  label="Something about you"
+                  value={aboutMe}
+                  onChange={handleAboutMeInput}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <input
+                  style={{ display: 'none' }}
+                  accept="image/*"
+                  id="image"
+                  name="image"
+                  type="file"
+                  onChange={(e) => setUserImage(e.target.files[0])}
+                />
+                <label htmlFor="image">
+                  <Button variant="contained" fullWidth component="span" style={{ marginTop: '10px' }}>
+                    Upload Profile Image
+                  </Button>
+                </label>
+              </Grid>
+              {/* Checkbox if needed */}
             </Grid>
-            <Grid item xs={12}>
-              <TextField
-                autoComplete="username"
-                name="username"
-                required
-                fullWidth
-                id="username"
-                label="Username"
-                value={username}
-                onChange={handleUsernameInput}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                autoComplete="firstName"
-                name="firstName"
-                required
-                fullWidth
-                id="firstName"
-                label="Name"
-                value={firstName}
-                onChange={handleFirstNameInput}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                autoComplete="family-name"
-                name="lastName"
-                required
-                fullWidth
-                id="lastName"
-                label="Last Name"
-                value={lastName}
-                onChange={handleLastNameInput}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                autoComplete="off"
-                name="aboutMe"
-                fullWidth
-                id="aboutMe"
-                label="Something about you"
-                value={aboutMe}
-                onChange={handleAboutMeInput}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <input
-                accept="image/*"
-                id="image"
-                name="image"
-                type="file"
-                onChange={(e) => setUserImage(e.target.files[0])}
-              />
-              <label htmlFor="image">
-                <Button variant="contained" component="span">
-                  Upload Profile Image
-                </Button>
-              </label>
-            </Grid>
-            {/* Checkbox if needed */}
-          </Grid>
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            sx={{ mt: 3, mb: 2 }}
-          >
-            Save Changes
-          </Button>
-          {/* Link for cancelling or going back */}
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+            >
+              Save Changes
+            </Button>
+            {/* Link for cancelling or going back */}
+          </Box>
         </Box>
-      </Box>
-    </Container>
+      </Container>
+    </ThemeProvider>
   );
 }
 

@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { useContext } from 'react';
+import { AuthContext } from '../context/auth.context';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
@@ -54,7 +56,10 @@ export const mainListItems = () => (
   </>
 );
 
-export const secondaryListItems = () => (
+export const secondaryListItems = () => {
+  const { logOutUser } = useContext(AuthContext);
+
+  return (
   <>
     {/* <ListSubheader component="div" inset>
       Saved reports
@@ -77,11 +82,12 @@ export const secondaryListItems = () => (
       </ListItemIcon>
       <ListItemText primary="Year-end sale" />
     </ListItemButton> */}
-    <ListItemButton>
+    <ListItemButton onClick={logOutUser}>
       <ListItemIcon>
         <LogoutIcon style={{ color: 'crimson' }}/>
       </ListItemIcon>
       <ListItemText primary="Logout" style={{ color: 'crimson' }}/>
     </ListItemButton>
   </>
-);
+  );
+};

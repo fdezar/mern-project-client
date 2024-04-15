@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useState, useContext } from "react";
 import axios from "axios";
 import authService from "../../services/auth.service";
+import TextField from "@mui/material/TextField";
 
 function EditPasswordPage() {
   const navigate = useNavigate();
@@ -44,8 +45,10 @@ function EditPasswordPage() {
   return (
     <>
       <div className="edit-profile">
+      <h1>Password change</h1>
         <form onSubmit={handlePasswordSubmit}>
           <label>Current Password:</label>
+          <TextField />
           <input
             type="password"
             name="password"

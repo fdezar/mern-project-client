@@ -11,6 +11,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
+import appThemeProvider from "../pages/theme/appThemeProvider";
+import { ThemeProvider } from "@mui/material"
 
 function DashboardPageContent() {
   const [toDoList, setToDoList] = useState([]);
@@ -55,6 +57,7 @@ function DashboardPageContent() {
   return (
     <div>
       <PomodoroClock />
+      <ThemeProvider theme={appThemeProvider}>
       <ToDoListForm handleAddItem={handleAddItem} />
       <Table size="small">
                <TableBody>
@@ -66,6 +69,7 @@ function DashboardPageContent() {
                  ))}
              </TableBody>
          </Table>
+      </ThemeProvider>
     </div>
   );
 }

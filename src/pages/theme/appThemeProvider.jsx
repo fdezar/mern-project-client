@@ -1,7 +1,7 @@
 import { createTheme } from '@mui/material/styles';
 import { purple } from '@mui/material/colors';
 
-const formThemeProvider = createTheme({
+const appThemeProvider = createTheme({
   palette: {
     primary: {
       main: "#4A49D3",
@@ -12,4 +12,4 @@ const formThemeProvider = createTheme({
   },
 });
 
-export default formThemeProvider;
+export default appThemeProvider;

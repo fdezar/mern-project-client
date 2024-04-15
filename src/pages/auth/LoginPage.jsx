@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import authService from "../../services/auth.service";
 import { AuthContext } from "../../context/auth.context";
-import formThemeProvider from "../theme/formThemeProvider";
+import appThemeProvider from "../theme/appThemeProvider";
 import { ThemeProvider } from "@mui/material";
 
 import * as React from 'react';
@@ -49,7 +49,7 @@ function LoginPage() {
   }
 
   return (
-    <ThemeProvider theme={formThemeProvider}>
+    <ThemeProvider theme={appThemeProvider}>
       <Container component="main" maxWidth="xs">
           <CssBaseline />
           <Box

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import toDoListService from "../services/todolist.service";
 import { TextField } from "@mui/material";
-import formThemeProvider from "../pages/theme/formThemeProvider";
+import formThemeProvider from "../pages/theme/appThemeProvider";
 import { ThemeProvider } from "@mui/material";
 
 function ToDoListForm({ handleAddItem }) {
