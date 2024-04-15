@@ -13,17 +13,14 @@ import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import DashboardPageContent from '../../components/DashboardPageContent';
 import { mainListItems, secondaryListItems } from '../../components/DashboardItemList';
 import MyProfilePage from '../auth/MyProfilePage';
 import EditProfilePage from '../auth/EditProfilePage';
 import EditPasswordPage from '../auth/EditPasswordPage'; 
-// import KanbanPage from './KanbanPage';
 import KanbanPage from "../../components/Kanban";
 import NotesPage from './NotesPage';
 import NoteCreatePage from './NoteCreatePage';
@@ -153,7 +150,6 @@ function DashboardPageLayout() {
         <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
           <Grid container spacing={3}>
             <Grid item xs={12} md={8} lg={9}>
-              {/* <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 950, minWidth: 1300 }}> */}
                 <Routes location={location}>
                   <Route path="/" element={<DashboardPageContent />} />
                   <Route path="kanban" element={<KanbanPage />} />
@@ -166,7 +162,6 @@ function DashboardPageLayout() {
                   <Route path="my-profile/edit" element={<EditProfilePage />} />
                   <Route path="my-profile/edit-password" element={<EditPasswordPage />} />
                 </Routes>
-              {/* </Paper> */}
             </Grid>
           </Grid>
         </Container>

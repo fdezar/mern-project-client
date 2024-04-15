@@ -1,5 +1,3 @@
-// src/context/auth.context.jsx
-
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -18,34 +16,26 @@ function AuthProviderWrapper(props) {
   
   const navigate = useNavigate();
   
-  const authenticateUser = () => {           //  <==  ADD  
-    // Get the stored token from the localStorage
+  const authenticateUser = () => {           
     const storedToken = localStorage.getItem('authToken');
     
-    // If the token exists in the localStorage
     if (storedToken) {
-      // We must send the JWT token in the request's "Authorization" Headers
       axios.get(
         `${API_URL}/auth/verify`, 
         { headers: { Authorization: `Bearer ${storedToken}`} }
       )
       .then((response) => {
-        // If the server verifies that the JWT token is valid  
-        const user = response.data;
-       // Update state variables        
+        const user = response.data;      
         setIsLoggedIn(true);
         setIsLoading(false);
         setUser(user);        
       })
-      .catch((error) => {
-        // If the server sends an error response (invalid token) 
-        // Update state variables         
+      .catch((error) => {        
         setIsLoggedIn(false);
         setIsLoading(false);
         setUser(null);        
       });      
     } else {
-      // If the token is not available (or is removed)
         setIsLoggedIn(false);
         setIsLoading(false);
         setUser(null);      

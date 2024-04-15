@@ -3,13 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import authService from "../../services/auth.service";
 
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import appThemeProvider from "../theme/appThemeProvider";
@@ -25,10 +23,6 @@ function EditProfilePage() {
   const [lastName, setLastName] = useState("");
   const [aboutMe, setAboutMe] = useState("");
   const [userImage, setUserImage] = useState("");
-
-//   const isEmailValid = () => {
-//     return email.includes("@");
-//   };
 
   const handleEmailInput = e => setEmail(e.target.value);
   const handleUsernameInput = e => setUsername(e.target.value);
@@ -182,7 +176,6 @@ function EditProfilePage() {
                   </Button>
                 </label>
               </Grid>
-              {/* Checkbox if needed */}
             </Grid>
             <Button
               type="submit"
@@ -192,7 +185,6 @@ function EditProfilePage() {
             >
               Save Changes
             </Button>
-            {/* Link for cancelling or going back */}
           </Box>
         </Box>
       </Container>

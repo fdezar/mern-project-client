@@ -1,5 +1,4 @@
 import { useState } from "react";
-import axios from "axios";
 import notesService from "../../services/notes.service";
 
 import Avatar from '@mui/material/Avatar';
@@ -9,11 +8,12 @@ import TextField from '@mui/material/TextField';
 import TextareaAutosize from '@mui/material/TextareaAutosize';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-// import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import EditNoteIcon from '@mui/icons-material/EditNote';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { useNavigate } from "react-router-dom";
+import appThemeProvider from "../theme/appThemeProvider";
+import { ThemeProvider } from "@mui/material";
 
 function NoteCreatePage() {
     const [title, setTitle] = useState("");
@@ -34,8 +34,7 @@ function NoteCreatePage() {
         notesService.createNote(newNote)
           .then(res => {
             // console.log(res.data);
-            navigate('/dashboard/notes'); // toDo - modificar
-            // Handle success, maybe redirect to note details page
+            navigate('/dashboard/notes');
           })
           .catch(err => {
             // console.error(err);
@@ -44,66 +43,60 @@ function NoteCreatePage() {
     };
 
     return (
-        <Container component="main" maxWidth="xs">
-            <CssBaseline />
-            <Box
-              sx={{
-                marginTop: 8,
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-              }}
-            >
-              <Avatar sx={{ m: 1, bgcolor: 'primary.main' }}>
-                <EditNoteIcon />
-              </Avatar>
-              <Typography component="h1" variant="h5">
-                Create Note
-              </Typography>
-              <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 3 }}>
-                <Grid container spacing={2}>
-                  <Grid item xs={12}>
-                    <TextField
-                      required
-                      fullWidth
-                      id="title"
-                      label="Title"
-                      autoFocus
-                      value={title}
-                      onChange={handleTitleInput}
-                    />
-                  </Grid>
-                  <Grid item xs={12}>
-                    {/* <TextField
-                      multiline
-                      fullWidth
-                      id="content"
-                      label="Content"
-                      value={content}
-                      onChange={handleContentInput}
-                    /> */}
-                    <TextareaAutosize
-                      minRows={5}
-                      maxRows={17}
-                      fullWidth
-                      id="content"
-                      placeholder="Content"
-                      value={content}
-                      onChange={handleContentInput}
-                    />
-                  </Grid>
-                </Grid>
-                <Button
-                  type="submit"
-                  fullWidth
-                  variant="contained"
-                  sx={{ mt: 3, mb: 2 }}
-                >
+        <ThemeProvider theme={appThemeProvider}>
+          <Container component="main" maxWidth="xs">
+              <CssBaseline />
+              <Box
+                sx={{
+                  marginTop: 8,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                }}
+              >
+                <Avatar sx={{ m: 1, bgcolor: 'primary.main' }}>
+                  <EditNoteIcon />
+                </Avatar>
+                <Typography component="h1" variant="h5">
                   Create Note
-                </Button>
+                </Typography>
+                <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 3 }}>
+                  <Grid container spacing={2}>
+                    <Grid item xs={12}>
+                      <TextField
+                        required
+                        fullWidth
+                        id="title"
+                        label="Title"
+                        autoFocus
+                        value={title}
+                        onChange={handleTitleInput}
+                      />
+                    </Grid>
+                    <Grid item xs={12}>
+                      <TextareaAutosize
+                        minRows={5}
+                        maxRows={17}
+                        fullWidth
+                        id="content"
+                        placeholder="Content"
+                        value={content}
+                        onChange={handleContentInput}
+                      />
+                    </Grid>
+                  </Grid>
+                  <Button
+                    type="submit"
+                    fullWidth
+                    variant="contained"
+                    sx={{ mt: 3, mb: 2 }}
+                  >
+                    Create Note
+                  </Button>
+                </Box>
               </Box>
-            </Box>
-        </Container>
+          </Container>
+        </ThemeProvider>
     )
 }
 

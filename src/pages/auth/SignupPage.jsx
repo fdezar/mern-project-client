@@ -1,18 +1,12 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-// import axios from "axios";
 import authService from "../../services/auth.service";
 
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-// import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import appThemeProvider from "../theme/appThemeProvider";
@@ -36,7 +30,6 @@ function SignupPage() {
   const handleAboutMeInput = e => setAboutMe(e.target.value);
   const handlePasswordInput = e => setPassword(e.target.value);
 
-
   const handleSubmit = e => {
     e.preventDefault();
 
@@ -51,10 +44,9 @@ function SignupPage() {
 
     const uploadData = new FormData();
 
-    // imageUrl => this name has to be the same as in the model since we pass
-    // req.body to .create() method when creating a new movie in '/api/movies' POST route
+    /* imageUrl => this name has to be the same as in the model since we pass
+    req.body to .create() method when creating a new movie in '/api/movies' POST route */
     uploadData.append("userImage", userImage);
-    
     
     authService
       .uploadImage(uploadData)
@@ -183,12 +175,6 @@ function SignupPage() {
                   </Button>
                 </label>
               </Grid>
-              {/* <Grid item xs={12}>
-                <FormControlLabel
-                  control={<Checkbox value="allowExtraEmails" color="primary" />}
-                  label="I want to receive inspiration, marketing promotions and updates via email."
-                />
-              </Grid> */}
             </Grid>
             <Button
               type="submit"
@@ -200,7 +186,6 @@ function SignupPage() {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                {/* <Link href="/login" variant="body2"> */}
                 <Link to="/login" style={{ textDecoration: 'none' }}>
                   Already have an account? Sign in
                 </Link>

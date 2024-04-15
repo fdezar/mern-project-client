@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from 'react-router-dom';
-import axios from "axios";
 import notesService from "../../services/notes.service";
 
 import Button from '@mui/material/Button';
@@ -10,6 +9,8 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+import appThemeProvider from "../theme/appThemeProvider";
+import { ThemeProvider } from "@mui/material";
 
 function NoteEditPage() {
     const [title, setTitle] = useState("");
@@ -47,54 +48,56 @@ function NoteEditPage() {
     }
 
     return (
-        <Container component="main" maxWidth="xs">
-            <CssBaseline />
-            <Box
-              sx={{
-                marginTop: 8,
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-              }}
-            >
-              <Typography component="h1" variant="h5">
-                Edit Note
-              </Typography>
-              <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 3 }}>
-                <Grid container spacing={2}>
-                  <Grid item xs={12}>
-                    <TextField
-                      required
-                      fullWidth
-                      id="title"
-                      label="Title"
-                      autoFocus
-                      value={title}
-                      onChange={handleTitleInput}
-                    />
+        <ThemeProvider theme={appThemeProvider}>
+          <Container component="main" maxWidth="xs">
+              <CssBaseline />
+              <Box
+                sx={{
+                  marginTop: 8,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                }}
+              >
+                <Typography component="h1" variant="h5">
+                  Edit Note
+                </Typography>
+                <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 3 }}>
+                  <Grid container spacing={2}>
+                    <Grid item xs={12}>
+                      <TextField
+                        required
+                        fullWidth
+                        id="title"
+                        label="Title"
+                        autoFocus
+                        value={title}
+                        onChange={handleTitleInput}
+                      />
+                    </Grid>
+                    <Grid item xs={12}>
+                      <TextField
+                        multiline
+                        fullWidth
+                        id="content"
+                        label="Content"
+                        value={content}
+                        onChange={handleContentInput}
+                      />
+                    </Grid>
                   </Grid>
-                  <Grid item xs={12}>
-                    <TextField
-                      multiline
-                      fullWidth
-                      id="content"
-                      label="Content"
-                      value={content}
-                      onChange={handleContentInput}
-                    />
-                  </Grid>
-                </Grid>
-                <Button
-                  type="submit"
-                  fullWidth
-                  variant="contained"
-                  sx={{ mt: 3, mb: 2 }}
-                >
-                  Save Changes
-                </Button>
+                  <Button
+                    type="submit"
+                    fullWidth
+                    variant="contained"
+                    sx={{ mt: 3, mb: 2 }}
+                  >
+                    Save Changes
+                  </Button>
+                </Box>
               </Box>
-            </Box>
-        </Container>
+          </Container>
+        </ThemeProvider>
     )
 }
 

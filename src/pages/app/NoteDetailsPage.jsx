@@ -1,9 +1,10 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 import notesService from '../../services/notes.service';
 import Button from '@mui/material/Button';
+import appThemeProvider from '../theme/appThemeProvider';
+import { ThemeProvider } from '@mui/material';
 
 function NoteDetailsPage() {
 
@@ -27,12 +28,14 @@ function NoteDetailsPage() {
             <p>Loading</p>
         </div>
         ) : (
-        <div>
-            <h1>{note.title}</h1>
-            <p>{note.content}</p>
-
-            <Link to={`edit`}><Button>Edit note</Button></Link>
-        </div>
+        <ThemeProvider theme={appThemeProvider}>
+            <div>
+                <h1>{note.title}</h1>
+                <p>{note.content}</p>
+            
+                <Link to={`edit`}><Button>Edit note</Button></Link>
+            </div>
+        </ThemeProvider>
     )
 }
 

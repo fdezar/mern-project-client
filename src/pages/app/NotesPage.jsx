@@ -1,4 +1,3 @@
-// import Link from '@mui/material/Link';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -49,7 +48,6 @@ function NotesPage() {
                 <TableRow>
                   <TableCell>Title</TableCell>
                   <TableCell>Last Update</TableCell>
-                  {/* <TableCell>Content</TableCell> */}
                   <TableCell align="right">Delete</TableCell>
                 </TableRow>
               </TableHead>
@@ -65,9 +63,6 @@ function NotesPage() {
           </Table>
 
           <Link to="/dashboard/notes/create"><Button variant="outlined">Create a note</Button></Link>
-          {/* <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 3 }}>
-          See more notes
-          </Link> */}
         </ThemeProvider>
     </>
     );

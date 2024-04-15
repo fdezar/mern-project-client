@@ -7,7 +7,6 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { BrowserRouter as Router } from 'react-router-dom'
-import { ThemeProviderWrapper } from "./context/theme.context";
 import { AuthProviderWrapper } from './context/auth.context.jsx'
 import { Provider } from "react-redux";
 import store from "./store/index.jsx";
@@ -17,13 +16,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   With it, kanban's drag and drop doesn't work. */
   // <React.StrictMode>
     <Router>
-      <ThemeProviderWrapper>
       <AuthProviderWrapper>
       <Provider store={store}>
         <App />
       </Provider>
       </AuthProviderWrapper>
-      </ThemeProviderWrapper>
     </Router>
   // </React.StrictMode>,
 )
