@@ -6,7 +6,7 @@ This repository contains the client-side code for Silk, a full-stack productivit
 
 ## Features 💡
 
-- Drag-and-drop Kanban board for task management (coming soon)
+- Drag-and-drop Kanban board for task management (front-end)
 - User authentication and authorization
 - Personal notes functionality
 - Responsive design for mobile and desktop
