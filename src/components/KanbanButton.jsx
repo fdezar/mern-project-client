@@ -5,7 +5,7 @@ import Button from "@mui/material/Button";
 const StyledButton = styled(Button)`
   && {
     color: white;
-    background: #5aac44;
+    background: #4A49D3;
   }
 `;
 
