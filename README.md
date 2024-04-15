@@ -8,6 +8,8 @@ This repository contains the client-side code for Silk, a full-stack productivit
 
 - Drag-and-drop Kanban board for task management (front-end)
 - User authentication and authorization
+- Pomodoro Clock
+- Todolist functionality
 - Personal notes functionality
 - Responsive design for mobile and desktop
 
