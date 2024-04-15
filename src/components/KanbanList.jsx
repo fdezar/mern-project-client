@@ -8,7 +8,6 @@ import { editTitle, deleteList } from "../actions";
 import DeleteIcon from '@mui/icons-material/Delete';
 
 const ListContainer = styled.div`
-  ${'' /* background-color: #dfe3e6; */}
   background-color: #E9EBFD;
   border-radius: 3px;
   width: 300px;

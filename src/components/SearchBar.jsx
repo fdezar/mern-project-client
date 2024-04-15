@@ -30,18 +30,12 @@ function SearchBar({ setNotes }) {
         <div>
             <form>
                 <TextField 
+                    variant="standard"
                     placeholder="Search..."
                     value={searchQuery}
                     onChange={handleInputChange}
                 />
-                {/* <input 
-                    type="text"
-                    value={searchQuery}
-                    onChange={handleInputChange}
-                /> */}
             </form>
-            {/* poner un icono o algo */}
-            {/* <p>Search</p> */}
         </div>
     );
 }

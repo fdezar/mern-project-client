@@ -78,49 +78,6 @@ const KanbanCard = React.memo(({ text, id, listID, index, dispatch }) => {
     dispatch(deleteCard(id, listID));
   };
 
-//   return isEditing ? (
-//         <KanbanForm text={cardText} onChange={handleChange} closeForm={closeForm}>
-//             <KanbanButton onClick={saveCard}>Save</KanbanButton>
-//         </KanbanForm>
-//     ) : (
-//         <animated.div style={props}>
-//         {/* <Droppable> */}
-            
-//         {/* <Droppable droppableId={String(id)} type="card">
-//         {provided => (
-//               <div {...provided.droppableProps} ref={provided.innerRef}> */}
-//           <Draggable draggableId={String(id)} index={index}>
-//             {provided => (
-//               <CardContainer
-//                 {...provided.draggableProps}
-//                 {...provided.dragHandleProps}
-//                 ref={provided.innerRef}
-//                 onDoubleClick={() => setIsEditing(true)}
-//               >
-//                 <Card>
-//                   <EditButton
-//                     onMouseDown={() => setIsEditing(true)}
-//                     fontSize="small"
-//                   >
-//                     edit
-//                   </EditButton>
-//                   <DeleteButton fontSize="small" onMouseDown={handleDeleteCard}>
-//                     delete
-//                   </DeleteButton>
-  
-//                   <CardContent>
-//                     <Typography>{text}</Typography>
-//                   </CardContent>
-//                 </Card>
-//               </CardContainer>
-//             )}
-//           </Draggable>
-//           {/* </div>
-//         )}
-//           </Droppable> */}
-//         </animated.div>
-//   );
-
   const renderEditForm = () => {
     return (
       <KanbanForm text={cardText} onChange={handleChange} closeForm={closeForm}>

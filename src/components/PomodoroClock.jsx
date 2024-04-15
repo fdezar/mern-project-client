@@ -155,39 +155,6 @@ function PomodoroClock() {
       <audio id="beep" preload="auto" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"></audio>
     </Wrapper>
     </ThemeProvider>
-        // <div>
-        //     <div className="wrapper">
-        //         <h2>Pomodoro Clock</h2>
-        //         <div className="break-session-length">
-        //             <div>
-        //                 <h3 id="break-label">Break</h3>
-        //                 <div>
-        //                     <button id="break-increment" className="btn btn-success" disabled={play} onClick={handleBreakIncrease}>+</button>
-        //                         <p id="break-length">{breakLength}</p>
-        //                     <button id="break-decrement" className="btn btn-warning" disabled={play} onClick={handleBreakDecrease}>-</button>
-        //                 </div>
-        //             </div>
-        //             <div>
-        //                 <h3 id="session-label">Session</h3>
-        //                 <div>
-        //                     <button id="session-increment" className="btn btn-success" disabled={play} onClick={handleSessionIncrease}>+</button>
-        //                         <p id="session-length">{sessionLength}</p>
-        //                     <button id="session-decrement" className="btn btn-warning" disabled={play} onClick={handleSessionDecrease}>-</button>
-        //                 </div>
-        //             </div>
-        //         </div>
-        //     <div className="timer-wrapper">
-        //         <div className="timer">
-        //             <h2 id="timer-label">{title}</h2>
-        //             <h3 id="time-left">{timeFormatter()}</h3>
-        //         </div>
-        //         <button id="start_stop" className="btn btn-primary" onClick={handlePlay} >Start/Stop</button>
-        //         <button id="reset" className="btn btn-danger" onClick={handleReset}>reset</button>
-        //     </div>
-        //     </div>
-        //     <audio id="beep" preload="auto" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"></audio>
-        // </div>
-        
     );
 }
 

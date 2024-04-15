@@ -6,7 +6,7 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
-// import Divider from '@mui/material/Divider';
+import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
@@ -94,14 +94,8 @@ function AppAppBar({ mode, toggleColorMode }) {
                 alt="Silk logo"
                 onClick={() => scrollToSection('hero')}
               />
-
-              {/* <MenuItem>
-                <Typography style={{ color: "#0959AA", fontFamily: "system-ui", fontWeight: "bold" }}>Silk</Typography>
-              </MenuItem> */}
               
               <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-              
-              
                 <MenuItem
                   onClick={() => scrollToSection('features')}
                   sx={{ py: '6px', px: '12px' }}
@@ -126,14 +120,6 @@ function AppAppBar({ mode, toggleColorMode }) {
                     Highlights
                   </Typography>
                 </MenuItem>
-                {/* <MenuItem
-                  onClick={() => scrollToSection('pricing')}
-                  sx={{ py: '6px', px: '12px' }}
-                >
-                  <Typography variant="body2" color="text.primary">
-                    Pricing
-                  </Typography>
-                </MenuItem> */}
                 <MenuItem
                   onClick={() => scrollToSection('faq')}
                   sx={{ py: '6px', px: '12px' }}
@@ -215,11 +201,9 @@ function AppAppBar({ mode, toggleColorMode }) {
                   <MenuItem onClick={() => scrollToSection('highlights')}>
                     Highlights
                   </MenuItem>
-                  {/* <MenuItem onClick={() => scrollToSection('pricing')}>
-                    Pricing
-                  </MenuItem> */}
+                 
                   <MenuItem onClick={() => scrollToSection('faq')}>FAQ</MenuItem>
-                  {/* <Divider /> */}
+                  <Divider />
                   <br />
                   <MenuItem>
                     <Link to="/signup" style={{ width: '100%'}}>
@@ -227,7 +211,6 @@ function AppAppBar({ mode, toggleColorMode }) {
                           color="primary"
                           variant="contained"
                           component="a"
-                        //   href="/signup/"
                           target="_blank"
                           sx={{ width: '100%' }}
                         >
@@ -241,8 +224,6 @@ function AppAppBar({ mode, toggleColorMode }) {
                           color="primary"
                           variant="outlined"
                           component="a"
-                        //   href="/login"
-                        //   target="_blank"
                           sx={{ width: '100%' }}
                         >
                           Sign in

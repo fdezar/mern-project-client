@@ -1,7 +1,5 @@
 import React from "react";
-// import Icon from "@material-ui/core/Icon";
 import AddIcon from '@mui/icons-material/Add';
-import Icon from "@mui/material/Icon";
 import styled from "styled-components";
 
 const KanbanOpenForm = ({ list, children, onClick }) => {

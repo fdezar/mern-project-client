@@ -1,5 +1,4 @@
 import { useState } from "react";
-import toDoListService from "../services/todolist.service";
 import { TextField } from "@mui/material";
 import formThemeProvider from "../pages/theme/appThemeProvider";
 import { ThemeProvider } from "@mui/material";
@@ -20,13 +19,6 @@ function ToDoListForm({ handleAddItem }) {
   return (
     <ThemeProvider theme={formThemeProvider}>
       <form onSubmit={handleSubmit} method="POST">
-        {/* <label htmlFor="name">Name:</label> */}
-        {/* <input 
-          type="text"
-          name="content"
-          value={content}
-          onChange={handleItemInput}
-        /> */}
         <TextField
           name="content"
           value={content}

@@ -1,13 +1,10 @@
-import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import PomodoroClock from "./PomodoroClock";
-import ToDoList from "./ToDoList";
 import ToDoListForm from "./ToDoListForm";
 import toDoListService from "../services/todolist.service";
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
-import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
