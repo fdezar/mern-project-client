@@ -2,7 +2,7 @@
 
 ![silk-logo](src/assets/images/silk-logo-readme.png)
 
-This repository contains the client-side code for Silk, a full-stack productivity application built using the MERN stack. The app includes a drag-and-drop Kanban board and personal user notes functionality.
+This repository contains the client-side code for Silk, a full-stack productivity application built using the MERN stack. The app includes a drag-and-drop Kanban board, a Pomodoro clock with a Todolist, and personal user notes functionality.
 
 ## Features 💡
 
