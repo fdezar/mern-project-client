@@ -16,7 +16,7 @@ This repository contains the client-side code for Silk, a full-stack productivit
 
 ### User
 
-- User authentication and authorization with JWT
+- User authentication and authorization with JSON Web Token
 - User Edit
 - Change Password
 - Delete user
