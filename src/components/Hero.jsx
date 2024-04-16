@@ -41,7 +41,7 @@ export default function Hero() {
               textAlign: 'center',
             }}
           >
-            Web Dev&nbsp;
+            Tasks &&nbsp;
             <Typography
               component="span"
               variant="h1"
@@ -55,7 +55,7 @@ export default function Hero() {
           </Typography>
           <Typography variant="h6" textAlign="center" color="text.secondary">
            <br />
-           Maximize Your Workflow with Silk. Elevate Your Web Development Game with Streamlined Tools and Time Management Solutions.
+           Maximize Your Workflow with Silk. Elevate Your Everyday Efficiency with Streamlined Tools and Time Management Solutions.
           </Typography>
           <Stack
             direction={{ xs: 'column', sm: 'row' }}

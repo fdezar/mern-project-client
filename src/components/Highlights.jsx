@@ -17,13 +17,13 @@ const items = [
     icon: <SettingsSuggestRoundedIcon />,
     title: 'Effortless Efficiency',
     description:
-      'Empower your productivity journey with seamless integration of Pomodoro, Todolist, Kanban, and note-taking features tailored for web developers.',
+      'Empower your productivity journey with seamless integration of Pomodoro, Todolist, Kanban, and note-taking features tailored for your everyday workflow.',
   },
   {
     icon: <ConstructionRoundedIcon />,
     title: 'Built to Empower',
     description:
-      'Experience robust functionality designed to elevate your web development workflow, ensuring lasting value and performance.',
+      'Experience robust functionality designed to elevate your daily workflow, ensuring lasting value and performance.',
   },
   {
     icon: <ThumbUpAltRoundedIcon />,
@@ -35,19 +35,19 @@ const items = [
     icon: <AutoFixHighRoundedIcon />,
     title: 'Reliable Solutions',
     description:
-      'Stay at the forefront of productivity with reliable features that anticipate and address the unique challenges faced by web developers.',
+      'Stay at the forefront of productivity with reliable features that anticipate and address your unique challenges and objectives.',
   },
   {
     icon: <SupportAgentRoundedIcon />,
     title: 'User-Focused Design',
     description:
-      'Prioritize user satisfaction with a design tailored to meet the needs of web developers, ensuring intuitive usability and seamless integration into your workflow.',
+      'Prioritize user satisfaction with a design tailored to meet the needs of users, ensuring intuitive usability and seamless integration into your workflow.',
   },
   {
     icon: <QueryStatsRoundedIcon />,
     title: 'Crafted for Success',
     description:
-      'Discover the precision and attention to detail in every feature, meticulously crafted to enhance your productivity and streamline your development process.',
+      'Discover the precision and attention to detail in every feature, meticulously crafted to enhance your productivity and streamline your goal achievement process.',
   },
 ];
 

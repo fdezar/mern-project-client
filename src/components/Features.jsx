@@ -61,7 +61,7 @@ export default function Features() {
               sx={{ mb: { xs: 2, sm: 4 } }}
             >
               
-              Silk elevates your web development workflow with tailored productivity features designed to address every need. From efficient task management to seamless cross-device syncing, discover how Silk empowers developers to excel in productivity. Explore its capabilities now.
+              Silk elevates your everyday workflow with tailored productivity features designed to address every need. From efficient task management to seamless cross-device syncing, discover how Silk empowers people to excel in productivity. Explore its capabilities now.
             </Typography>
           </div>
           <Grid container item gap={1} sx={{ display: { xs: 'auto', sm: 'none' } }}>

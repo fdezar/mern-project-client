@@ -74,7 +74,7 @@ export default function FAQ() {
             id="panel2d-header"
           >
             <Typography component="h3" variant="subtitle2">
-            How Does Kanban Drag and Drop Benefit Web Developers?
+            How Does Kanban Drag and Drop Benefit My Workflow?
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
