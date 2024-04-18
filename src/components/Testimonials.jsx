@@ -41,7 +41,7 @@ const userTestimonials = [
   {
     avatar: <Avatar alt="David Brown" src="/src/assets/images/landing-page/testimonials-user-5.jpg" />,
     name: 'David Brown',
-    occupation: 'Full Stack Dev',
+    occupation: 'Full Stack Developer',
     testimonial:
       "Since incorporating Silk into my routine, I've seen a remarkable improvement in my productivity as a web developer. The Pomodoro timer helps me stay focused and motivated, while the Kanban Drag and Drop feature keeps me organized and on track with my tasks.",
   },

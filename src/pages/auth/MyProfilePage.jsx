@@ -57,9 +57,9 @@ function MyProfilePage() {
                 <Link to={'edit'}><Button variant="contained" style={{ marginBottom: "15px", marginRight: "5px" }}>Edit Profile</Button></Link>
                 <Link to={'edit-password'}><Button variant="contained" style={{ marginBottom: "15px" }}>Edit Password</Button></Link>
                 <br />
-                <Button variant="outlined" style={{ marginBottom: "15px", marginRight: "5px" }} onClick={logOutUser}>Logout</Button>
-                <Button variant="outlined" color="secondary" style={{ marginBottom: "15px", marginRight: "5px" }} onClick={handleDeleteImage}>Delete image</Button>
-                <Button variant="outlined" color="secondary" style={{ marginBottom: "15px" }} onClick={handleDeleteProfile}>Delete profile</Button>
+                {/* <Button variant="outlined" style={{ marginBottom: "15px", marginRight: "5px" }} onClick={logOutUser}>Logout</Button> */}
+                <Button variant="outlined" color="error" style={{ marginBottom: "15px", marginRight: "5px" }} onClick={handleDeleteImage}>Delete image</Button>
+                <Button variant="outlined" color="error" style={{ marginBottom: "15px" }} onClick={handleDeleteProfile}>Delete profile</Button>
             </div>
         </ThemeProvider>
     )
