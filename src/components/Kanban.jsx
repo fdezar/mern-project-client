@@ -36,7 +36,7 @@ class Kanban extends PureComponent {
     const { lists } = this.props;
     return (
       <DragDropContext onDragEnd={this.onDragEnd}>
-        <h2>Kanban</h2>
+        <h1 style={{ marginBottom: '10px'}}>Kanban</h1>
         <Droppable droppableId="all-lists" direction="horizontal" type="list">
           {provided => (
             <ListsContainer

@@ -43,7 +43,7 @@ function NotesPage() {
           <ThemeProvider theme={appThemeProvider}>
             <h1>Notes</h1>
             <SearchBar setNotes={setNotes} />
-            <Table size="small">
+            <Table size="small" style={{ margin: '20px auto'}}>
               <TableHead>
                 <TableRow>
                   <TableCell>Title</TableCell>

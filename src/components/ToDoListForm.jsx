@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { TextField } from "@mui/material";
+import { TextField, Button } from "@mui/material";
 import formThemeProvider from "../pages/theme/appThemeProvider";
 import { ThemeProvider } from "@mui/material";
+import AddIcon from '@mui/icons-material/Add';
 
 function ToDoListForm({ handleAddItem }) {
     const [ content, setContent ] = useState("");
@@ -23,8 +24,11 @@ function ToDoListForm({ handleAddItem }) {
           name="content"
           value={content}
           onChange={handleItemInput}
+          sx={{ width: '300px', marginBottom: '30px' }}
+          variant="standard"
+          label="Add task..."
         />
-        <button type="submit">Add Task</button>
+        <Button type="submit" variant="contained" sx={{ marginLeft: '10px', padding: '4px', marginTop: '15px' }}><AddIcon /></Button>
       </form>
     </ThemeProvider>
   );

@@ -8,12 +8,15 @@ import { ThemeProvider } from "@mui/material";
 
 const Wrapper = styled('div')({
     textAlign: 'center',
-    padding: '20px',
+    padding: '20px 20px 20px 0',
   });
   
   const LengthControl = styled('div')({
     display: 'flex',
-    alignItems: 'center',
+    alignItems: 'flex-start',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    width: '200px'
   });
   
   const Timer = styled('div')({
@@ -117,34 +120,36 @@ function PomodoroClock() {
     return (
       <ThemeProvider theme={appThemeProvider}>
         <Wrapper>
-      <Typography variant="h2">Pomodoro Clock</Typography>
+      <Typography variant="h6" style={{ display: 'flex', alignItems: 'flex-start', margin: '0 0 10px 20px'}}>Pomodoro</Typography>
+      <hr style={{ marginBottom: '40px' }}/>
       <Grid container spacing={2} justifyContent="center">
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={12} style={{ display: 'flex', justifyContent: 'center' }}>
           <LengthControl>
-            <Typography variant="h3">Break</Typography>
-            <div>
-              <Button variant="contained" color="primary" disabled={play} onClick={handleBreakIncrease}>+</Button>
-              <Typography variant="body1">{breakLength}</Typography>
-              <Button variant="contained" color="secondary" disabled={play} onClick={handleBreakDecrease}>-</Button>
+            <Typography variant="h6" color="primary" sx={{ width: '100px' }}>Break</Typography>
+            <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>
+              <Button variant="outlined" color="secondary" disabled={play} onClick={handleBreakDecrease}>-</Button>
+              <Typography variant="body1" sx={{ margin: '8px 10px 5px 10px' }}>{breakLength}</Typography>
+              <Button variant="outlined" color="primary" disabled={play} onClick={handleBreakIncrease}>+</Button>
             </div>
           </LengthControl>
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={12} style={{ marginBottom: '30px', display: 'flex', justifyContent: 'center' }}>
           <LengthControl>
-            <Typography variant="h3">Session</Typography>
-            <div>
-              <Button variant="contained" color="primary" disabled={play} onClick={handleSessionIncrease}>+</Button>
-              <Typography variant="body1">{sessionLength}</Typography>
-              <Button variant="contained" color="secondary" disabled={play} onClick={handleSessionDecrease}>-</Button>
+            <Typography variant="h6" color="primary" sx={{ width: '100px' }}>Session</Typography>
+            <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>
+              <Button variant="outlined" color="secondary" disabled={play} onClick={handleSessionDecrease}>-</Button>
+              <Typography variant="body1" sx={{ margin: '8px 10px 5px 10px' }}>{sessionLength}</Typography>
+              <Button variant="outlined" color="primary" disabled={play} onClick={handleSessionIncrease}>+</Button>
             </div>
           </LengthControl>
         </Grid>
       </Grid>
       <Timer>
-        <Typography variant="h2" id="timer-label">{title}</Typography>
+        {/* <Typography variant="h4" id="timer-label">{title}</Typography> */}
+        <Typography variant="h4" id="timer-label">{title}</Typography>
         <Typography variant="h3" id="time-left">{timeFormatter()}</Typography>
       </Timer>
-      <Grid container spacing={2} justifyContent="center">
+      <Grid container spacing={2} justifyContent="center" style={{ marginBottom: '30px'}}>
         <Grid item xs={6} sm={3}>
           <Button variant="contained" color="primary" id="start_stop" onClick={handlePlay}>{play ? 'Stop' : 'Start'}</Button>
         </Grid>

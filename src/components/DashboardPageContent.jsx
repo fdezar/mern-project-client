@@ -9,7 +9,7 @@ import TableRow from '@mui/material/TableRow';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 import appThemeProvider from "../pages/theme/appThemeProvider";
-import { ThemeProvider } from "@mui/material"
+import { ThemeProvider, Typography } from "@mui/material"
 
 function DashboardPageContent() {
   const [toDoList, setToDoList] = useState([]);
@@ -53,8 +53,11 @@ function DashboardPageContent() {
 
   return (
     <div>
+      <h1>Your Workspace</h1>
       <PomodoroClock />
       <ThemeProvider theme={appThemeProvider}>
+      <Typography variant="h6" style={{ margin: "0 0 10px 20px" }}>Your Tasks</Typography>
+      <hr style={{ marginBottom: '30px'}}/>
       <ToDoListForm handleAddItem={handleAddItem} />
       <Table size="small">
                <TableBody>
