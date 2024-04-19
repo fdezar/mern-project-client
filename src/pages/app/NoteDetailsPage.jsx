@@ -33,7 +33,7 @@ function NoteDetailsPage() {
                 <h1>{note.title}</h1>
                 <p>{note.content}</p>
             
-                <Link to={`edit`}><Button>Edit note</Button></Link>
+                <Link to={`edit`}><Button variant="outlined" sx={{ marginTop: '15px' }}>Edit note</Button></Link>
             </div>
         </ThemeProvider>
     )

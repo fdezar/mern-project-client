@@ -146,14 +146,14 @@ function PomodoroClock() {
       </Grid>
       <Timer>
         {/* <Typography variant="h4" id="timer-label">{title}</Typography> */}
-        <Typography variant="h4" id="timer-label">{title}</Typography>
+        <Typography variant="h4" id="timer-label">Time</Typography>
         <Typography variant="h3" id="time-left">{timeFormatter()}</Typography>
       </Timer>
-      <Grid container spacing={2} justifyContent="center" style={{ marginBottom: '30px'}}>
-        <Grid item xs={6} sm={3}>
+      <Grid container justifyContent="center" style={{ margin: '10px 0 30px 0'}}>
+        <Grid item xs={6} sm={3} style={{ margin: '10px 0 0 0'}}>
           <Button variant="contained" color="primary" id="start_stop" onClick={handlePlay}>{play ? 'Stop' : 'Start'}</Button>
         </Grid>
-        <Grid item xs={6} sm={3}>
+        <Grid item xs={6} sm={3} style={{ margin: '10px 0 0 0'}}>
           <Button variant="contained" color="secondary" id="reset" onClick={handleReset}>Reset</Button>
         </Grid>
       </Grid>

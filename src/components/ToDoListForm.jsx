@@ -28,7 +28,7 @@ function ToDoListForm({ handleAddItem }) {
           variant="standard"
           label="Add task..."
         />
-        <Button type="submit" variant="contained" sx={{ marginLeft: '10px', padding: '4px', marginTop: '15px' }}><AddIcon /></Button>
+        <Button type="submit" variant="contained" sx={{ marginLeft: '10px', padding: '4px', marginTop: '15px', minWidth: '35px', maxWidth: '35px' }}><AddIcon /></Button>
       </form>
     </ThemeProvider>
   );

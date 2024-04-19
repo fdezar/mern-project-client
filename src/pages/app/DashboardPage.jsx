@@ -149,7 +149,7 @@ function DashboardPageLayout() {
         <Toolbar />
         <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
           <Grid container spacing={3}>
-            <Grid item xs={12} md={8} lg={9}>
+            <Grid item xs={12} md={15} lg={19}>
                 <Routes location={location}>
                   <Route path="/" element={<DashboardPageContent />} />
                   <Route path="kanban" element={<KanbanPage />} />

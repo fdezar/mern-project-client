@@ -77,11 +77,11 @@ function NoteCreatePage() {
                       <TextareaAutosize
                         minRows={5}
                         maxRows={17}
-                        fullWidth
                         id="content"
                         placeholder="Content"
                         value={content}
                         onChange={handleContentInput}
+                        style={{ minWidth: '300px' }}
                       />
                     </Grid>
                   </Grid>
