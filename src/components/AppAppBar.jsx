@@ -88,7 +88,7 @@ function AppAppBar({ mode, toggleColorMode }) {
             >
               <img
                 src={
-                  '/src/assets/images/silk-logo.png'
+                  'src/assets/images/silk-logo.png'
                 }
                 style={logoStyle}
                 alt="Silk logo"
