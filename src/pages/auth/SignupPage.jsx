@@ -11,6 +11,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import appThemeProvider from "../theme/appThemeProvider";
 import { ThemeProvider } from "@mui/material";
+import silkLogo from "/src/assets/images/silk-logo.png"
 
 function SignupPage() {
   const [email, setEmail] = useState("");
@@ -81,7 +82,7 @@ function SignupPage() {
             alignItems: 'center',
           }}
         >
-        <img src="/src/assets/images/silk-logo.png" style={{ width: '50px', margin: '20px' }}></img>
+        <img src={silkLogo} style={{ width: '50px', margin: '20px' }}></img>
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>

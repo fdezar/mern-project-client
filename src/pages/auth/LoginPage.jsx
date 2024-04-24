@@ -13,6 +13,7 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+import silkLogo from "/src/assets/images/silk-logo.png"
 
 function LoginPage() {
   const [email, setEmail] = useState("JohnSmith@localhost.com");
@@ -55,7 +56,7 @@ function LoginPage() {
               alignItems: 'center',
             }}
           >
-            <img src="/src/assets/images/silk-logo.png" style={{ width: '50px', margin: '40px auto' }}></img>
+            <img src={silkLogo} style={{ width: '50px', margin: '40px auto' }}></img>
             <Typography component="h1" variant="h5">
               Sign in
             </Typography>
