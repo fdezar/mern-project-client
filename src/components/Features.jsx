@@ -17,24 +17,24 @@ const items = [
     title: 'Pomodoro & Tasks',
     description:
       'Boost productivity with our integrated Pomodoro timer, seamlessly balancing work intervals and breaks for optimal focus. Experience enhanced time management as you effortlessly divide your workday into focused sprints, punctuated by rejuvenating breaks.',
-    imageLight: 'url("/static/images/templates/templates-images/dash-light.png")',
-    imageDark: 'url("/static/images/templates/templates-images/dash-dark.png")',
+    imageLight: 'url("src/assets/images/landing-page/pomodoro.png")',
+    imageDark: 'url("src/assets/images/landing-page/pomodoro.png")',
   },
   {
     icon: <BarChartIcon />,
     title: 'Drag and Drop Kanban',
     description:
       'Effortlessly manage tasks with our intuitive Kanban Drag and Drop feature, streamlining workflow organization and progress tracking. From ideation to completion, empower your team to visualize tasks, prioritize assignments, and adapt dynamically to project needs with ease.',
-    imageLight: 'url("/static/images/templates/templates-images/mobile-light.png")',
-    imageDark: 'url("/static/images/templates/templates-images/mobile-dark.png")',
+    imageLight: 'url("src/assets/images/landing-page/kanban.png")',
+    imageDark: 'url("src/assets/images/landing-page/kanban.png")',
   },
   {
     icon: <NotesIcon />,
     title: 'Save your notes anywhere',
     description:
       'Silk is available on all platforms, such as web, mobile, and desktop.',
-    imageLight: 'url("/static/images/templates/templates-images/devices-light.png")',
-    imageDark: 'url("/static/images/templates/templates-images/devices-dark.png")',
+    imageLight: 'url("src/assets/images/landing-page/notes.png")',
+    imageDark: 'url("src/assets/images/landing-page/notes.png")',
   },
 ];
 

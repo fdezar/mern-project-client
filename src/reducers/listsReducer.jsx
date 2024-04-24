@@ -3,44 +3,62 @@ import { CONSTANTS } from "../actions";
 let listID = 2;
 let cardID = 6;
 
+// const initialState = [
+//   {
+//     title: "To Do",
+//     id: `list-${0}`,
+//     cards: [
+//       {
+//         id: `card-${0}`,
+//         text: "Implement Backend"
+//       },
+//       {
+//         id: `card-${1}`,
+//         text: "Add Icons"
+//       }
+//     ]
+//   },
+//   {
+//     title: "In Progress",
+//     id: `list-${1}`,
+//     cards: [
+//       {
+//         id: `card-${2}`,
+//         text: "Implement Kanban"
+//       },
+//       {
+//         id: `card-${3}`,
+//         text: "Implement drag and drop"
+//       },
+//       {
+//         id: `card-${4}`,
+//         text:
+//           "react-beautiful-dnd"
+//       },
+//       {
+//         id: `card-${5}`,
+//         text:
+//           "Style with Material UI"
+//       }
+//     ]
+//   },
+//   {
+//     title: "Done",
+//     id: `list-${2}`,
+//     cards: []
+//   }
+// ];
+
 const initialState = [
   {
     title: "To Do",
     id: `list-${0}`,
-    cards: [
-      {
-        id: `card-${0}`,
-        text: "Implement Backend"
-      },
-      {
-        id: `card-${1}`,
-        text: "Add Icons"
-      }
-    ]
+    cards: []
   },
   {
     title: "In Progress",
     id: `list-${1}`,
-    cards: [
-      {
-        id: `card-${2}`,
-        text: "Implement Kanban"
-      },
-      {
-        id: `card-${3}`,
-        text: "Implement drag and drop"
-      },
-      {
-        id: `card-${4}`,
-        text:
-          "react-beautiful-dnd"
-      },
-      {
-        id: `card-${5}`,
-        text:
-          "Style with Material UI"
-      }
-    ]
+    cards: []
   },
   {
     title: "Done",

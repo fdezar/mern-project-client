@@ -62,7 +62,7 @@ export default function Hero() {
             alignSelf="center"
             spacing={1}
             useFlexGap
-            sx={{ pt: 2, width: { xs: '100%', sm: 'auto' } }}
+            sx={{ pt: 2, width: { xs: 'auto', sm: 'auto' } }}
           >  
             <Button variant="contained" color="primary" style={{ width: '110px'}}>
               <Link to='/signup' style={{ textDecoration: 'none', color: 'inherit' }}>
@@ -80,8 +80,8 @@ export default function Hero() {
             width: '100%',
             backgroundImage:
               theme.palette.mode === 'light'
-                ? 'url("/static/images/templates/templates-images/hero-light.png")'
-                : 'url("/static/images/templates/templates-images/hero-dark.png")',
+                ? 'url("/src/assets/images/landing-page/dashboard.png")'
+                : 'url("/src/assets/images/landing-page/dashboard.png")',
             backgroundSize: 'cover',
             borderRadius: '10px',
             outline: '1px solid',

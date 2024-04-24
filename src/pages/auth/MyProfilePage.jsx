@@ -11,7 +11,7 @@ const ProfileWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: 10px 20px 20px 20px;
 `;
 
 const ProfileImage = styled.img`
@@ -67,18 +67,18 @@ function MyProfilePage() {
   ) : (
     <ThemeProvider theme={appThemeProvider}>
       <ProfileWrapper>
-        <Typography variant="h4">My Profile</Typography>
+        <h1 style={{ marginBottom: '25px' }}>My Profile</h1>
         
         <ProfileImage src={myUser.userImage} alt="Profile" />
         
         <Typography variant="h6">{myUser.firstName} {myUser.lastName}</Typography>
         
-        <Typography variant="subtitle1">@{myUser.username}</Typography>
+        <Typography variant="subtitle1" sx={{ marginBottom: '5px' }}>@{myUser.username}</Typography>
         
         <Typography variant="h6">About</Typography>
-        <Typography variant="body1">{myUser.aboutMe}</Typography>
+        <Typography variant="body1" sx={{ marginBottom: '5px' }}>{myUser.aboutMe}</Typography>
         
-        <ButtonGroup>
+        <ButtonGroup style={{ marginTop: '10px'}}>
           <Link to={'edit'} style={{ textDecoration: 'none' }}>
             <Button variant="contained">Edit Profile</Button>
           </Link>
