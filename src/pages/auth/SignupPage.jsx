@@ -13,12 +13,12 @@ import appThemeProvider from "../theme/appThemeProvider";
 import { ThemeProvider } from "@mui/material";
 
 function SignupPage() {
-  const [email, setEmail] = useState("Admin12@localhost.com");
-  const [username, setUsername] = useState("Admin");
-  const [firstName, setFirstName] = useState("Admin");
-  const [lastName, setLastName] = useState("Host");
-  const [aboutMe, setAboutMe] = useState("Hello");
-  const [password, setPassword] = useState("Admin10");
+  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [aboutMe, setAboutMe] = useState("");
+  const [password, setPassword] = useState("");
   const [userImage, setUserImage] = useState("");
 
   const navigate = useNavigate();

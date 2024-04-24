@@ -1,5 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 
 import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
@@ -23,7 +24,8 @@ const logoStyle = {
 };
 
 function AppAppBar({ mode, toggleColorMode }) {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
@@ -42,6 +44,10 @@ function AppAppBar({ mode, toggleColorMode }) {
       setOpen(false);
     }
   };
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  }
 
   return (
     <div>
@@ -86,6 +92,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                 px: 0,
               }}
             >
+             {imageLoaded && (
               <img
                 src={
                   'src/assets/images/silk-logo.png'
@@ -93,8 +100,9 @@ function AppAppBar({ mode, toggleColorMode }) {
                 style={logoStyle}
                 alt="Silk logo"
                 onClick={() => scrollToSection('hero')}
+                onLoad={handleImageLoad}
               />
-              
+             )}
               <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                 <MenuItem
                   onClick={() => scrollToSection('features')}
