@@ -11,7 +11,7 @@ import { useTheme } from '@mui/system';
 import userImage1 from "/src/assets/images/landing-page/testimonials-user-1.jpg"
 import userImage2 from "/src/assets/images/landing-page/testimonials-user-2.jpg"
 import userImage3 from "/src/assets/images/landing-page/testimonials-user-3.jpg"
-import userImage4 from "/src/assets/images/landing-page/testimonials-user-4.jpg"
+import userImage4 from "/src/assets/images/landing-page/testimonials-user-4.jpeg"
 import userImage5 from "/src/assets/images/landing-page/testimonials-user-5.jpg"
 import userImage6 from "/src/assets/images/landing-page/testimonials-user-6.jpg"
 

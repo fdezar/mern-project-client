@@ -10,9 +10,9 @@ import Typography from '@mui/material/Typography';
 import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import NotesIcon from '@mui/icons-material/Notes';
-import pomodoroImage from 'src/assets/images/landing-page/pomodoro.png';
-import kanbanImage from 'src/assets/images/landing-page/kanban.png';
-import notesImage from 'src/assets/images/landing-page/notes.png';
+import pomodoroImage from '/src/assets/images/landing-page/pomodoro.png';
+import kanbanImage from '/src/assets/images/landing-page/kanban.png';
+import notesImage from '/src/assets/images/landing-page/notes.png';
 
 const items = [
   {
