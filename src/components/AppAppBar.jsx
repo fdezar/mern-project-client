@@ -15,6 +15,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ToggleColorMode from './ToggleColorMode';
 import { Link } from "react-router-dom";
 
+import silkLogo from 'src/assets/images/silk-logo.png'
+
 const logoStyle = {
   width: '35px',
   height: 'auto',
@@ -25,7 +27,6 @@ const logoStyle = {
 
 function AppAppBar({ mode, toggleColorMode }) {
   const [open, setOpen] = useState(false);
-  const [imageLoaded, setImageLoaded] = useState(false);
 
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
@@ -44,10 +45,6 @@ function AppAppBar({ mode, toggleColorMode }) {
       setOpen(false);
     }
   };
-
-  const handleImageLoad = () => {
-    setImageLoaded(true);
-  }
 
   return (
     <div>
@@ -92,17 +89,12 @@ function AppAppBar({ mode, toggleColorMode }) {
                 px: 0,
               }}
             >
-             {imageLoaded && (
               <img
-                src={
-                  'src/assets/images/silk-logo.png'
-                }
+                src={silkLogo}
                 style={logoStyle}
                 alt="Silk logo"
                 onClick={() => scrollToSection('hero')}
-                onLoad={handleImageLoad}
-              />
-             )}
+              /> 
               <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                 <MenuItem
                   onClick={() => scrollToSection('features')}
