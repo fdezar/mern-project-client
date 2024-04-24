@@ -14,7 +14,6 @@ import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import ToggleColorMode from './ToggleColorMode';
 import { Link } from "react-router-dom";
-
 import silkLogo from '/src/assets/images/silk-logo.png'
 
 const logoStyle = {

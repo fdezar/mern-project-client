@@ -6,6 +6,7 @@ import Container from '@mui/material/Container';
 import { Link } from 'react-router-dom';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import dashboardImage from '/src/assets/images/landing-page/dashboard.png'
 
 export default function Hero() {
   return (
@@ -80,8 +81,8 @@ export default function Hero() {
             width: '100%',
             backgroundImage:
               theme.palette.mode === 'light'
-                ? 'url("/src/assets/images/landing-page/dashboard.png")'
-                : 'url("/src/assets/images/landing-page/dashboard.png")',
+                ? `url(${dashboardImage})`
+                : `url(${dashboardImage})`,
             backgroundSize: 'cover',
             borderRadius: '10px',
             outline: '1px solid',
