@@ -115,8 +115,6 @@ function PomodoroClock() {
         return `${formattedMinutes}:${formattedSeconds}`;
     }
 
-    const title = timingType === "SESSION" ? "Session" : "Break"; 
-
     return (
       <ThemeProvider theme={appThemeProvider}>
         <Wrapper>
@@ -145,7 +143,6 @@ function PomodoroClock() {
         </Grid>
       </Grid>
       <Timer>
-        {/* <Typography variant="h4" id="timer-label">{title}</Typography> */}
         <Typography variant="h4" id="timer-label">Time</Typography>
         <Typography variant="h3" id="time-left">{timeFormatter()}</Typography>
       </Timer>

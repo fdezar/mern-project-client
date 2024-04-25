@@ -143,11 +143,6 @@ export default function Testimonials() {
                   title={testimonial.name}
                   subheader={testimonial.occupation}
                 />
-                {/* <img
-                  src={logos[index]}
-                  alt={`Logo ${index + 1}`}
-                  style={logoStyle}
-                /> */}
               </Box>
             </Card>
           </Grid>

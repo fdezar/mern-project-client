@@ -34,7 +34,7 @@ function EditProfilePage() {
   useEffect(() => {
     authService.getUserProfile()
         .then((res) => {
-            console.log(res.data);
+            // console.log(res.data);
             setMyUser(res.data);
             setEmail(res.data.email);
             setUsername(res.data.username);

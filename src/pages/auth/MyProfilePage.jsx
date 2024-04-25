@@ -41,7 +41,7 @@ function MyProfilePage() {
       .then(res => {
         setMyUser(res.data);
       })
-      .catch(err => console.error(err));
+    //   .catch(err => console.error(err));
   }, []);
 
   const handleDeleteProfile = () => {
@@ -49,7 +49,7 @@ function MyProfilePage() {
       .then(() => {
         navigate('/');
       })
-      .catch(err => console.error(err));
+    //   .catch(err => console.error(err));
   }
 
   const handleDeleteImage = () => {
@@ -57,7 +57,7 @@ function MyProfilePage() {
       .then(() => {
         // Image deleted
       })
-      .catch(err => console.error(err));
+    //   .catch(err => console.error(err));
   }
 
   return !myUser ? (

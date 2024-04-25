@@ -38,7 +38,6 @@ class NotesService {
   };
 }
 
-// Create one instance object
 const notesService = new NotesService();
 
 export default notesService;

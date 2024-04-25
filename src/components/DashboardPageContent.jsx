@@ -28,7 +28,7 @@ function DashboardPageContent() {
     toDoListService
       .createToDoListItem(newItem)
       .then((item) => {
-        console.log(item);
+        // console.log(item);
         const updatedToDoList = [...toDoList, item.data];
         setToDoList(updatedToDoList);
       })
