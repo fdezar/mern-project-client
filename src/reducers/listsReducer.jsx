@@ -84,6 +84,8 @@ const listsReducer = (state = initialState, action) => {
       };
       listID += 1;
 
+      console.log("list created", newList);
+
     //   return kanbanService.createKanban(newList)
     //     .then(newKanban => {
     //         return [...state, newKanban];

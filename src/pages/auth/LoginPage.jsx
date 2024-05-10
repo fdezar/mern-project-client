@@ -14,12 +14,22 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import silkLogo from "/src/assets/images/silk-logo.png"
+import styled from 'styled-components';
+
+const ErrorMessageDiv = styled.div`
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 80px;
+    text-align: justify;
+    color: #ED4337;
+`;
 
 function LoginPage() {
   const [email, setEmail] = useState("JohnSmith@localhost.com");
   const [password, setPassword] = useState("Admin1");
   const navigate = useNavigate();
   const { storeToken, authenticateUser } = useContext(AuthContext);
+  const [errorMessage, setErrorMessage] = useState(undefined);
 
   const handleEmailInput = e => setEmail(e.target.value);
   const handlePasswordInput = e => setPassword(e.target.value);
@@ -41,6 +51,8 @@ function LoginPage() {
         })
         .catch(err => {
             // console.error(err);
+            const errorDescription = err.response.data.message;
+            setErrorMessage(errorDescription);
         });
   }
 
@@ -101,6 +113,9 @@ function LoginPage() {
                   </Link>
                 </Grid>
               </Grid>
+              <ErrorMessageDiv>
+              {errorMessage && <p className="error-message">{errorMessage}</p>}
+              </ErrorMessageDiv>
             </Box>
           </Box>
       </Container>

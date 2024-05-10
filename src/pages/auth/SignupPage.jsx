@@ -12,6 +12,15 @@ import Container from '@mui/material/Container';
 import appThemeProvider from "../theme/appThemeProvider";
 import { ThemeProvider } from "@mui/material";
 import silkLogo from "/src/assets/images/silk-logo.png"
+import styled from 'styled-components';
+
+const ErrorMessageDiv = styled.div`
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 80px;
+    text-align: justify;
+    color: #ED4337;
+`;
 
 function SignupPage() {
   const [email, setEmail] = useState("");
@@ -21,6 +30,7 @@ function SignupPage() {
   const [aboutMe, setAboutMe] = useState("");
   const [password, setPassword] = useState("");
   const [userImage, setUserImage] = useState("");
+  const [errorMessage, setErrorMessage] = useState(undefined);
 
   const navigate = useNavigate();
 
@@ -65,6 +75,8 @@ function SignupPage() {
             })
             .catch(err => {
                 // console.error(err);
+                const errorDescription = err.response.data.message;
+                setErrorMessage(errorDescription);
             });
         })
       .catch(err => console.log("Error while uploading the file: ", err));
@@ -192,6 +204,9 @@ function SignupPage() {
                 </Link>
               </Grid>
             </Grid>
+            <ErrorMessageDiv>
+              {errorMessage && <p className="error-message">{errorMessage}</p>}
+            </ErrorMessageDiv>
           </Box>
         </Box>
       </Container>
