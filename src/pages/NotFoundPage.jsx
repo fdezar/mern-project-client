@@ -2,10 +2,13 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import { Link } from 'react-router-dom';
+import appThemeProvider from './theme/appThemeProvider';
+import { ThemeProvider } from '@mui/material';
 
 function NotFoundPage() {
     return (
-        <Container>
+      <ThemeProvider theme={appThemeProvider}>
+        <Container style={{ marginTop: '100px' }}>
           <Typography variant="h1">
             404
           </Typography>
@@ -21,6 +24,7 @@ function NotFoundPage() {
             Go Back Home
           </Button>
         </Container>
+      </ThemeProvider>
     );
 }
 

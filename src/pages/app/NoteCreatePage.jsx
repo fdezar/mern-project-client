@@ -5,7 +5,6 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import TextareaAutosize from '@mui/material/TextareaAutosize';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import EditNoteIcon from '@mui/icons-material/EditNote';
@@ -14,10 +13,20 @@ import Container from '@mui/material/Container';
 import { useNavigate } from "react-router-dom";
 import appThemeProvider from "../theme/appThemeProvider";
 import { ThemeProvider } from "@mui/material";
+import styled from 'styled-components';
+
+const ErrorMessageDiv = styled.div`
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 80px;
+    text-align: center;
+    color: crimson;
+`;
 
 function NoteCreatePage() {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
+    const [errorMessage, setErrorMessage] = useState(undefined);
     const navigate = useNavigate();
 
     const handleTitleInput = e => setTitle(e.target.value);
@@ -38,7 +47,8 @@ function NoteCreatePage() {
           })
           .catch(err => {
             // console.error(err);
-            // Handle error, maybe show an error message to the user
+            const errorDescription = err.response.data.message;
+            setErrorMessage(errorDescription);
           });
     };
 
@@ -74,14 +84,14 @@ function NoteCreatePage() {
                       />
                     </Grid>
                     <Grid item xs={12}>
-                      <TextareaAutosize
-                        minRows={5}
-                        maxRows={17}
+                      <textarea
+                        minRows={7}
+                        maxRows={12}
                         id="content"
                         placeholder="Content"
                         value={content}
                         onChange={handleContentInput}
-                        style={{ minWidth: '300px' }}
+                        style={{ minWidth: '400px', minHeight: '400px' }}
                       />
                     </Grid>
                   </Grid>
@@ -93,6 +103,9 @@ function NoteCreatePage() {
                   >
                     Create Note
                   </Button>
+                  <ErrorMessageDiv>
+                    {errorMessage && <p className="error-message">{errorMessage}</p>}
+                  </ErrorMessageDiv>
                 </Box>
               </Box>
           </Container>

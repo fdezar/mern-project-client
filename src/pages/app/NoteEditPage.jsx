@@ -11,10 +11,20 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import appThemeProvider from "../theme/appThemeProvider";
 import { ThemeProvider } from "@mui/material";
+import styled from 'styled-components';
+
+const ErrorMessageDiv = styled.div`
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 80px;
+    text-align: center;
+    color: crimson;
+`;
 
 function NoteEditPage() {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
+    const [errorMessage, setErrorMessage] = useState(undefined);
     const { noteId } = useParams();
     const navigate = useNavigate();
 
@@ -39,11 +49,13 @@ function NoteEditPage() {
 
         notesService.updateNote(noteId, updatedNote)
             .then(res => {
-                console.log(res.data);
+                // console.log(res.data);
                 navigate(`/dashboard/notes/${noteId}`);
             })
             .catch(err => {
-                console.error(err);
+                // console.error(err);
+                const errorDescription = err.response.data.message;
+                setErrorMessage(errorDescription);
             })
     }
 
@@ -94,6 +106,9 @@ function NoteEditPage() {
                   >
                     Save Changes
                   </Button>
+                  <ErrorMessageDiv>
+                    {errorMessage && <p className="error-message">{errorMessage}</p>}
+                  </ErrorMessageDiv>
                 </Box>
               </Box>
           </Container>
