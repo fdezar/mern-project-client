@@ -6,6 +6,12 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import styled from 'styled-components';
+
+const StyledLink = styled.a`
+    text-decoration: none;
+    color: inherit;
+`;
 
 function Copyright() {
   return (
@@ -39,7 +45,7 @@ export default function Footer() {
       >
         <div>
           <Typography display="inline" sx={{ mx: 0.5, opacity: 0.7 }}>
-            Made by @fdezar
+            Made by <StyledLink href="https://www.github.com/fdezar">@fdezar</StyledLink>
           </Typography>
           <Copyright />
         </div>

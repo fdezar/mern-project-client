@@ -21,7 +21,7 @@ const ErrorMessageDiv = styled.div`
     margin-top: 40px;
     margin-bottom: 80px;
     text-align: center;
-    color: #ED4337;
+    color: crimson;
 `;
 
 function LoginPage() {

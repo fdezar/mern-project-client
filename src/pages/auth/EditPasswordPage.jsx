@@ -7,6 +7,15 @@ import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
+import styled from 'styled-components';
+
+const ErrorMessageDiv = styled.div`
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 80px;
+    text-align: center;
+    color: crimson;
+`;
 
 function EditPasswordPage() {
   const navigate = useNavigate();
@@ -15,7 +24,7 @@ function EditPasswordPage() {
   const [newPassword, setNewPassword] = useState("");
   const [confirmNewPassword, setConfirmNewPassword] = useState("");
   const [editForm, setEditForm] = useState(false);
-//   const [errorMessage, setErrorMessage] = useState(undefined);
+  const [errorMessage, setErrorMessage] = useState(undefined);
 
   const handleCurrentPassword = (e) => setCurrentPassword(e.target.value);
   const handleNewPassword = (e) => setNewPassword(e.target.value);
@@ -39,9 +48,9 @@ function EditPasswordPage() {
         navigate("/login");
       })
       .catch((err) => {
-        console.error(err);
-        // const errorDescription = error.response.data.message;
-        // setErrorMessage(errorDescription);
+        // console.error(err);
+        const errorDescription = err.response.data.message;
+        setErrorMessage(errorDescription);
       });
   };
 
@@ -114,6 +123,9 @@ function EditPasswordPage() {
           <button type="submit">Save</button>
           {/* </Grid>
           </Box> */}
+          <ErrorMessageDiv>
+            {errorMessage && <p className="error-message">{errorMessage}</p>}
+          </ErrorMessageDiv>
         </form>
       </div>
     </>

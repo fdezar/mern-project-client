@@ -13,6 +13,15 @@ import Container from '@mui/material/Container';
 import appThemeProvider from "../theme/appThemeProvider";
 import { ThemeProvider } from "@mui/material";
 import silkLogo from "/src/assets/images/silk-logo.png"
+import styled from 'styled-components';
+
+const ErrorMessageDiv = styled.div`
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 80px;
+    text-align: center;
+    color: crimson;
+`;
 
 function EditProfilePage() {
 
@@ -24,6 +33,7 @@ function EditProfilePage() {
   const [lastName, setLastName] = useState("");
   const [aboutMe, setAboutMe] = useState("");
   const [userImage, setUserImage] = useState("");
+  const [errorMessage, setErrorMessage] = useState(undefined);
 
   const handleEmailInput = e => setEmail(e.target.value);
   const handleUsernameInput = e => setUsername(e.target.value);
@@ -75,9 +85,14 @@ function EditProfilePage() {
           })
           .catch(err => {
             // console.error(err);
+            const errorDescription = err.response.data.message;
+            setErrorMessage(errorDescription);
           });
         })
-      // .catch(err => console.error("Error while uploading the file: ", err));
+      .catch(err => {
+        // console.error("Error while uploading the file: ", err);
+        setErrorMessage("Image is required. ", err);
+      });
   };
 
   return !myUser ? (
@@ -186,6 +201,9 @@ function EditProfilePage() {
             >
               Save Changes
             </Button>
+            <ErrorMessageDiv>
+              {errorMessage && <p className="error-message">{errorMessage}</p>}
+            </ErrorMessageDiv>
           </Box>
         </Box>
       </Container>

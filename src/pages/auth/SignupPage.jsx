@@ -19,7 +19,7 @@ const ErrorMessageDiv = styled.div`
     margin-top: 20px;
     margin-bottom: 80px;
     text-align: justify;
-    color: #ED4337;
+    color: crimson;
 `;
 
 function SignupPage() {
