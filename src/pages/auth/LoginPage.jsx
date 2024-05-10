@@ -18,9 +18,9 @@ import styled from 'styled-components';
 
 const ErrorMessageDiv = styled.div`
     width: 100%;
-    margin-top: 20px;
+    margin-top: 40px;
     margin-bottom: 80px;
-    text-align: justify;
+    text-align: center;
     color: #ED4337;
 `;
 
