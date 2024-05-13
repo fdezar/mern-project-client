@@ -87,7 +87,10 @@ function DashboardPageLayout() {
         // console.log(res.data);
         setMyUser(res.data);
     })
-    // .catch(err => console.log(err));
+    .catch(err => {
+      // console.log(err);
+      navigate('/');
+    });
 }, []);
 
   const toggleDrawer = () => {
